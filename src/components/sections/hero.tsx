@@ -11,63 +11,87 @@ export function Hero() {
 
     return (
         <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white pt-20">
-            {/* Background Narrative Texture - World Map & Connectivity */}
-            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                {/* Ambient Light */}
-                <div className="absolute -top-[30%] -left-[20%] w-[80%] h-[160%] bg-gradient-to-br from-amber-50/40 via-slate-50/30 to-transparent blur-[120px] -rotate-12 opacity-70" />
+            {/* Background Narrative Texture - World Map & Connectivity (Premium Hybrid) */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-white">
+                {/* Cinematic Light & Depth */}
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_-20%,#f8fafc_0%,transparent_100%)] opacity-100" />
+                <div className="absolute -top-[30%] -left-[10%] w-[70%] h-[140%] bg-gradient-to-br from-amber-50/20 via-white to-transparent blur-[120px] -rotate-12 opacity-80" />
 
-                {/* Custom SVG World Map Background (Spain Centered & Zoomed Out) */}
+                {/* Advanced SVG World Map */}
                 <svg
-                    className="absolute inset-0 w-full h-full opacity-[0.2]"
+                    className="absolute inset-0 w-full h-full opacity-[0.25] mix-blend-multiply"
                     viewBox="0 0 1000 500"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     preserveAspectRatio="xMidYMid slice"
                 >
-                    {/* Meridians and Parallels - Global Grid */}
-                    <g stroke="#94a3b8" strokeWidth="0.5" strokeOpacity="0.4">
+                    <defs>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="2" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#94a3b8" stopOpacity="0.2" />
+                            <stop offset="50%" stopColor="#cbd5e1" stopOpacity="0.5" />
+                            <stop offset="100%" stopColor="#94a3b8" stopOpacity="0.2" />
+                        </linearGradient>
+                    </defs>
+
+                    {/* Meridians and Parallels - Cinematic Grid */}
+                    <g stroke="url(#mapGradient)" strokeWidth="0.3">
                         {[0, 100, 200, 300, 400, 500].map(y => (
-                            <path key={`p-${y}`} d={`M0 ${y} Q 500 ${y - 20} 1000 ${y}`} />
+                            <path key={`p-${y}`} d={`M0 ${y} Q 500 ${y - 30} 1000 ${y}`} />
                         ))}
-                        {[100, 200, 300, 400, 500, 600, 700, 800, 900].map(x => (
-                            <path key={`m-${x}`} d={`M${x} 0 Q ${x + 50} 250 ${x} 500`} />
+                        {[50, 150, 250, 350, 450, 550, 650, 750, 850, 950].map(x => (
+                            <path key={`m-${x}`} d={`M${x} -100 Q ${x + 80} 250 ${x} 600`} />
                         ))}
                     </g>
 
-                    {/* Recognizable Continental Outlines (Line Art) */}
-                    <g stroke="#cbd5e1" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                        {/* Europe & Africa (Centered) */}
-                        <path d="M480 120 L 490 115 L 510 110 L 530 115 L 550 130 L 540 160 L 560 180 L 540 200 L 550 250 L 530 350 L 500 450 L 450 420 L 420 350 L 440 300 L 410 250 L 420 200 L 450 180 L 470 170 Z" />
+                    {/* Continental Outlines with Depth */}
+                    <g stroke="#94a3b8" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" opacity="0.6">
+                        {/* Europe & Africa (Centered Focus) */}
+                        <path d="M485 125 L 495 120 L 515 115 L 535 120 L 555 135 L 545 165 L 565 185 L 545 205 L 555 255 L 535 355 L 505 455 L 455 425 L 425 355 L 445 305 L 415 255 L 425 205 L 455 185 L 475 175 Z" filter="url(#glow)" />
 
-                        {/* Americas (Left) */}
-                        <path d="M100 80 L 150 70 L 220 120 L 200 200 L 150 220 L 180 300 L 220 450 L 180 480 L 120 400 L 140 300 L 80 200 L 60 100 Z" />
+                        {/* Americas (Left - Slightly Blurry) */}
+                        <path d="M100 80 L 150 70 L 220 120 L 205 205 L 155 225 L 185 305 L 225 455 L 185 485 L 125 405 L 145 305 L 85 205 L 65 105 Z" opacity="0.4" />
 
                         {/* Asia & Australia (Right) */}
-                        <path d="M650 100 L 750 80 L 850 120 L 950 150 L 920 250 L 850 300 L 880 400 L 820 450 L 780 400 L 800 300 L 700 250 L 620 200 L 630 150 Z" />
-                        <path d="M850 350 A 20 20 0 1 0 890 350 A 20 20 0 1 0 850 350" /> {/* Australia simplified */}
+                        <path d="M655 105 L 755 85 L 855 125 L 955 155 L 925 255 L 855 305 L 885 405 L 825 455 L 785 405 L 805 305 L 705 255 L 625 205 L 635 155 Z" opacity="0.4" />
                     </g>
 
-                    {/* International Mobility Paths - Connecting to Spain */}
-                    <g stroke="#701218" strokeWidth="1" strokeDasharray="5 5" className="opacity-50">
-                        {/* America to Spain */}
-                        <path d="M180 220 Q 300 150 480 180">
-                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="20s" repeatCount="indefinite" />
-                        </path>
-                        {/* Asia to Spain */}
-                        <path d="M850 200 Q 650 120 480 180">
-                            <animate attributeName="stroke-dashoffset" from="0" to="100" dur="25s" repeatCount="indefinite" />
-                        </path>
+                    {/* Animated Connection Glows */}
+                    <g stroke="#701218" strokeWidth="1.5" strokeDasharray="6 30" opacity="0.6">
+                        <motion.path
+                            d="M180 220 Q 300 120 480 183"
+                            animate={{ strokeDashoffset: [300, 0] }}
+                            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                        />
+                        <motion.path
+                            d="M850 200 Q 650 90 480 183"
+                            animate={{ strokeDashoffset: [0, 300] }}
+                            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                        />
                     </g>
 
-                    {/* Focal Point - Spain (Strategic geographic location) */}
-                    <g className="animate-pulse">
-                        <circle cx="480" cy="183" r="6" fill="#701218" fillOpacity="0.2" />
-                        <circle cx="480" cy="183" r="3" fill="#701218" />
+                    {/* High-Authority Focal Point (Spain) */}
+                    <g filter="url(#glow)">
+                        <motion.circle
+                            cx="482" cy="184" r="10" fill="#701218" fillOpacity="0.1"
+                            animate={{ r: [8, 12, 8] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        />
+                        <circle cx="482" cy="184" r="5" fill="#701218" fillOpacity="0.3" />
+                        <circle cx="482" cy="184" r="2.5" fill="#701218" />
                     </g>
                 </svg>
 
+                {/* Texture Overlay (Grain) */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+                />
+
                 {/* Bottom transition gradient */}
-                <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-white to-transparent z-10" />
+                <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
             </div>
 
             <Container className="relative z-10 grid gap-12 lg:grid-cols-2 lg:gap-8 items-center py-12">
