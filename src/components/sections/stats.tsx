@@ -27,7 +27,7 @@ export function Stats() {
                             transition={{ delay: index * 0.1, duration: 0.6 }}
                             className="text-center"
                         >
-                            <div className="text-3xl lg:text-4xl font-serif font-bold text-[#701218] mb-2">
+                            <div className="text-3xl lg:text-4xl font-serif font-bold text-white mb-2">
                                 {stat.value}
                             </div>
                             <div className="text-sm text-slate-400 uppercase tracking-wider font-medium">

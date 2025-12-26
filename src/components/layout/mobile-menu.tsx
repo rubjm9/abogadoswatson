@@ -44,25 +44,30 @@ export function MobileMenu() {
             <AnimatePresence>
                 {isOpen && (
                     <>
-                        {/* Backdrop */}
+                        {/* Full Screen Backdrop with Strong Blur (Captures the whole page) */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsOpen(false)}
-                            className="fixed inset-0 z-[60] bg-slate-950/20 backdrop-blur-sm"
+                            className="fixed inset-0 z-[60] bg-white/40"
+                            style={{
+                                backdropFilter: "blur(60px)",
+                                WebkitBackdropFilter: "blur(60px)"
+                            }}
                         />
 
-                        {/* Menu Panel */}
+                        {/* Menu Panel (Above the backdrop) */}
                         <motion.div
-                            initial={{ x: "100%" }}
-                            animate={{ x: 0 }}
-                            exit={{ x: "100%" }}
-                            transition={{ type: "tween", duration: 0.3 }}
-                            className="fixed inset-0 z-[70] w-full h-full bg-white/80 backdrop-blur-2xl flex flex-col pt-20"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 0.2 }}
+                            className="fixed inset-0 z-[70] w-full h-[100dvh] flex flex-col overflow-hidden pointer-events-none"
                         >
-                            <div className="flex items-center justify-between p-6 border-b border-slate-200/50 absolute top-0 left-0 w-full bg-white/50">
-                                <span className="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Menú</span>
+                            {/* Header (Opaque) */}
+                            <div className="flex items-center justify-between p-6 border-b border-slate-200/50 bg-white shadow-sm shrink-0 pointer-events-auto">
+                                <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#701218]">Menú</span>
                                 <Button
                                     variant="ghost"
                                     size="icon"
@@ -73,55 +78,59 @@ export function MobileMenu() {
                                 </Button>
                             </div>
 
-                            <div className="flex-1 overflow-y-auto px-8 py-10 space-y-12">
-                                {/* Services Section */}
-                                <div className="space-y-6">
-                                    <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#701218] opacity-70">
-                                        {t('services')}
-                                    </h3>
-                                    <div className="grid gap-6">
-                                        {serviceCategories.map((category) => (
-                                            <div key={category.title} className="space-y-3">
-                                                <h4 className="text-sm font-serif font-bold text-slate-900 border-l-2 border-[#701218] pl-3">
-                                                    {category.title}
-                                                </h4>
-                                                <div className="grid gap-2 pl-4">
-                                                    {category.services.map((service) => (
-                                                        <Link
-                                                            key={service.title}
-                                                            href={service.href}
-                                                            className="text-sm text-slate-600 hover:text-[#701218] py-1 block transition-colors"
-                                                        >
-                                                            {service.title}
-                                                        </Link>
-                                                    ))}
+                            {/* Content (Opaque-ish and scrollable) */}
+                            <div className="flex-1 overflow-y-auto px-6 py-4 pointer-events-auto bg-white/10 backdrop-blur-sm">
+                                <div className="max-w-md mx-auto space-y-10 py-6">
+                                    {/* Services Section */}
+                                    <div className="space-y-4">
+                                        <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400">
+                                            {t('services')}
+                                        </h3>
+                                        <div className="grid gap-6">
+                                            {serviceCategories.map((category) => (
+                                                <div key={category.title} className="space-y-3">
+                                                    <h4 className="text-sm font-bold text-slate-900 border-l-2 border-[#701218] pl-3">
+                                                        {category.title}
+                                                    </h4>
+                                                    <div className="grid gap-2 pl-3">
+                                                        {category.services.map((service) => (
+                                                            <Link
+                                                                key={service.title}
+                                                                href={service.href}
+                                                                className="text-sm font-medium text-slate-600 hover:text-[#701218] py-1 block"
+                                                            >
+                                                                {service.title}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
 
-                                {/* Main Links */}
-                                <div className="space-y-6 border-t border-slate-200/50 pt-10">
-                                    <Link href="/sobre-nosotros" className="block text-xl font-serif font-bold text-slate-900">
-                                        {t('about')}
-                                    </Link>
-                                    <Link href="/blog" className="block text-xl font-serif font-bold text-slate-900">
-                                        {t('blog')}
-                                    </Link>
-                                </div>
+                                    {/* Main Links */}
+                                    <div className="space-y-4 border-t border-slate-100 pt-8">
+                                        <Link href="/sobre-nosotros" className="block text-xl font-bold text-slate-900 hover:text-[#701218]">
+                                            {t('about')}
+                                        </Link>
+                                        <Link href="/blog" className="block text-xl font-bold text-slate-900 hover:text-[#701218]">
+                                            {t('blog')}
+                                        </Link>
+                                    </div>
 
-                                {/* Language Selector */}
-                                <div className="pt-6 border-t border-slate-200/50 flex items-center justify-between group">
-                                    <span className="text-sm font-bold uppercase tracking-widest text-slate-400 font-sans">
-                                        Idioma
-                                    </span>
-                                    <LanguageSwitcher />
+                                    {/* Language Selector */}
+                                    <div className="pt-6 border-t border-slate-100 flex items-center justify-between pb-8">
+                                        <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                                            Idioma
+                                        </span>
+                                        <LanguageSwitcher />
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="p-8 bg-white/50 border-t border-slate-200/50">
-                                <Button asChild className="w-full h-16 bg-[#701218] hover:bg-[#500d11] text-white rounded-none uppercase tracking-[0.2em] text-xs font-bold shadow-xl shadow-[#701218]/20">
+                            {/* Footer (Fixed Opaque) */}
+                            <div className="p-6 bg-white border-t border-slate-200 shrink-0 pointer-events-auto">
+                                <Button asChild className="w-full h-14 bg-[#701218] hover:bg-[#500d11] text-white rounded-none uppercase tracking-[0.3em] text-xs font-bold shadow-xl">
                                     <Link href="/contacto">{t('contact')}</Link>
                                 </Button>
                             </div>
