@@ -12,5 +12,117 @@
     "about": "Nosotros",
     "blog": "Blog",
     "contact": "Contacto"
+  },
+  "AboutPage": {
+    "hero": {
+      "subtitle": "Sobre Abogados Watson",
+      "title": "Compromiso con la excelencia legal y el acompañamiento humano.",
+      "description": "Un despacho especializado en extranjería y movilidad internacional, con una forma clara y honesta de ejercer el Derecho."
+    },
+    "intro": {
+      "title": "Un acompañamiento integral en sus decisiones más importantes",
+      "p1": "Abogados Watson nace con la misión de transformar la complejidad del derecho español en una transición segura y comprensible. Nos especializamos en extranjería y movilidad internacional, combinando el rigor jurídico con una sensibilidad especial hacia quienes deciden establecer su futuro en España.",
+      "p2": "Creemos que cada persona es única, y su situación legal también. Por ello, ofrecemos un servicio integral apoyándonos en una red de colaboradores especializados para cubrir cada necesidad con solvencia técnica."
+    },
+    "methodology": {
+      "title": "Nuestra forma de trabajar",
+      "subtitle": "Rigor jurídico, claridad y responsabilidad",
+      "item1": {
+        "title": "Rigor Técnico",
+        "description": "Diagnósticos legales realistas basados en un análisis exhaustivo de la normativa vigente."
+      },
+      "item2": {
+        "title": "Transparencia",
+        "description": "Comunicación clara sobre escenarios, riesgos y tiempos de procesamiento."
+      },
+      "item3": {
+        "title": "Foco en el Cliente",
+        "description": "Cada caso es procesado con la atención individual que merece una decisión de vida o negocio."
+      }
+    },
+    "founder": {
+      "title": "La Fundadora",
+      "name": "Watson",
+      "role": "Fundadora y Abogada",
+      "bio": "De origen internacional y multilingüe, Watson aporta una visión global indispensable en el sector de la movilidad. Tras formarse en artes escénicas y música, se graduó en Derecho por la Universidad de Valladolid y cursó su Máster en la Universidad Camilo José Cela. Su trayectoria en despachos multidisciplinares de alto calibre le ha permitido especializarse en contratación inmobiliaria, sucesiones y extranjería técnica. Su visión organizada y detallista es clave para ofrecer un asesoramiento legal honesto, responsable y verdaderamente comprensible."
+    },
+    "team": {
+      "title": "Nuestro Equipo",
+      "subtitle": "Profesionales comprometidos con su seguridad jurídica",
+      "members": [
+        {
+          "name": "Rubén Jiménez",
+          "role": "Chief Marketing Officer (CMO)",
+          "bio": "Estratega de marca y comunicación, responsable de proyectar los valores de transparencia y rigor del despacho en el entorno digital e internacional."
+        },
+        {
+          "name": "Ana C. González",
+          "role": "Abogada",
+          "bio": "Especialista en derecho de extranjería y movilidad internacional, con amplia experiencia en la gestión de expedientes complejos para perfiles técnicos y familias."
+        },
+        {
+          "name": "Mónica Garcimartín Rivas",
+          "role": "Abogada",
+          "bio": "Con más de 20 años de experiencia, se especializa en el ámbito procesal civil, penal y contencioso-administrativo. Ha intervenido en numerosos procesos judiciales en toda la geografía española y ejerció como juez sustituta."
+        },
+        {
+          "name": "Lidia Ramos Palacios",
+          "role": "Abogada y Mediadora",
+          "bio": "Especialista en defensa de consumidores, derecho bancario y mediación en deudas de vivienda. Aporta una visión resolutiva en reclamaciones de cantidad, desahucios y delitos económicos."
+        },
+        {
+          "name": "Beatriz Martínez Lora",
+          "role": "Abogada",
+          "bio": "Especialista en derecho penal, violencia de género y derecho de familia. Su enfoque combina la firmeza jurídica con el acompañamiento en situaciones de vulnerabilidad."
+        },
+        {
+          "name": "Rafael Mena Peinado",
+          "role": "Abogado",
+          "bio": "Especialista en derecho civil, penal, bancario y mercantil. Su doble formación en Derecho y Administración de Empresas (ADE) le permite ofrecer un asesoramiento integral a negocios e inversores."
+        },
+        {
+          "name": "Carolina P. Gálvez",
+          "role": "Atención al Cliente y Calidad",
+          "bio": "Responsable de la gestión administrativa y la calidad del servicio, asegurando que cada cliente reciba una atención impecable desde el primer contacto."
+        }
+      ]
+    },
+    "cta": {
+      "title": "¿Desea evaluar la viabilidad de su caso?",
+      "description": "Solicite una evaluación técnica con nuestro equipo para conocer sus opciones legales en España.",
+      "button": "Agendar evaluación técnica"
+    }
+  },
+  "ContactPage": {
+    "hero": {
+      "title": "Inicie su proceso con seguridad jurídica",
+      "subtitle": "Estamos a su disposición para evaluar la viabilidad técnica de su caso y acompañarle en cada etapa legal."
+    },
+    "methods": {
+      "whatsapp": {
+        "title": "Consulta Directa",
+        "description": "Atención inmediata para resolver dudas preliminares y agendar citas.",
+        "button": "Contactar por WhatsApp"
+      },
+      "email": {
+        "title": "Canal Formar",
+        "description": "Para envío de documentación y consultas técnicas detalladas.",
+        "button": "Enviar Email"
+      },
+      "office": {
+        "title": "Presencia Física",
+        "description": "Sede central del despacho.",
+        "address": "Calle Angustias 9, Valladolid"
+      }
+    },
+    "form": {
+      "title": "Evaluación Técnica",
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono de contacto",
+      "message": "¿En qué podemos ayudarle?",
+      "submit": "Solicitar información",
+      "privacy": "Sus datos serán tratados con absoluta confidencialidad de acuerdo a la normativa vigente de protección de datos (RGPD). Al enviar el formulario, acepta nuestra política de privacidad."
+    }
   }
 }

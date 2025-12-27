@@ -12,5 +12,117 @@
     "about": "About Us",
     "blog": "Blog",
     "contact": "Contact"
+  },
+  "AboutPage": {
+    "hero": {
+      "subtitle": "About Abogados Watson",
+      "title": "Commitment to legal excellence and human support.",
+      "description": "A law firm specialized in immigration and international mobility, with a clear and honest way of practicing Law."
+    },
+    "intro": {
+      "title": "Comprehensive support for your most important decisions",
+      "p1": "Abogados Watson was born with the mission to transform the complexity of Spanish law into a secure and understandable transition. We specialize in technical immigration and international mobility, combining legal rigor with a special sensitivity towards those who decide to establish their future in Spain.",
+      "p2": "We believe that every person is unique, and so is their legal situation. Therefore, we offer a comprehensive service supported by a network of specialized collaborators to cover every need with technical solvency."
+    },
+    "methodology": {
+      "title": "Our Way of Working",
+      "subtitle": "Legal Rigor, Clarity, and Responsibility",
+      "item1": {
+        "title": "Technical Rigor",
+        "description": "Realistic legal diagnoses based on an exhaustive analysis of current regulations."
+      },
+      "item2": {
+        "title": "Transparency",
+        "description": "Clear communication about scenarios, risks, and processing times."
+      },
+      "item3": {
+        "title": "Client Focus",
+        "description": "Each case is processed with the individual attention that a life or business decision deserves."
+      }
+    },
+    "founder": {
+      "title": "The Founder",
+      "name": "Watson",
+      "role": "Founder and Lawyer",
+      "bio": "Of international and multilingual origin, Watson brings a global vision indispensable in the mobility sector. After training in performing arts and music, she graduated in Law from the University of Valladolid and completed her Master's at the Camilo José Cela University. Her career in high-caliber multidisciplinary firms has allowed her to specialize in real estate contracting, successions, and technical immigration. Her organized and detailed vision is key to offering honest, responsible, and truly understandable legal advice."
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Professionals committed to your legal security",
+      "members": [
+        {
+          "name": "Rubén Jiménez",
+          "role": "Chief Marketing Officer (CMO)",
+          "bio": "Brand and communication strategist, responsible for projecting the firm's values of transparency and rigor in the digital and international environment."
+        },
+        {
+          "name": "Ana C. González",
+          "role": "Lawyer",
+          "bio": "Specialist in immigration law and international mobility, with extensive experience in managing complex cases for technical profiles and families."
+        },
+        {
+          "name": "Mónica Garcimartín Rivas",
+          "role": "Lawyer",
+          "bio": "With more than 20 years of experience, she specializes in civil, criminal, and administrative litigation. She has intervened in numerous judicial processes throughout Spain and served as a substitute judge."
+        },
+        {
+          "name": "Lidia Ramos Palacios",
+          "role": "Lawyer and Mediator",
+          "bio": "Specialist in consumer protection, banking law, and housing debt mediation. She brings a decisive vision to debt claims, evictions, and financial crimes."
+        },
+        {
+          "name": "Beatriz Martínez Lora",
+          "role": "Lawyer",
+          "bio": "Specialist in criminal law, gender violence, and family law. Her approach combines legal firmness with support in situations of vulnerability."
+        },
+        {
+          "name": "Rafael Mena Peinado",
+          "role": "Lawyer",
+          "bio": "Specialist in civil, criminal, banking, and commercial law. His double training in Law and Business Administration (ADE) allows him to offer comprehensive advice to businesses and investors."
+        },
+        {
+          "name": "Carolina P. Gálvez",
+          "role": "Customer Service and Quality",
+          "bio": "Responsible for administrative management and service quality, ensuring that each client receives impeccable attention from the first contact."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Do you want to evaluate the viability of your case?",
+      "description": "Request a technical evaluation with our team to learn about your legal options in Spain.",
+      "button": "Schedule technical evaluation"
+    }
+  },
+  "ContactPage": {
+    "hero": {
+      "title": "Begin your process with legal security",
+      "subtitle": "We are at your disposal to evaluate the technical feasibility of your case and accompany you through every legal stage."
+    },
+    "methods": {
+      "whatsapp": {
+        "title": "Direct Consultation",
+        "description": "Immediate attention to resolve preliminary doubts and schedule appointments.",
+        "button": "Contact via WhatsApp"
+      },
+      "email": {
+        "title": "Formal Channel",
+        "description": "For sending documentation and detailed technical inquiries.",
+        "button": "Send Email"
+      },
+      "office": {
+        "title": "Physical Presence",
+        "description": "The firm's headquarters.",
+        "address": "Calle Angustias 9, Valladolid"
+      }
+    },
+    "form": {
+      "title": "Technical Evaluation",
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Contact phone",
+      "message": "How can we help you?",
+      "submit": "Request information",
+      "privacy": "Your data will be treated with absolute confidentiality in accordance with current data protection regulations (GDPR). By submitting the form, you accept our privacy policy."
+    }
   }
 }

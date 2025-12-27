@@ -44,30 +44,27 @@ export function MobileMenu() {
             <AnimatePresence>
                 {isOpen && (
                     <>
-                        {/* Full Screen Backdrop with Strong Blur (Captures the whole page) */}
+                        {/* Menu Panel & Backdrop combined for reliability */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            onClick={() => setIsOpen(false)}
-                            className="fixed inset-0 z-[60] bg-white/40"
-                            style={{
-                                backdropFilter: "blur(60px)",
-                                WebkitBackdropFilter: "blur(60px)"
-                            }}
-                        />
-
-                        {/* Menu Panel (Above the backdrop) */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 10 }}
                             transition={{ duration: 0.2 }}
-                            className="fixed inset-0 z-[70] w-full h-[100dvh] flex flex-col overflow-hidden pointer-events-none"
+                            className="fixed inset-0 z-[70] w-full h-[100dvh] bg-white/95 flex flex-col overflow-hidden"
+                            style={{
+                                backdropFilter: "blur(24px)",
+                                WebkitBackdropFilter: "blur(24px)"
+                            }}
                         >
-                            {/* Header (Opaque) */}
-                            <div className="flex items-center justify-between p-6 border-b border-slate-200/50 bg-white shadow-sm shrink-0 pointer-events-auto">
-                                <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#701218]">Menú</span>
+                            {/* Header (Clean & Opaque) */}
+                            <div className="flex items-center justify-between p-6 border-b border-slate-100 bg-white shrink-0">
+                                <Link href="/" onClick={() => setIsOpen(false)}>
+                                    <img
+                                        src="/images/logo-horizontal.png"
+                                        alt="Abogados Watson"
+                                        className="h-8 w-auto"
+                                    />
+                                </Link>
                                 <Button
                                     variant="ghost"
                                     size="icon"
@@ -78,26 +75,26 @@ export function MobileMenu() {
                                 </Button>
                             </div>
 
-                            {/* Content (Opaque-ish and scrollable) */}
-                            <div className="flex-1 overflow-y-auto px-6 py-4 pointer-events-auto bg-white/10 backdrop-blur-sm">
-                                <div className="max-w-md mx-auto space-y-10 py-6">
+                            {/* Content (Scrollable) */}
+                            <div className="flex-1 overflow-y-auto px-6">
+                                <div className="max-w-md mx-auto space-y-10 py-10">
                                     {/* Services Section */}
-                                    <div className="space-y-4">
+                                    <div className="space-y-6">
                                         <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400">
                                             {t('services')}
                                         </h3>
-                                        <div className="grid gap-6">
+                                        <div className="grid gap-8">
                                             {serviceCategories.map((category) => (
-                                                <div key={category.title} className="space-y-3">
-                                                    <h4 className="text-sm font-bold text-slate-900 border-l-2 border-[#701218] pl-3">
+                                                <div key={category.title} className="space-y-4">
+                                                    <h4 className="text-sm font-bold text-slate-900 border-l-2 border-[#701218] pl-4">
                                                         {category.title}
                                                     </h4>
-                                                    <div className="grid gap-2 pl-3">
+                                                    <div className="grid gap-3 pl-4">
                                                         {category.services.map((service) => (
                                                             <Link
                                                                 key={service.title}
                                                                 href={service.href}
-                                                                className="text-sm font-medium text-slate-600 hover:text-[#701218] py-1 block"
+                                                                className="text-base font-medium text-slate-600 hover:text-[#701218] py-1 block transition-colors"
                                                             >
                                                                 {service.title}
                                                             </Link>
@@ -109,17 +106,17 @@ export function MobileMenu() {
                                     </div>
 
                                     {/* Main Links */}
-                                    <div className="space-y-4 border-t border-slate-100 pt-8">
-                                        <Link href="/sobre-nosotros" className="block text-xl font-bold text-slate-900 hover:text-[#701218]">
+                                    <div className="space-y-6 border-t border-slate-100 pt-10">
+                                        <Link href="/sobre-nosotros" className="block text-xl font-bold text-slate-900 hover:text-[#701218] transition-colors">
                                             {t('about')}
                                         </Link>
-                                        <Link href="/blog" className="block text-xl font-bold text-slate-900 hover:text-[#701218]">
+                                        <Link href="/blog" className="block text-xl font-bold text-slate-900 hover:text-[#701218] transition-colors">
                                             {t('blog')}
                                         </Link>
                                     </div>
 
                                     {/* Language Selector */}
-                                    <div className="pt-6 border-t border-slate-100 flex items-center justify-between pb-8">
+                                    <div className="pt-6 border-t border-slate-100 flex items-center justify-between pb-12">
                                         <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
                                             Idioma
                                         </span>
@@ -128,9 +125,9 @@ export function MobileMenu() {
                                 </div>
                             </div>
 
-                            {/* Footer (Fixed Opaque) */}
-                            <div className="p-6 bg-white border-t border-slate-200 shrink-0 pointer-events-auto">
-                                <Button asChild className="w-full h-14 bg-[#701218] hover:bg-[#500d11] text-white rounded-none uppercase tracking-[0.3em] text-xs font-bold shadow-xl">
+                            {/* Footer (Action) */}
+                            <div className="p-6 bg-white border-t border-slate-100 shrink-0">
+                                <Button asChild className="w-full h-16 bg-[#701218] hover:bg-[#500d11] text-white rounded-none uppercase tracking-[0.3em] text-xs font-bold shadow-xl">
                                     <Link href="/contacto">{t('contact')}</Link>
                                 </Button>
                             </div>
