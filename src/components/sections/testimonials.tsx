@@ -45,7 +45,7 @@ export function Testimonials() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 italic relative"
+                            className="bg-white p-8 rounded-lg shadow-sm border border-slate-200 italic relative transition-all duration-300"
                         >
                             <div className="text-4xl text-[#701218]/20 font-serif absolute top-4 left-6">&quot;</div>
                             <p className="text-slate-700 mb-6 relative z-10">{t.content}</p>

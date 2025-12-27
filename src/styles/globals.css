@@ -3,6 +3,13 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+    
+    /* Brand Colors */
+    --color-primary: #701218;
+    --color-primary-hover: #590e13;
+    --color-primary-light: rgba(112, 18, 24, 0.1);
+    --color-text: #0f172a;
+    --color-text-muted: #64748b;
 }
 
 @media (prefers-color-scheme: dark) {

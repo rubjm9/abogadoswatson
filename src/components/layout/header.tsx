@@ -118,7 +118,7 @@ export function Header() {
                 <div className="flex items-center gap-4">
                     <div className="hidden md:flex items-center gap-4">
                         <LanguageSwitcher />
-                        <Button asChild className="hidden md:inline-flex bg-[#701218] hover:bg-[#500d11] text-white">
+                        <Button asChild className="hidden md:inline-flex bg-[#701218] hover:bg-[#590e13] text-white">
                             <Link href="/contacto">{t('contact')}</Link>
                         </Button>
                     </div>

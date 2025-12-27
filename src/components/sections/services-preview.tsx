@@ -51,9 +51,9 @@ export function ServicesPreview() {
                         <motion.div
                             key={index}
                             whileHover={{ y: -5 }}
-                            className="group bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-[#701218]/30 hover:shadow-md transition-all"
+                            className="group bg-white p-8 rounded-lg shadow-sm border border-slate-200 hover:border-[#701218]/30 hover:shadow-md transition-all duration-300"
                         >
-                            <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#701218]/10 transition-colors">
+                            <div className="w-12 h-12 bg-slate-50 rounded-md flex items-center justify-center mb-6 group-hover:bg-[#701218]/10 transition-colors duration-300">
                                 <service.icon className="w-6 h-6 text-slate-700 group-hover:text-[#701218] transition-colors" />
                             </div>
                             <h3 className="text-xl font-serif font-bold text-slate-900 mb-3 group-hover:text-[#701218] transition-colors">

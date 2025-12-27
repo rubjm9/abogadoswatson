@@ -127,7 +127,7 @@ export function MobileMenu() {
 
                             {/* Footer (Action) */}
                             <div className="p-6 bg-white border-t border-slate-100 shrink-0">
-                                <Button asChild className="w-full h-16 bg-[#701218] hover:bg-[#500d11] text-white rounded-none uppercase tracking-[0.3em] text-xs font-bold shadow-xl">
+                                <Button asChild className="w-full h-16 bg-[#701218] hover:bg-[#590e13] text-white uppercase tracking-[0.3em] text-xs font-bold shadow-xl">
                                     <Link href="/contacto">{t('contact')}</Link>
                                 </Button>
                             </div>

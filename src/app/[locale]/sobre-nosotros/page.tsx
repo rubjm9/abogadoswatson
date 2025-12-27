@@ -25,7 +25,7 @@ export default function AboutPage() {
     };
 
     return (
-        <main className="pt-20">
+        <main className="pt-24">
             {/* Hero Section */}
             <section className="relative py-24 bg-white overflow-hidden">
                 <div className="absolute inset-0 z-0">
@@ -102,9 +102,9 @@ export default function AboutPage() {
                             <motion.div
                                 key={i}
                                 variants={fadeIn}
-                                className="p-8 bg-slate-50 border border-slate-100 rounded-none hover:shadow-xl transition-shadow group"
+                                className="p-8 bg-slate-50 border border-slate-200 rounded-lg hover:shadow-xl transition-all duration-300 group"
                             >
-                                <div className="w-12 h-12 bg-white rounded-none flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#701218]/10 transition-colors">
+                                <div className="w-12 h-12 bg-white rounded-md flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#701218]/10 transition-colors duration-300">
                                     <item.icon className="w-6 h-6 text-[#701218]" />
                                 </div>
                                 <h3 className="font-serif text-xl font-bold text-slate-900 mb-4">
@@ -240,7 +240,7 @@ export default function AboutPage() {
                         <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
                             {t('cta.description')}
                         </p>
-                        <Button asChild size="lg" className="h-16 px-10 text-xs font-bold uppercase tracking-widest bg-[#701218] text-white hover:bg-[#590e13] transition-all rounded-none shadow-xl shadow-[#701218]/10 group">
+                        <Button asChild size="lg" className="h-16 px-10 text-xs font-bold uppercase tracking-widest bg-[#701218] text-white hover:bg-[#590e13] shadow-xl shadow-[#701218]/10 group">
                             <Link href="/contacto" className="flex items-center gap-3">
                                 {t('cta.button')}
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

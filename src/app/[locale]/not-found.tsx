@@ -1,23 +1,18 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/navigation';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 import { Home, Search, FileQuestion } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { NotFoundClient } from './not-found-client';
 
-export default function NotFound() {
-    const t = useTranslations('ErrorPages.notFound');
+export default async function NotFound() {
+    const t = await getTranslations('ErrorPages.notFound');
 
     return (
-        <main className="pt-20 min-h-screen bg-white">
+        <main className="pt-24 min-h-screen bg-white">
             <Container className="py-24">
                 <div className="max-w-2xl mx-auto text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="space-y-8"
-                    >
+                    <NotFoundClient>
                         {/* Icono y número */}
                         <div className="flex justify-center mb-8">
                             <div className="relative">
@@ -45,7 +40,7 @@ export default function NotFound() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
                             <Button
                                 asChild
-                                className="bg-[#701218] hover:bg-[#590e13] text-white rounded-none px-8 py-6 h-auto uppercase tracking-widest text-[11px] font-bold shadow-lg shadow-[#701218]/10 transition-all hover:-translate-y-1"
+                                className="bg-[#701218] hover:bg-[#590e13] text-white px-8 py-6 h-auto uppercase tracking-widest text-[11px] font-bold shadow-lg shadow-[#701218]/10 transition-all duration-300 hover:-translate-y-1"
                             >
                                 <Link href="/">
                                     <Home className="mr-2 h-4 w-4 inline" />
@@ -55,7 +50,7 @@ export default function NotFound() {
                             <Button
                                 asChild
                                 variant="outline"
-                                className="border-slate-200 rounded-none px-8 py-6 h-auto uppercase tracking-widest text-[11px] font-bold hover:bg-slate-50 transition-all"
+                                className="border-slate-200 px-8 py-6 h-auto uppercase tracking-widest text-[11px] font-bold hover:bg-slate-50 transition-all duration-300"
                             >
                                 <Link href="/contacto">
                                     <Search className="mr-2 h-4 w-4 inline" />
@@ -94,7 +89,7 @@ export default function NotFound() {
                                 </Link>
                             </div>
                         </div>
-                    </motion.div>
+                    </NotFoundClient>
                 </div>
             </Container>
         </main>

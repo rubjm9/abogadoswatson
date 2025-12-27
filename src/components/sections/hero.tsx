@@ -10,7 +10,7 @@ export function Hero() {
     const t = useTranslations("HomePage");
 
     return (
-        <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white pt-20">
+        <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white pt-24">
             {/* Background Narrative Texture - World Map & Connectivity (Premium Hybrid) */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-white">
                 {/* Cinematic Light & Depth */}
@@ -120,10 +120,10 @@ export function Hero() {
                     </p>
 
                     <div className="mt-12 flex flex-col sm:flex-row gap-5">
-                        <Button asChild size="lg" className="h-16 px-10 text-xs font-bold uppercase tracking-widest bg-[#701218] text-white hover:bg-[#590e13] transition-all rounded-none shadow-xl shadow-[#701218]/10">
+                        <Button asChild size="lg" className="h-16 px-10 text-xs font-bold uppercase tracking-widest bg-[#701218] text-white hover:bg-[#590e13] shadow-xl shadow-[#701218]/10">
                             <Link href="/contacto">{t('ctaMain')}</Link>
                         </Button>
-                        <Button asChild variant="outline" size="lg" className="h-16 px-10 text-xs font-bold uppercase tracking-widest bg-transparent text-slate-900 border-slate-200 hover:bg-slate-50 hover:border-slate-400 transition-all rounded-none">
+                        <Button asChild variant="outline" size="lg" className="h-16 px-10 text-xs font-bold uppercase tracking-widest bg-transparent text-slate-900 border-slate-200 hover:bg-slate-50 hover:border-slate-400">
                             <Link href="/servicios">{t('ctaSecondary')}</Link>
                         </Button>
                     </div>

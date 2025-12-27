@@ -95,7 +95,7 @@ export default function ContactPage() {
     };
 
     return (
-        <main className="pt-20 bg-white">
+        <main className="pt-24 bg-white">
             {/* Hero Section */}
             <section className="py-24 border-b border-slate-50">
                 <Container>
@@ -136,7 +136,7 @@ export default function ContactPage() {
                                                 </p>
                                                 <Button 
                                                     asChild 
-                                                    className="bg-[#701218] hover:bg-[#590e13] text-white rounded-none px-8 py-6 h-auto uppercase tracking-widest text-[10px] font-bold shadow-lg shadow-[#701218]/10 transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#701218] focus:ring-offset-2"
+                                                    className="bg-[#701218] hover:bg-[#590e13] text-white px-8 py-6 h-auto uppercase tracking-widest text-[10px] font-bold shadow-lg shadow-[#701218]/10 transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#701218] focus:ring-offset-2"
                                                 >
                                                     <a 
                                                         href="https://wa.me/34637058570" 
@@ -240,7 +240,7 @@ export default function ContactPage() {
                                                     id="name"
                                                     {...form.register('name')}
                                                     placeholder={tForm('placeholders.name')}
-                                                    className={`bg-white border-slate-200 rounded-none h-14 focus:border-[#701218] transition-colors ${
+                                                    className={`bg-white border-slate-200 h-14 focus:border-[#701218] ${
                                                         form.formState.errors.name ? 'border-red-500 focus:border-red-500' : ''
                                                     } ${
                                                         form.formState.touchedFields.name && !form.formState.errors.name ? 'border-green-500' : ''
@@ -274,7 +274,7 @@ export default function ContactPage() {
                                                     type="email"
                                                     {...form.register('email')}
                                                     placeholder={tForm('placeholders.email')}
-                                                    className={`bg-white border-slate-200 rounded-none h-14 focus:border-[#701218] transition-colors ${
+                                                    className={`bg-white border-slate-200 h-14 focus:border-[#701218] ${
                                                         form.formState.errors.email ? 'border-red-500 focus:border-red-500' : ''
                                                     } ${
                                                         form.formState.touchedFields.email && !form.formState.errors.email ? 'border-green-500' : ''
@@ -310,7 +310,7 @@ export default function ContactPage() {
                                                 type="tel"
                                                 {...form.register('phone')}
                                                 placeholder={tForm('placeholders.phone')}
-                                                className={`bg-white border-slate-200 rounded-none h-14 focus:border-[#701218] transition-colors ${
+                                                className={`bg-white border-slate-200 h-14 focus:border-[#701218] ${
                                                     form.formState.errors.phone ? 'border-red-500 focus:border-red-500' : ''
                                                 } ${
                                                     form.formState.touchedFields.phone && !form.formState.errors.phone && form.watch('phone') ? 'border-green-500' : ''
@@ -344,7 +344,7 @@ export default function ContactPage() {
                                                 id="message"
                                                 {...form.register('message')}
                                                 placeholder={tForm('placeholders.message')}
-                                                className={`bg-white border-slate-200 rounded-none min-h-[160px] focus:border-[#701218] transition-colors resize-none ${
+                                                className={`bg-white border-slate-200 min-h-[160px] focus:border-[#701218] resize-none ${
                                                     form.formState.errors.message ? 'border-red-500 focus:border-red-500' : ''
                                                 } ${
                                                     form.formState.touchedFields.message && !form.formState.errors.message ? 'border-green-500' : ''
@@ -370,7 +370,7 @@ export default function ContactPage() {
                                         <Button 
                                             type="submit" 
                                             disabled={isSubmitting}
-                                            className="w-full h-16 bg-slate-900 hover:bg-slate-800 text-white rounded-none uppercase tracking-[0.2em] text-[11px] font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+                                            className="w-full h-16 bg-slate-900 hover:bg-slate-800 text-white uppercase tracking-[0.2em] text-[11px] font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
                                             aria-label={t('form.submit')}
                                             aria-busy={isSubmitting}
                                         >

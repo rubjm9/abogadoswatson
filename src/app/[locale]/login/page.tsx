@@ -9,7 +9,7 @@ export default function LoginPage() {
     const t = useTranslations('ErrorPages.login');
 
     return (
-        <main className="pt-20 min-h-screen bg-white">
+        <main className="pt-24 min-h-screen bg-white">
             <Container className="py-24">
                 <div className="max-w-2xl mx-auto text-center">
                     <motion.div
@@ -45,7 +45,7 @@ export default function LoginPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
                             <Button
                                 asChild
-                                className="bg-[#701218] hover:bg-[#590e13] text-white rounded-none px-8 py-6 h-auto uppercase tracking-widest text-[11px] font-bold shadow-lg shadow-[#701218]/10 transition-all hover:-translate-y-1"
+                                className="bg-[#701218] hover:bg-[#590e13] text-white px-8 py-6 h-auto uppercase tracking-widest text-[11px] font-bold shadow-lg shadow-[#701218]/10 transition-all duration-300 hover:-translate-y-1"
                             >
                                 <Link href="/">
                                     <Home className="mr-2 h-4 w-4 inline" />
@@ -55,7 +55,7 @@ export default function LoginPage() {
                             <Button
                                 asChild
                                 variant="outline"
-                                className="border-slate-200 rounded-none px-8 py-6 h-auto uppercase tracking-widest text-[11px] font-bold hover:bg-slate-50 transition-all"
+                                className="border-slate-200 px-8 py-6 h-auto uppercase tracking-widest text-[11px] font-bold hover:bg-slate-50 transition-all duration-300"
                             >
                                 <Link href="/contacto">
                                     <Mail className="mr-2 h-4 w-4 inline" />

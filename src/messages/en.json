@@ -180,5 +180,831 @@
       "phone": "+1 234 567 890",
       "message": "Tell us about your inquiry..."
     }
+  },
+  "ServicesPage": {
+    "description": "Legal solutions designed for your international mobility. We simplify legal complexity so you can focus on your goals.",
+    "categories": {
+      "residence": {
+        "title": "Establish Your Residence",
+        "subtitle": "Living in Spain",
+        "services": {
+          "students": {
+            "title": "Students",
+            "description": "Management of initial visas, extensions, and modification to work permits."
+          },
+          "nomads": {
+            "title": "Digital Nomads",
+            "description": "Residence for international remote workers and freelancers."
+          },
+          "family": {
+            "title": "Family Reunification",
+            "description": "Processes to bring family members of legal residents in Spain."
+          }
+        }
+      },
+      "work": {
+        "title": "Work and Talent",
+        "subtitle": "Your Professional Career",
+        "services": {
+          "qualified": {
+            "title": "Highly Qualified Professionals",
+            "description": "Fast-track permits for technical, executive, and university graduate profiles."
+          },
+          "corporate": {
+            "title": "Intra-Company Transfers",
+            "description": "Mobility of workers within the same international corporate structure."
+          },
+          "entrepreneurs": {
+            "title": "Entrepreneurs",
+            "description": "Visa for launching innovative projects in Spanish territory."
+          }
+        }
+      },
+      "citizenship": {
+        "title": "Obtain Your Passport",
+        "subtitle": "Spanish Citizenship",
+        "services": {
+          "grandchildren": {
+            "title": "Grandchildren Law (LMD)",
+            "description": "Citizenship for children and grandchildren of Spanish nationals by origin."
+          },
+          "residence": {
+            "title": "Citizenship by Residence",
+            "description": "Processing after completing the legal period of stay in Spain."
+          },
+          "nature": {
+            "title": "Naturalization",
+            "description": "Exceptional processes for citizenship granted by the Government."
+          }
+        }
+      },
+      "business": {
+        "title": "Investments and Business",
+        "subtitle": "Growing in Spain",
+        "services": {
+          "investment": {
+            "title": "Business Investment",
+            "description": "Legal advice for the creation or acquisition of companies."
+          },
+          "realEstate": {
+            "title": "Real Estate",
+            "description": "Technical and legal due diligence for secure purchase of real estate assets."
+          }
+        }
+      }
+    },
+    "legalDefense": {
+      "title": "Legal Defense",
+      "description": "Has your application been denied? We manage administrative and judicial appeals to protect your rights against the administration.",
+      "button": "Contact Now"
+    }
+  },
+  "NacionalidadPage": {
+    "breadcrumb": "Spanish Citizenship",
+    "hero": {
+      "badge": "Citizenship Rights",
+      "title": "Get Your Spanish Passport: Technical Citizenship Management",
+      "subtitle": "Spanish citizenship application files through various legal pathways",
+      "description": "Becoming a Spanish citizen means securing your future in Europe. We digitize the entire process with direct electronic submission to the Ministry of Justice to gain months of advantage in your **Favorable Resolution**.",
+      "imageAlt": "Spanish Passport"
+    },
+    "types": {
+      "descendants": {
+        "title": "Job Search for Descendants",
+        "subtitle": "Children and grandchildren of Spanish nationals by origin",
+        "description": "Special authorization that allows job searching in Spain for children and grandchildren of Spanish nationals by origin, facilitating their integration and subsequent access to citizenship by residence.",
+        "features": [
+          "For direct descendants of Spanish nationals by origin",
+          "Facilitates entry into the Spanish labor market",
+          "Strategic pathway to future citizenship"
+        ]
+      },
+      "residence": {
+        "title": "Consolidate Your Life in Spain",
+        "subtitle": "Citizenship by Residence",
+        "description": "The standard pathway for foreign citizens with continuous legal residence. The general period is 10 years, reduced to 2 years for Ibero-American citizens and 1 year for spouses of Spanish nationals.",
+        "features": [
+          "Ibero-Americans, Equatorial Guinea, Philippines: 2 years",
+          "Spouses of Spanish nationals: 1 year of legal residence",
+          "Passing CCSE (culture) and DELE (language) tests"
+        ]
+      },
+      "option": {
+        "title": "Secure Your Family's Future",
+        "subtitle": "Citizenship by Option",
+        "description": "An agile process designed for children of citizens who have obtained Spanish citizenship or those who were subject to the parental authority of a Spanish national.",
+        "features": [
+          "Under 20 years old (generally)",
+          "No Ministry administrative fees",
+          "Direct registration in the Civil Registry"
+        ]
+      },
+      "nature": {
+        "title": "Strategic Grant Pathway",
+        "subtitle": "Naturalization",
+        "description": "Grant awarded by the Government through Royal Decree after evaluating exceptional circumstances. It is a discretionary and gracious pathway of high legal complexity.",
+        "features": [
+          "Gracious and discretionary nature",
+          "Exceptional circumstances (sports, cultural, scientific)",
+          "Direct processing before the Ministry of Justice"
+        ]
+      }
+    },
+    "technicalSupport": {
+      "title": "File Guarantees and Key Concepts",
+      "silence": {
+        "title": "Favorable Resolution and Administrative Silence",
+        "description": "If after one year from filing the application there is no response, a negative **Administrative Silence** occurs. At this point, we recommend filing a judicial appeal to accelerate the decision."
+      },
+      "exams": {
+        "title": "Exams and Waivers (CCSE/DELE)",
+        "description": "We evaluate whether you meet the requirements to request a **Waiver** of integration and language exams in specific duly accredited cases."
+      },
+      "requirements": {
+        "title": "Responding to Requirements",
+        "description": "An administrative **Requirement** must be addressed with absolute technical precision to avoid file closure or denial of your application."
+      },
+      "custody": {
+        "title": "Security in Custody",
+        "description": "We supervise the technical validity of all documents included in your **File** to ensure the success of the administrative process."
+      }
+    },
+    "defense": {
+      "title": "Denial or Administrative Silence?",
+      "description": "If your citizenship application has been denied or exceeded the legal deadline without response, we activate the judicial appeal pathway to accelerate the favorable resolution.",
+      "link": "Consult Legal Defense Options"
+    },
+    "cta": {
+      "title": "Ready for Your Legal Diagnosis?",
+      "description": "Each family history and residence is unique. We analyze the technical viability of your application before initiating any administrative process.",
+      "button": "Request Legal Diagnosis",
+      "evaluate": "Evaluate Legal Viability"
+    }
+  },
+  "EstudiantesPage": {
+    "breadcrumb": {
+      "parent": "Living in Spain",
+      "current": "Students"
+    },
+    "hero": {
+      "badge": "Education & Legal Mobility",
+      "title": "Student Visa in Spain: Your Gateway to Europe",
+      "description": "Much more than an academic stay. We manage your **initial authorization** and design your legal strategy to convert your studies into stable residence.",
+      "cta": "Evaluate My Academic Viability"
+    },
+    "work": {
+      "title": "Working with Student Visa",
+      "description": "Since the latest reform, students in Spain have automatic work authorization compatible with their studies.",
+      "features": [
+        {
+          "label": "Up to 30 hours per week",
+          "text": "Employment or self-employment as long as it does not interfere with class schedule."
+        },
+        {
+          "label": "No geographic restrictions",
+          "text": "Possibility to work anywhere in the national territory."
+        },
+        {
+          "label": "Automatic validity",
+          "text": "Your study TIE enables work without additional procedures in most cases."
+        }
+      ]
+    },
+    "renewal": {
+      "title": "Renewal and Extension of Stay",
+      "description": "Maintaining your legal status requires rigorous planning of renewal deadlines to avoid periods of irregularity.",
+      "features": [
+        {
+          "label": "60-day deadline",
+          "text": "You must start the extension 60 days before or up to 90 days after expiration."
+        },
+        {
+          "label": "Academic progress",
+          "text": "Certificate of completion of previous studies and new enrollment in an authorized center."
+        },
+        {
+          "label": "Financial means",
+          "text": "Proof of sufficient funds for the new educational stage."
+        }
+      ]
+    },
+    "bridge": {
+      "title": "The Bridge to Your Future in Spain",
+      "subtitle": "We design your legal transition from the first day of studies.",
+      "jobSearch": {
+        "title": "Job Search",
+        "description": "After completing a degree or master's, you have 1 year to search for work or start a business without needing a prior visa.",
+        "badge": "Post-Graduate Option"
+      },
+      "modification": {
+        "title": "Direct Modification",
+        "description": "Direct step to residence and work if you have a firm job offer, without waiting 3 years.",
+        "link": "Or see Digital Nomad"
+      },
+      "citizenship": {
+        "title": "Citizenship",
+        "description": "Although study years do not count toward citizenship, we help you \"start the clock\" as soon as possible.",
+        "link": "See Citizenship"
+      }
+    },
+    "cta": {
+      "title": "Ready for Your Stage in Spain?",
+      "subtitle": "Technical advice for complex immigration cases",
+      "button1": "Start My Student Application",
+      "button2": "Technical Consultation on Extensions"
+    }
+  },
+  "NomadasPage": {
+    "breadcrumb": {
+      "parent": "Living in Spain",
+      "current": "Digital Nomads"
+    },
+    "hero": {
+      "badge": "International Mobility & Remote Work",
+      "title": "Residence for Digital Nomads in Spain",
+      "description": "We achieve your legal residence in less than **90 days**. Technical management before the Large Companies Unit (UGE-CE) for international remote workers and remote professionals.",
+      "cta": "Evaluate Legal Viability of My Remote Work"
+    },
+    "profiles": {
+      "title": "Professional Profile Differentiation",
+      "subtitle": "The key to success lies in the correct categorization of your contractual relationship.",
+      "employed": {
+        "title": "Remote Employee",
+        "description": "For employees of foreign companies that allow remote work from Spain. Requires the company to have at least 1 year of existence and certify the possibility of remote work.",
+        "features": [
+          "Social Security coverage certificate or registration in Spain.",
+          "Employment contract with minimum 3 months seniority."
+        ]
+      },
+      "selfEmployed": {
+        "title": "Self-Employed Remote Worker",
+        "description": "For independent professionals (freelancers) with international clients. Working for companies in Spain is allowed as long as it does not exceed 20% of total revenue.",
+        "features": [
+          "Proof of commercial relationship with international clients.",
+          "University degree or minimum 3 years of experience."
+        ]
+      }
+    },
+    "risks": {
+      "title": "Real Risks and UGE Criteria",
+      "description": "The process before the Large Companies Unit (UGE-CE) is rigorous. A small error in interpreting the criteria can result in file closure or immediate denial.",
+      "economic": {
+        "title": "Insufficient Financial Means",
+        "description": "It is vital to demonstrate stable income equivalent to 200% of the minimum wage (plus percentages for family members)."
+      },
+      "socialSecurity": {
+        "title": "Social Security Conflicts",
+        "description": "Lack of bilateral agreements or incorrect certificates is the #1 cause of requirements."
+      }
+    },
+    "methodology": {
+      "title": "Our Security Methodology",
+      "steps": [
+        "Prior audit of corporate documentation.",
+        "Validation of degrees and international apostilles.",
+        "Drafting of company certificates under UGE standards.",
+        "Electronic submission with professional certificate."
+      ]
+    },
+    "defense": {
+      "title": "Denial or Failed Renewal?",
+      "description": "If your digital nomad application has been denied or you have problems with renewal, our litigation unit protects your rights before the administration.",
+      "link": "See Legal Defense Options"
+    },
+    "cta": {
+      "title": "Start Your Life in Spain Today",
+      "subtitle": "Free Initial Technical Viability Diagnosis",
+      "button1": "Evaluate Legal Viability of My Remote Work",
+      "button2": "Request Document Audit",
+      "timeline": "Resolution in less than 90 calendar days"
+    }
+  },
+  "TrabajarPage": {
+    "breadcrumb": "Work and Talent",
+    "hero": {
+      "badge": "Professional Career",
+      "title": "Boost Your Career and Professional Talent in Spain",
+      "subtitle": "Work authorizations for self-employed, employed, and Startup Law",
+      "description": "We accompany professionals and companies in managing global talent. We ensure the legality of your professional activity with a focus on agility and regulatory compliance."
+    },
+    "services": {
+      "title": "Services for Talent",
+      "subtitle": "Solutions for Professional Profiles and Entrepreneurs",
+      "items": {
+        "qualified": {
+          "title": "Qualified Professionals (PAC)",
+          "subtitle": "High-Qualification Talent",
+          "description": "Processing of authorizations for executive, technical, or prestigious university graduate profiles before the UGE."
+        },
+        "corporate": {
+          "title": "Corporate Mobility",
+          "subtitle": "Solutions for Companies",
+          "description": "Legal management for transferring employees between centers of the same company or national and international corporate group.",
+          "link": "B2B Solutions and Requirements"
+        },
+        "entrepreneurs": {
+          "title": "Entrepreneurs",
+          "subtitle": "Startup Law",
+          "description": "Advice for launching innovative business projects of special economic interest for Spain.",
+          "link": "Startup Law and Visas"
+        },
+        "investors": {
+          "title": "Investors (Law 14/2013)",
+          "subtitle": "Investment Mobility",
+          "description": "Authorizations for business projects, capital, or investment in financial assets. We manage your investor profile and your real estate portfolio."
+        },
+        "uge": {
+          "title": "Large Companies Unit",
+          "subtitle": "Processing Before UGE-CE",
+          "description": "Direct management before the specialized body to expedite international talent processes with precise technical criteria."
+        }
+      }
+    },
+    "specialization": {
+      "title": "Talent Specialization",
+      "subtitle": "Technical Management Before the Large Companies Unit (UGE)",
+      "description": "The key to success in professional authorizations lies in the correct categorization of the profile and the company. At **Abogados Watson**, we master UGE criteria to guarantee fast processes and significantly reduce waiting times.",
+      "features": [
+        "Strategic professional classification (PAC vs General Regime).",
+        "Advice to human resources departments (B2B).",
+        "Business plan development for entrepreneurs and investors.",
+        "Comprehensive management of corporate and personal documentation."
+      ],
+      "link": "Explore Investment and Business Services"
+    },
+    "defense": {
+      "title": "Unfavorable Resolution?",
+      "description": "In talent processes, a denial can impact your career or business. We have technical resources to reverse erroneous administrative decisions and protect your professional mobility.",
+      "link": "Consult Legal Defense Options"
+    },
+    "cta": {
+      "title": "Unlock Your Professional Future",
+      "subtitle": "Technical Evaluation of Professional and Business Profile",
+      "button1": "Evaluate Legal Viability",
+      "button2": "Legal Diagnosis of Your Case"
+    }
+  },
+  "VivirPage": {
+    "breadcrumb": "Living in Spain",
+    "hero": {
+      "badge": "International Mobility",
+      "title": "Establish Your Residence in Spain with Legal Security",
+      "subtitle": "Comprehensive Management and Advice in Immigration Regimes",
+      "description": "We simplify bureaucratic complexity so your transition to Spain is safe and efficient. We handle everything from the initial **application** to its long-term maintenance."
+    },
+    "services": {
+      "title": "Residence Services",
+      "subtitle": "Solutions Adapted to Your Immigration Profile",
+      "items": {
+        "nomads": {
+          "title": "Digital Nomads in Spain",
+          "subtitle": "Are You a Digital Nomad? International Remote Work",
+          "description": "Authorization for employees and self-employed workers who work remotely from Spain for foreign companies. Comprehensive residence management and tax benefits.",
+          "priority": "Priority Service",
+          "link": "Technical Guide and Requirements"
+        },
+        "students": {
+          "title": "Students and Training",
+          "subtitle": "Study Visa",
+          "description": "Management of study stays, extensions, and planning your professional future toward long-term residence or Spanish citizenship.",
+          "link": "Visa and Work Guide"
+        },
+        "family": {
+          "title": "Family Reunification",
+          "subtitle": "Right to Family Life",
+          "description": "Procedures to bring your loved ones to Spain under the general or community regime with full legal security.",
+          "link": "Requirements and Deadlines Guide"
+        },
+        "nonlucrative": {
+          "title": "Non-Lucrative Residence",
+          "subtitle": "Residing Without Working",
+          "description": "For citizens who have sufficient financial means to live in Spain without performing work activities."
+        },
+        "roots": {
+          "title": "Roots and Exceptional Circumstances",
+          "subtitle": "Administrative Regularization",
+          "description": "Social, labor, family, or training roots procedures. We evaluate the viability of your application."
+        },
+        "renewals": {
+          "title": "Renewals and Long-Term Residence",
+          "subtitle": "Maintaining Legal Status",
+          "description": "Management of permit renewals and obtaining long-term residence after 5 years of legal and continuous residence."
+        }
+      }
+    },
+    "commitment": {
+      "title": "Our Technical Commitment",
+      "subtitle": "Methodology for a Favorable Resolution",
+      "description": "At **Abogados Watson**, we don't just submit forms. We audit your documentation before submission to eliminate the risk of inadmissibility or unnecessary **requirements** that delay your process.",
+      "features": [
+        "Viability evaluation according to current regulations.",
+        "Preparation and technical review of all documentation.",
+        "Agile electronic submission to immigration offices.",
+        "Active monitoring of application status until resolution."
+      ]
+    },
+    "defense": {
+      "title": "Problems with Your Application?",
+      "description": "If your residence application has been denied or you experience unjustified delays, we have a specialized unit in appeals and challenges to protect your right to live in Spain.",
+      "link": "Consult Legal Defense Options"
+    },
+    "cta": {
+      "title": "Start Your Process with Security",
+      "subtitle": "Legal Viability Diagnosis for Your Residence",
+      "button1": "Evaluate Legal Viability",
+      "button2": "Legal Diagnosis of Your Case"
+    }
+  },
+  "DefensaJuridicaPage": {
+    "hero": {
+      "badge": "Legal Security",
+      "title": "Solutions When Your Legal Process Stops or Is Denied",
+      "subtitle": "Administrative and Administrative-Litigation Appeals in Immigration",
+      "description": "A negative resolution or excessive delay is not the end of the road. It's time to apply solid **technical defense** to protect your rights and redirect your **application** toward success."
+    },
+    "cases": {
+      "title": "Cases We Handle",
+      "subtitle": "Specialized Legal Intervention Scenarios",
+      "description": "We identify the exact legal obstacle to apply the most effective defense tool.",
+      "items": {
+        "denial": {
+          "title": "Residence or Citizenship Denial",
+          "subtitle": "Negative Administrative Resolution",
+          "description": "We analyze the reasons for denial to reverse it through administrative or judicial channels."
+        },
+        "delays": {
+          "title": "Unjustified Delays",
+          "subtitle": "Administrative Silence",
+          "description": "When the legal response deadline has expired, administrative silence allows action to force a decision."
+        },
+        "requirements": {
+          "title": "Complex Requirements",
+          "subtitle": "Technical Correction Requests",
+          "description": "We handle requests for additional documentation that block the continuity of your legal process."
+        },
+        "sanctions": {
+          "title": "Sanction Proceedings",
+          "subtitle": "Expulsion Procedures",
+          "description": "Immediate technical defense against mandatory departure orders or serious administrative sanctions."
+        }
+      }
+    },
+    "protocol": {
+      "title": "Our Defense Protocol",
+      "subtitle": "Legal Method Focused on Conflict Resolution",
+      "steps": {
+        "analysis": {
+          "title": "Comprehensive File Analysis",
+          "description": "We audit all submitted documentation and the received resolution to detect formal or substantive errors."
+        },
+        "strategy": {
+          "title": "Strategic Pathway Selection",
+          "description": "We determine whether it's more effective to act administratively (before the same body) or judicially (before the courts)."
+        },
+        "preparation": {
+          "title": "Technical Appeal Preparation",
+          "description": "We draft the legal foundation based on case law and current regulations to ensure rigor."
+        },
+        "monitoring": {
+          "title": "Monitoring and Precautionary Measures",
+          "description": "We monitor each step and request suspension of negative effects of the resolution when the law allows."
+        }
+      }
+    },
+    "realistic": {
+      "title": "A Realistic Approach",
+      "description1": "At **Abogados Watson**, we don't base our defense on promises of guaranteed success, but on rigorous analysis of viability.",
+      "description2": "If a file has limited legal possibilities, we will inform you honestly before initiating any costly procedure."
+    },
+    "appeals": {
+      "title": "Appeal Pathways",
+      "subtitle": "Procedural Instruments for Defense of Your Rights",
+      "description": "We explain the legal tools we will use to redirect your situation.",
+      "types": {
+        "reposicion": {
+          "title": "Second Administrative Opportunity",
+          "subtitle": "Reconsideration Appeal",
+          "description": "An appeal before the same body that issued the resolution for them to reconsider their decision within a short period."
+        },
+        "alzada": {
+          "title": "Review by Superior Body",
+          "subtitle": "Hierarchical Appeal",
+          "description": "Filed before the hierarchical superior of the body that denied your application to seek a different legal perspective."
+        },
+        "contencioso": {
+          "title": "Court Intervention",
+          "subtitle": "Administrative-Litigation Appeal",
+          "description": "We initiate the judicial pathway before Spanish judges to evaluate the legality of the immigration resolution."
+        },
+        "cautelares": {
+          "title": "Protection During Process",
+          "subtitle": "Precautionary Measures",
+          "description": "We request temporary suspension of the effects of a denial so you can maintain your rights while the trial is resolved."
+        }
+      }
+    },
+    "guarantees": {
+      "title": "Why Trust Our Defense",
+      "items": [
+        "Exclusive specialization in immigration and citizenship litigation.",
+        "Absolute transparency about real possibilities of success.",
+        "Technical rigor in drafting legal foundations.",
+        "Constant information about the status of your Appeal."
+      ]
+    },
+    "cta": {
+      "title": "Let's Evaluate Your Legal Situation",
+      "subtitle": "Technical Diagnosis Prior to Filing Appeals",
+      "button1": "Evaluate Appeal Viability",
+      "button2": "Legal Review of Your File",
+      "description": "This initial diagnosis allows us to determine if there is a solid basis to act. We don't initiate processes without a clear strategy."
+    }
+  },
+  "FamiliaPage": {
+    "breadcrumb": {
+      "parent": "Living in Spain",
+      "current": "Family Reunification"
+    },
+    "hero": {
+      "badge": "Right to Family Life",
+      "title": "Family Reunification in Spain: Security for Your Family",
+      "description": "We understand that family unity is your priority. We manage your file with **legal rigor** to ensure that the reunion is not cut short by administrative errors.",
+      "cta": "Family Viability Review"
+    },
+    "regimes": {
+      "title": "General Regime vs. Community Regime",
+      "subtitle": "It is essential to correctly identify the legal framework applicable to your family situation.",
+      "general": {
+        "title": "General Regime",
+        "subtitle": "For Non-EU Residents",
+        "description": "Applicable to foreigners with legal residence in Spain who wish to bring their family members. Requires having resided for at least 1 year (to reunify spouse and children) or being a long-term resident (for ascendants).",
+        "features": [
+          "Family bond: Spouse, children under 18, and ascendants over 65.",
+          "Initial application in Spain by the reunifying party."
+        ]
+      },
+      "community": {
+        "title": "Community Regime",
+        "subtitle": "Relatives of EU Citizens / Family Roots",
+        "description": "For relatives of Spanish citizens or other EU States. Includes the **EU Family Member Card** and the new **Family Roots** for caregivers or children of Spanish nationals by origin.",
+        "features": [
+          "Relatives: Spouse, registered partner, children under 21, and dependent ascendants.",
+          "Direct processing in Spain after the relative's entry."
+        ]
+      }
+    },
+    "requirements": {
+      "title": "Real Limits: Income and Housing",
+      "description": "The administration applies strict mathematical criteria. The desire to be together is not enough; material capacity for support must be demonstrated.",
+      "income": {
+        "title": "Economic Income (IPREM)",
+        "description": "General Regime: 150% of IPREM for the first relative (approx. €900) and 50% extra for each additional relative."
+      },
+      "housing": {
+        "title": "Housing Adequacy",
+        "description": "It is mandatory to present an **Adequate Housing Report** issued by the Autonomous Community or City Council."
+      },
+      "dependency": {
+        "title": "Economic Dependency",
+        "description": "For ascendants, it must be proven that they live at the expense of the reunifying party through regular money transfers (generally last 12 months)."
+      },
+      "documentation": {
+        "title": "Critical Documentation",
+        "familyBond": {
+          "title": "Family Bond",
+          "description": "Marriage or birth certificates duly apostilled or legalized and translated."
+        },
+        "means": {
+          "title": "Means of Support",
+          "description": "Employment contract, pay stubs, and last Income Tax return (IRPF)."
+        },
+        "insurance": {
+          "title": "Health Insurance",
+          "description": "In the community regime, it is vital to have private insurance without waiting periods or copays if not working."
+        }
+      }
+    },
+    "info": {
+      "title": "Important Note:",
+      "description": "Resolution deadlines vary according to the Immigration Office, but administrative silence is usually negative after 45-90 days. A perfect presentation reduces the risk of requirements that prolong the process."
+    },
+    "cta": {
+      "title": "Secure Your Family's Future",
+      "description": "We review your economic and documentary situation before submission to guarantee a favorable resolution.",
+      "button1": "Family Viability Review",
+      "button2": "Consult IPREM Requirements"
+    }
+  },
+  "NegociosPage": {
+    "breadcrumb": "Investment and Business",
+    "hero": {
+      "badge": "Investment and Wealth",
+      "title": "Invest and Grow Your Wealth in Spain with Legal Protection",
+      "subtitle": "Commercial and Real Estate Legal Advice for Foreigners",
+      "description": "We transform investment into legal security. We protect your assets and facilitate your entry into the Spanish market with impeccable technical rigor."
+    },
+    "services": {
+      "title": "Investment Services",
+      "subtitle": "Legal Protection in Real Estate and Commercial Transactions",
+      "items": {
+        "realEstate": {
+          "title": "Real Estate Purchase-Sale",
+          "subtitle": "Legal Advice on Investments",
+          "description": "Total legal security in the acquisition of real estate in Spain, from reservation to public deed with complete transparency.",
+          "link": "Legal Security and Golden Visa"
+        },
+        "dueDiligence": {
+          "title": "Legal Due Diligence",
+          "subtitle": "Buy with Expert Eyes",
+          "description": "Deep technical and legal audit to ensure that the asset you are acquiring is free of liens and hidden defects."
+        },
+        "companies": {
+          "title": "Company Formation",
+          "subtitle": "Commercial Law",
+          "description": "Creation and legal structure of companies for foreign investors who wish to operate in the Spanish market with guarantees."
+        },
+        "nie": {
+          "title": "NIE and Identification Management",
+          "subtitle": "Certificates for Non-Residents",
+          "description": "Agile obtaining of identification numbers necessary for any economic transaction or investment in Spain."
+        },
+        "tax": {
+          "title": "Real Estate Tax Planning",
+          "subtitle": "Investment Optimization",
+          "description": "Analysis of the tax impact of your investments to ensure maximum legal efficiency in national territory."
+        }
+      }
+    },
+    "guarantee": {
+      "title": "Investor Guarantee",
+      "subtitle": "Legal Strategy for Security of Your Assets",
+      "description": "The investment process in Spain requires constant supervision. At **Abogados Watson**, we accompany the investor from purchase intention to registration. We offer **360º coordination** that includes Notary, Registry, and Tax Planning.",
+      "features": [
+        "Technical audit (Due Diligence) of real estate assets.",
+        "Negotiation and drafting of contracts with third parties.",
+        "Complete notarial and registry coordination.",
+        "Legal representation for non-resident investors."
+      ]
+    },
+    "defense": {
+      "title": "Investment at Risk?",
+      "description": "We protect your assets against any administrative conflict, licensing issues, or contractual breaches. Our legal defense unit is prepared to act with technical rigor.",
+      "link": "Consult Legal Defense Options"
+    },
+    "cta": {
+      "title": "Secure Your Investment Today",
+      "subtitle": "Initial Market Analysis and Investment Legal Diagnosis",
+      "button1": "Evaluate Legal Viability",
+      "button2": "Legal Diagnosis of Your Case"
+    }
+  },
+  "InversionesPage": {
+    "breadcrumb": {
+      "parent": "Investment and Business",
+      "current": "Investors and Entrepreneurs"
+    },
+    "hero": {
+      "badge": "High-Net-Worth & Business Mobility",
+      "title": "Legal Protection for Global Investors and Entrepreneurs",
+      "description": "We secure your wealth and projects in Spain. Specialists in **legal Due Diligence** and investment residence management (Golden Visa) with a focus on long-term security.",
+      "cta": "Analyze Legal Security of My Investment"
+    },
+    "dueDiligence": {
+      "title": "Legal Real Estate and Commercial Due Diligence",
+      "description": "Before committing capital, we verify the legal reality of assets and structures. We minimize registry risks, hidden liens, and tax contingencies.",
+      "features": [
+        {
+          "label": "Registry Verification",
+          "text": "Exhaustive analysis of liens, easements, and ownership in the Property Registry."
+        },
+        {
+          "label": "Regulatory Audit",
+          "text": "Compliance with licenses, urban planning regulations, and specific foreign investment regulations."
+        },
+        {
+          "label": "Secure Structure",
+          "text": "Design of the acquisition form to optimize investor protection."
+        }
+      ]
+    },
+    "protection": {
+      "title": "Asset Shielding and Protection",
+      "description": "We implement legal strategies to safeguard your international and local assets under Spanish and European legal framework.",
+      "features": [
+        {
+          "label": "Succession Planning",
+          "text": "Family protocols and cross-border wills."
+        },
+        {
+          "label": "Corporate Structuring",
+          "text": "Creation of holdings and protected investment vehicles."
+        },
+        {
+          "label": "Compliance (UGE)",
+          "text": "Maintenance of investment requirements for the validity of your residence."
+        }
+      ]
+    },
+    "defense": {
+      "title": "Defense Against Administrative Conflicts",
+      "description": "High-value investments sometimes face registry blockages or arbitrary denials by the administration. Our **Litigation and Legal Defense** team intervenes against any legal obstacle.",
+      "link": "See Investor Legal Defense"
+    },
+    "projects": {
+      "title": "Development of Projects of Economic Interest",
+      "description": "We don't just manage the visa; we validate the legal and technical viability of your business plan in Spain before Enisa and other regulatory bodies.",
+      "features": [
+        "Analysis of innovative character and scalability for Startup Law.",
+        "Advice on obtaining public financing and tax benefits."
+      ],
+      "items": {
+        "entrepreneur": {
+          "title": "Entrepreneur Visa",
+          "subtitle": "Law 14/2013"
+        },
+        "financial": {
+          "title": "Financial Investment",
+          "subtitle": "Funds and Capital"
+        },
+        "verification": {
+          "title": "Technical Verification",
+          "subtitle": "Pre-Investment"
+        },
+        "familyOffice": {
+          "title": "Family Office Management",
+          "subtitle": "Global Structure"
+        }
+      }
+    },
+    "cta": {
+      "title": "Invest with Certainty, Not Assumptions",
+      "subtitle": "High-Level Legal Consulting for International Capital",
+      "button1": "Analyze Legal Security of My Investment",
+      "button2": "Consultation on Golden Visa"
+    }
+  },
+  "CorporativoPage": {
+    "breadcrumb": {
+      "parent": "Work and Talent",
+      "current": "Corporate Mobility"
+    },
+    "hero": {
+      "badge": "Corporate Mobility & International Talent",
+      "title": "Strategic Management of Highly Qualified Professionals",
+      "description": "We accelerate the incorporation of global talent into your organization. Specialists in authorizations before the **Large Companies Unit (UGE-CE)** with preferred response times.",
+      "cta": "Corporate Mobility Diagnosis"
+    },
+    "solutions": {
+      "title": "Solutions for Global Mobility",
+      "subtitle": "We optimize the appropriate legal framework for each professional profile and corporate structure.",
+      "pac": {
+        "title": "Qualified Professionals (PAC)",
+        "description": "For the hiring of executives or highly qualified personnel by Spanish companies. Requires university degree or equivalent experience and a specific salary threshold.",
+        "features": [
+          "Validity of up to 3 years with possibility of renewal.",
+          "Enables work throughout the national territory."
+        ]
+      },
+      "ict": {
+        "title": "Intra-Company Transfer (ICT)",
+        "description": "For the transfer of workers within the same international corporate group. Ideal for temporary projects or specialized knowledge transfer.",
+        "features": [
+          "Simplified management for corporate groups.",
+          "Especially designed for intra-group EU mobility."
+        ]
+      }
+    },
+    "uge": {
+      "title": "Operational Excellence Before UGE",
+      "description": "The **Large Companies and Strategic Collectives Unit** requires impeccable presentation. Our methodology drastically reduces the risk of requirements that block the incorporation of your talent.",
+      "fastTrack": {
+        "title": "Fast-Track Processing",
+        "description": "Resolutions within 20 business days thanks to preferred electronic management."
+      },
+      "audit": {
+        "title": "Company Audit",
+        "description": "We validate the requirements of the contracting entity (business volume, workforce) before the application."
+      },
+      "benefits": {
+        "title": "Benefits for Talent",
+        "items": [
+          "Joint authorization for spouse and children from day one.",
+          "No consideration of National Employment Situation.",
+          "Quick access to Social Security and NIE number.",
+          "Possibility of processing from tourist stay situation in Spain."
+        ]
+      }
+    },
+    "business": {
+      "title": "Creating a Structure in Spain?",
+      "description": "If the transfer of professionals requires the formation of a subsidiary or corporate real estate investment, we coordinate the commercial and tax aspects in an integrated manner.",
+      "link": "Explore Investment and Business Services"
+    },
+    "cta": {
+      "title": "Optimize Your Global Talent Management",
+      "subtitle": "Legal Partnership for HR Departments and Executives",
+      "button1": "Corporate Mobility Diagnosis",
+      "button2": "Consult UGE Fees"
+    }
   }
 }
