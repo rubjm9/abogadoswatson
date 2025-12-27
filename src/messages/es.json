@@ -124,5 +124,61 @@
       "submit": "Solicitar información",
       "privacy": "Sus datos serán tratados con absoluta confidencialidad de acuerdo a la normativa vigente de protección de datos (RGPD). Al enviar el formulario, acepta nuestra política de privacidad."
     }
+  },
+  "ErrorPages": {
+    "notFound": {
+      "title": "Página no encontrada",
+      "description": "Lo sentimos, la página que está buscando no existe o ha sido movida.",
+      "backHome": "Volver al inicio",
+      "contact": "Contactar",
+      "helpfulLinks": "Enlaces útiles:",
+      "links": {
+        "home": "Inicio",
+        "services": "Servicios",
+        "about": "Sobre nosotros",
+        "contact": "Contacto"
+      }
+    },
+    "unauthorized": {
+      "title": "Acceso no autorizado",
+      "description": "No tiene permisos suficientes para acceder a esta página.",
+      "backHome": "Volver al inicio",
+      "backDashboard": "Volver al panel",
+      "contact": "Contactar",
+      "helpText": "Si cree que esto es un error, por favor contacte con el administrador del sistema."
+    },
+    "login": {
+      "title": "Autenticación requerida",
+      "description": "Debe iniciar sesión para acceder a esta página.",
+      "backHome": "Volver al inicio",
+      "contact": "Contactar",
+      "helpText": "Si necesita acceso, por favor contacte con nuestro equipo."
+    }
+  },
+  "ContactForm": {
+    "validation": {
+      "nameRequired": "El nombre es obligatorio",
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "Por favor ingrese un correo electrónico válido",
+      "phoneInvalid": "Por favor ingrese un número de teléfono válido",
+      "messageRequired": "El mensaje es obligatorio",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres"
+    },
+    "success": {
+      "title": "Mensaje enviado",
+      "message": "Gracias por contactarnos. Nos pondremos en contacto con usted pronto."
+    },
+    "error": {
+      "title": "Error al enviar",
+      "message": "Hubo un problema al enviar su mensaje. Por favor intente nuevamente."
+    },
+    "sending": "Enviando...",
+    "placeholders": {
+      "name": "Juan Pérez",
+      "email": "juan@ejemplo.com",
+      "phone": "+34 600 000 000",
+      "message": "Cuéntenos sobre su consulta..."
+    }
   }
 }
