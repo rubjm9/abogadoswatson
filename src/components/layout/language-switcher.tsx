@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface LanguageSwitcherProps {
-    isScrolled?: boolean;
+    isLightMode?: boolean;
 }
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ isLightMode = true }: LanguageSwitcherProps) {
     const locale = useLocale();
     const router = useRouter();
     const pathname = usePathname();
@@ -24,7 +24,12 @@ export function LanguageSwitcher() {
             variant="ghost"
             size="sm"
             onClick={toggleLocale}
-            className="font-medium uppercase transition-colors text-slate-700 hover:text-slate-900 hover:bg-slate-100/50"
+            className={cn(
+                "font-medium uppercase transition-colors",
+                isLightMode
+                    ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100/50"
+                    : "text-white hover:text-white/80 hover:bg-white/10"
+            )}
         >
             {locale === "es" ? "EN" : "ES"}
         </Button>

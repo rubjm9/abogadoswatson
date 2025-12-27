@@ -5,6 +5,7 @@ import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
 
 export const authConfig: NextAuthConfig = {
+    secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
     pages: {
         signIn: '/login',
     },

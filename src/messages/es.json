@@ -265,7 +265,7 @@
       "badge": "Derecho de Ciudadanía",
       "title": "Obtén tu pasaporte español: Gestión técnica de nacionalidad",
       "subtitle": "Expedientes de concesión de nacionalidad española por diversas vías legales",
-      "description": "Convertirse en ciudadano español es asegurar tu futuro en Europa. Digitalizamos todo el proceso con presentación telemática directa al Ministerio de Justicia para ganar meses de ventaja en tu **Resolución Favorable**.",
+      "description": "Convertirse en ciudadano español es asegurar tu futuro en Europa. Digitalizamos todo el proceso con presentación telemática directa al Ministerio de Justicia para ganar meses de ventaja en tu <strong>Resolución Favorable</strong>.",
       "imageAlt": "Pasaporte Español"
     },
     "types": {
@@ -314,19 +314,19 @@
       "title": "Garantías del Expediente y Conceptos Clave",
       "silence": {
         "title": "Resolución Favorable y Silencio Administrativo",
-        "description": "Si tras un año desde la presentación del expediente no hay respuesta, se produce un **Silencio Administrativo** negativo. En este punto, recomendamos interponer un recurso contencioso para acelerar la decisión."
+        "description": "Si tras un año desde la presentación del expediente no hay respuesta, se produce un <strong>Silencio Administrativo</strong> negativo. En este punto, recomendamos interponer un recurso contencioso para acelerar la decisión."
       },
       "exams": {
         "title": "Exámenes y Dispensas (CCSE/DELE)",
-        "description": "Evaluamos si cumples los requisitos para solicitar una **Dispensa** de los exámenes de integración y lengua en casos específicos debidamente acreditados."
+        "description": "Evaluamos si cumples los requisitos para solicitar una <strong>Dispensa</strong> de los exámenes de integración y lengua en casos específicos debidamente acreditados."
       },
       "requirements": {
         "title": "Atención a Requerimientos",
-        "description": "Un **Requerimiento** de la administración debe atenderse con precisión técnica absoluta para evitar el archivo o la denegación de tu solicitud."
+        "description": "Un <strong>Requerimiento</strong> de la administración debe atenderse con precisión técnica absoluta para evitar el archivo o la denegación de tu solicitud."
       },
       "custody": {
         "title": "Seguridad en la Custodia",
-        "description": "Supervisamos la validez técnica de todos los documentos integrados en tu **Expediente** para asegurar el éxito del proceso administrativo."
+        "description": "Supervisamos la validez técnica de todos los documentos integrados en tu <strong>Expediente</strong> para asegurar el éxito del proceso administrativo."
       }
     },
     "defense": {
@@ -349,7 +349,7 @@
     "hero": {
       "badge": "Formación & Movilidad Legal",
       "title": "Visado de Estudiante en España: Tu puerta a Europa",
-      "description": "Mucho más que una estancia académica. Gestionamos tu **autorización inicial** y diseñamos tu estrategia legal para convertir tus estudios en una residencia estable.",
+      "description": "Mucho más que una estancia académica. Gestionamos tu <strong>autorización inicial</strong> y diseñamos tu estrategia legal para convertir tus estudios en una residencia estable.",
       "cta": "Evaluar mi viabilidad académica"
     },
     "work": {
@@ -422,7 +422,7 @@
     "hero": {
       "badge": "Movilidad Internacional & Teletrabajo",
       "title": "Residencia para Nómadas Digitales en España",
-      "description": "Logramos tu residencia legal en menos de **90 días**. Gestión técnica ante la Unidad de Grandes Empresas (UGE-CE) para teletrabajadores internacionales y profesionales remotos.",
+      "description": "Logramos tu residencia legal en menos de <strong>90 días</strong>. Gestión técnica ante la Unidad de Grandes Empresas (UGE-CE) para teletrabajadores internacionales y profesionales remotos.",
       "cta": "Evaluar viabilidad legal de mi teletrabajo"
     },
     "profiles": {
@@ -523,7 +523,7 @@
     "specialization": {
       "title": "Especialización en Talento",
       "subtitle": "Gestión técnica ante la Unidad de Grandes Empresas (UGE)",
-      "description": "La clave del éxito en autorizaciones profesionales reside en la correcta categorización del perfil y la empresa. En **Abogados Watson**, dominamos los criterios de la UGE para garantizar procesos rápidos y reducir tiempos de espera significativos.",
+      "description": "La clave del éxito en autorizaciones profesionales reside en la correcta categorización del perfil y la empresa. En <strong>Abogados Watson</strong>, dominamos los criterios de la UGE para garantizar procesos rápidos y reducir tiempos de espera significativos.",
       "features": [
         "Clasificación profesional estratégica (PAC vs Régimen General).",
         "Asesoramiento a departamentos de recursos humanos (B2B).",
@@ -550,7 +550,7 @@
       "badge": "Movilidad Internacional",
       "title": "Establecer tu residencia en España con seguridad jurídica",
       "subtitle": "Gestión y asesoramiento integral en regímenes de extranjería",
-      "description": "Simplificamos la complejidad burocrática para que tu transición a España sea segura y eficiente. Resolvemos desde la obtención inicial del **expediente** hasta su mantenimiento a largo plazo."
+      "description": "Simplificamos la complejidad burocrática para que tu transición a España sea segura y eficiente. Resolvemos desde la obtención inicial del <strong>expediente</strong> hasta su mantenimiento a largo plazo."
     },
     "services": {
       "title": "Servicios de residencia",
@@ -595,7 +595,7 @@
     "commitment": {
       "title": "Nuestro compromiso técnico",
       "subtitle": "Metodología para una resolución favorable",
-      "description": "En **Abogados Watson**, no nos limitamos a presentar formularios. Auditamos tu documentación antes de presentarla para eliminar el riesgo de inadmisión o **requerimientos** innecesarios que dilaten tu proceso.",
+      "description": "En <strong>Abogados Watson</strong>, no nos limitamos a presentar formularios. Auditamos tu documentación antes de presentarla para eliminar el riesgo de inadmisión o <strong>requerimientos</strong> innecesarios que dilaten tu proceso.",
       "features": [
         "Evaluación de viabilidad según normativa vigente.",
         "Preparación y revisión técnica de toda la documentación.",
@@ -620,7 +620,7 @@
       "badge": "Seguridad Jurídica",
       "title": "Soluciones cuando tu proceso legal se detiene o es denegado",
       "subtitle": "Recursos administrativos y contencioso-administrativos en extranjería",
-      "description": "Una resolución negativa o un retraso excesivo no es el final del camino. Es el momento de aplicar una **defensa técnica** sólida para proteger tus derechos y reconducir tu **expediente** hacia el éxito."
+      "description": "Una resolución negativa o un retraso excesivo no es el final del camino. Es el momento de aplicar una <strong>defensa técnica</strong> sólida para proteger tus derechos y reconducir tu <strong>expediente</strong> hacia el éxito."
     },
     "cases": {
       "title": "Casos en los que actuamos",
@@ -673,7 +673,7 @@
     },
     "realistic": {
       "title": "Un enfoque realista",
-      "description1": "En **Abogados Watson**, no basamos nuestra defensa en promesas de éxito garantizado, sino en un análisis riguroso de la viabilidad.",
+      "description1": "En <strong>Abogados Watson</strong>, no basamos nuestra defensa en promesas de éxito garantizado, sino en un análisis riguroso de la viabilidad.",
       "description2": "Si un expediente tiene escasas posibilidades legales, te lo informaremos con honestidad antes de iniciar cualquier procedimiento oneroso."
     },
     "appeals": {
@@ -728,7 +728,7 @@
     "hero": {
       "badge": "Derecho a la Vida Familiar",
       "title": "Reagrupación Familiar en España: Seguridad para tu familia",
-      "description": "Entendemos que la unión familiar es tu prioridad. Gestionamos tu expediente con **rigor jurídico** para asegurar que el reencuentro no se vea truncado por errores administrativos.",
+      "description": "Entendemos que la unión familiar es tu prioridad. Gestionamos tu expediente con <strong>rigor jurídico</strong> para asegurar que el reencuentro no se vea truncado por errores administrativos.",
       "cta": "Revisión de viabilidad familiar"
     },
     "regimes": {
@@ -746,7 +746,7 @@
       "community": {
         "title": "Régimen Comunitario",
         "subtitle": "Familiares de ciudadanos UE / Arraigo Familiar",
-        "description": "Para familiares de ciudadanos españoles o de otros Estados UE. Incluye la **Tarjeta de Familiar de Ciudadano de la Unión** y el nuevo **Arraigo Familiar** para cuidadores o hijos de españoles de origen.",
+        "description": "Para familiares de ciudadanos españoles o de otros Estados UE. Incluye la <strong>Tarjeta de Familiar de Ciudadano de la Unión</strong> y el nuevo <strong>Arraigo Familiar</strong> para cuidadores o hijos de españoles de origen.",
         "features": [
           "Familiares: Cónyuge, pareja de hecho, hijos menores de 21 y ascendientes a cargo.",
           "Tramitación directa en España tras la entrada del familiar."
@@ -762,7 +762,7 @@
       },
       "housing": {
         "title": "Adecuación de Vivienda",
-        "description": "Es obligatorio presentar un **Informe de Vivienda Adecuada** emitido por la Comunidad Autónoma o Ayuntamiento."
+        "description": "Es obligatorio presentar un <strong>Informe de Vivienda Adecuada</strong> emitido por la Comunidad Autónoma o Ayuntamiento."
       },
       "dependency": {
         "title": "Dependencia Económica",
@@ -838,7 +838,7 @@
     "guarantee": {
       "title": "Garantía del Inversor",
       "subtitle": "Estrategia legal para la seguridad de tus activos",
-      "description": "El proceso de inversión en España requiere una supervisión constante. En **Abogados Watson**, acompañamos al inversor desde la intención de compra hasta la inscripción registral. Ofrecemos una **coordinación 360º** que incluye Notaría, Registro y Planificación Fiscal.",
+      "description": "El proceso de inversión en España requiere una supervisión constante. En <strong>Abogados Watson</strong>, acompañamos al inversor desde la intención de compra hasta la inscripción registral. Ofrecemos una <strong>coordinación 360º</strong> que incluye Notaría, Registro y Planificación Fiscal.",
       "features": [
         "Auditoría técnica (Due Diligence) de activos inmobiliarios.",
         "Negociación y redacción de contratos con terceros.",
@@ -866,7 +866,7 @@
     "hero": {
       "badge": "High-Net-Worth & Business Mobility",
       "title": "Protección Juridica para Inversores y Emprendedores Globales",
-      "description": "Aseguramos tu patrimonio y tus proyectos en España. Especialistas en **Due Diligence legal** y gestión de residencias por inversión (Golden Visa) con un enfoque en la seguridad a largo plazo.",
+      "description": "Aseguramos tu patrimonio y tus proyectos en España. Especialistas en <strong>Due Diligence legal</strong> y gestión de residencias por inversión (Golden Visa) con un enfoque en la seguridad a largo plazo.",
       "cta": "Analizar seguridad jurídica de mi inversión"
     },
     "dueDiligence": {
@@ -907,7 +907,7 @@
     },
     "defense": {
       "title": "Defensa Ante Conflictos Administrativos",
-      "description": "Las inversiones de alto valor a veces enfrentan bloqueos registrales o denegaciones arbitrarias por parte de la administración. Nuestro equipo de **Litigación y Defensa Jurídica** interviene ante cualquier obstáculo legal.",
+      "description": "Las inversiones de alto valor a veces enfrentan bloqueos registrales o denegaciones arbitrarias por parte de la administración. Nuestro equipo de <strong>Litigación y Defensa Jurídica</strong> interviene ante cualquier obstáculo legal.",
       "link": "Ver Defensa Jurídica Inversionista"
     },
     "projects": {
@@ -951,7 +951,7 @@
     "hero": {
       "badge": "Corporate Mobility & International Talent",
       "title": "Gestión Estratégica de Profesionales Altamente Cualificados",
-      "description": "Aceleramos la incorporación de talento global en tu organización. Especialistas en autorizaciones ante la **Unidad de Grandes Empresas (UGE-CE)** con tiempos de respuesta preferentes.",
+      "description": "Aceleramos la incorporación de talento global en tu organización. Especialistas en autorizaciones ante la <strong>Unidad de Grandes Empresas (UGE-CE)</strong> con tiempos de respuesta preferentes.",
       "cta": "Diagnóstico de Movilidad Corporativa"
     },
     "solutions": {
@@ -976,7 +976,7 @@
     },
     "uge": {
       "title": "Excelencia Operativa ante la UGE",
-      "description": "La **Unidad de Grandes Empresas y Colectivos Estratégicos** requiere una presentación impecable. Nuestra metodología reduce drásticamente el riesgo de requerimientos que bloqueen la incorporación de tu talento.",
+      "description": "La <strong>Unidad de Grandes Empresas y Colectivos Estratégicos</strong> requiere una presentación impecable. Nuestra metodología reduce drásticamente el riesgo de requerimientos que bloqueen la incorporación de tu talento.",
       "fastTrack": {
         "title": "Fast-Track Processing",
         "description": "Resoluciones en plazos de 20 días hábiles gracias a la gestión telemática preferente."
@@ -1005,6 +1005,128 @@
       "subtitle": "Partnership legal para departamentos de RRHH y Directivos",
       "button1": "Diagnóstico de Movilidad Corporativa",
       "button2": "Consultar Cuotas UGE"
+    }
+  },
+  "AvisoLegalPage": {
+    "breadcrumb": "Aviso Legal",
+    "title": "Aviso Legal",
+    "lastUpdate": "Última actualización: 26 de diciembre de 2025",
+    "sections": {
+      "holder": {
+        "title": "1. Información Titular",
+        "description": "En cumplimiento de lo previsto en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa que el titular de este sitio web es <strong>Abogados Watson</strong> (en adelante, \"el Despacho\").",
+        "items": {
+          "name": "Denominación Social:",
+          "nameValue": "Watson & Asociados Jurídicos S.L. (Ejemplo)",
+          "address": "Domicilio Social:",
+          "addressValue": "Paseo de la Castellana, Madrid, España",
+          "email": "Email de contacto:",
+          "emailValue": "info@abogadoswatson.com",
+          "regulation": "Normativa Profesional:",
+          "regulationValue": "El ejercicio de la abogacía se rige por el Estatuto General de la Abogacía Española y el Código Deontológico de la Abogacía Española."
+        }
+      },
+      "terms": {
+        "title": "2. Condiciones de Uso",
+        "description": "El acceso y uso de este sitio web atribuye la condición de usuario, implicando la aceptación plena y sin reservas de todas las disposiciones incluidas en este Aviso Legal. Los contenidos de este sitio tienen una finalidad meramente informativa y no constituyen, bajo ninguna circunstancia, la prestación de un servicio de asesoramiento jurídico de carácter profesional."
+      },
+      "intellectual": {
+        "title": "3. Propiedad Intelectual e Industrial",
+        "description": "La totalidad de los contenidos de este sitio web, incluyendo a título enunciativo pero no limitativo, textos, imágenes, logotipos, iconos, diseño gráfico y código fuente, son propiedad de Abogados Watson o de terceros que han autorizado su uso. Queda prohibida cualquier reproducción, distribución o transformación de estos contenidos sin la autorización expresa y por escrito del titular."
+      },
+      "liability": {
+        "title": "4. Limitación de Responsabilidad",
+        "description": "El Despacho no se hace responsable de los errores u omisiones de los que pudieran adolecer los contenidos de este sitio web ni de otros contenidos a los que se pueda acceder a través del mismo. Los enlaces externos se proporcionan con fines informativos y no implican relación ni aprobación alguna por parte del Despacho."
+      },
+      "jurisdiction": {
+        "title": "5. Jurisdicción y Ley Aplicable",
+        "description": "Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes, siendo competentes para la resolución de todos los conflictos derivados o relacionados con su uso los Juzgados y Tribunales de Madrid."
+      }
+    }
+  },
+  "PrivacidadPage": {
+    "breadcrumb": "Privacidad",
+    "title": "Política de Privacidad",
+    "lastUpdate": "Última actualización: 26 de diciembre de 2025",
+    "intro": "De conformidad con el <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la <strong>Ley Orgánica 3/2018 (LOPDGDD)</strong>, Abogados Watson informa a continuación sobre su política de protección de datos personales.",
+    "sections": {
+      "responsible": {
+        "title": "1. Responsable del Tratamiento",
+        "identity": "Identidad:",
+        "identityValue": "Watson & Asociados Jurídicos S.L.",
+        "email": "Email DP para ejercicio de derechos:",
+        "emailValue": "legal@abogadoswatson.com"
+      },
+      "purpose": {
+        "title": "2. Finalidad del Tratamiento",
+        "description": "Tratamos la información que nos facilita con las siguientes finalidades:",
+        "items": [
+          "Gestión de la relación profesional y ejecución del encargo jurídico.",
+          "Atención de consultas y solicitudes de información recibidas a través de formularios.",
+          "Cumplimiento de obligaciones legales derivadas de la normativa de prevención de blanqueo de capitales.",
+          "Envío de comunicaciones informativas relacionadas con el ámbito legal, siempre que contemos con su consentimiento expreso."
+        ]
+      },
+      "legitimization": {
+        "title": "3. Legitimación",
+        "description": "La base legal para el tratamiento de su datos es:",
+        "items": [
+          "La <strong>relación contractual</strong> para la gestión de servicios jurídicos.",
+          "El <strong>interés legítimo</strong> para responder a consultas.",
+          "El <strong>consentimiento</strong> del interesado para el envío de información comercial."
+        ]
+      },
+      "retention": {
+        "title": "4. Conservación de Datos",
+        "description": "Los datos personales proporcionados se conservarán mientras se mantenga la relación profesional o durante los años necesarios para cumplir con las obligaciones legales (específicamente 5 años en materia tributaria y mercantil, y hasta 10 años en prevención de blanqueo de capitales)."
+      },
+      "rights": {
+        "title": "5. Sus Derechos",
+        "description": "Como titular de los datos, usted puede ejercer en cualquier momento sus derechos de:",
+        "items": [
+          "Acceso a sus datos personales.",
+          "Rectificación de datos inexactos.",
+          "Supresión (derecho al olvido).",
+          "Limitación del tratamiento.",
+          "Oposición al tratamiento.",
+          "Portabilidad de los datos."
+        ],
+        "exercise": "Para ejercer estos derechos, puede enviar un correo electrónico a <strong>legal@abogadoswatson.com</strong>, adjuntando copia de su DNI o documento equivalente para verificar su identidad."
+      }
+    }
+  },
+  "CookiesPage": {
+    "breadcrumb": "Política de Cookies",
+    "title": "Política de Cookies",
+    "intro": "Este sitio web utiliza cookies para mejorar la experiencia del usuario y analizar el tráfico de navegación. En cumplimiento de la <strong>LSSI-CE</strong>, le informamos de qué son y cómo las gestionamos.",
+    "sections": {
+      "what": {
+        "title": "¿Qué es una cookie?",
+        "description": "Una cookie es un pequeño archivo de texto que se descarga en su navegador cuando accede a determinadas páginas web. Permite a la web almacenar y recuperar información sobre sus hábitos de navegación o sobre su equipo."
+      },
+      "types": {
+        "title": "Tipos de Cookies que utilizamos",
+        "technical": {
+          "title": "1. Cookies Técnicas",
+          "description": "Necesarias para el correcto funcionamiento del sitio, como la gestión de sesiones o la elección del idioma."
+        },
+        "analytical": {
+          "title": "2. Cookies Analíticas",
+          "description": "Nos permiten cuantificar el número de usuarios y realizar la medición y análisis estadístico de la utilización que hacen los usuarios del servicio ofertado."
+        }
+      },
+      "management": {
+        "title": "Gestión de Cookies",
+        "description": "Usted puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador:",
+        "browsers": {
+          "chrome": "Chrome:",
+          "chromeValue": "Configuración - Privacidad y seguridad - Cookies.",
+          "firefox": "Firefox:",
+          "firefoxValue": "Ajustes - Privacidad y seguridad - Cookies y datos del sitio.",
+          "safari": "Safari:",
+          "safariValue": "Preferencias - Privacidad - Bloquear todas las cookies."
+        }
+      }
     }
   }
 }

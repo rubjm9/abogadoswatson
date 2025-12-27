@@ -33,6 +33,11 @@ export default function DefensaJuridicaPage() {
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* SECCIÓN 1 — HERO (Confianza) */}
             <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden">
+                <img
+                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80"
+                    alt={t('hero.imageAlt') || 'Defensa jurídica'}
+                    className="absolute inset-0 w-full h-full object-cover opacity-40"
+                />
                 <div className="absolute inset-0 bg-slate-900/80 z-10" />
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#701218]/20 to-transparent z-20" />
 
@@ -47,9 +52,7 @@ export default function DefensaJuridicaPage() {
                         <p className="text-sm text-[#701218] font-bold mb-4 bg-[#701218]/10 px-3 py-1 rounded-sm inline-block">
                             {t('hero.subtitle')}
                         </p>
-                        <p className="text-xl text-slate-300 leading-relaxed max-w-2xl">
-                            {t('hero.description')}
-                        </p>
+                        <p className="text-xl text-slate-300 leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
                     </div>
                 </Container>
             </section>

@@ -13,11 +13,15 @@ export default function CorporativoPage() {
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* HERO SECTION - B2B Focus */}
             <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden text-white">
-                <Breadcrumbs items={[{ label: t('breadcrumb.parent'), href: "/servicios/trabajar" }, { label: t('breadcrumb.current') }]} className="relative z-30" />
-                <div className="absolute inset-0 bg-slate-900/95 z-10" />
+                <img
+                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&q=80"
+                    alt={t('hero.imageAlt') || 'Movilidad corporativa'}
+                    className="absolute inset-0 w-full h-full object-cover opacity-40"
+                />
+                <div className="absolute inset-0 bg-slate-900/80 z-10" />
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#701218]/20 to-transparent z-20" />
 
-                <Container className="relative z-30">
+                <Container className="relative z-10">
                     <div className="max-w-4xl">
                         <span className="text-[#701218] font-bold tracking-widest uppercase text-xs mb-4 block">
                             {t('hero.badge')}
@@ -25,9 +29,7 @@ export default function CorporativoPage() {
                         <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
                             {t('hero.title')}
                         </h1>
-                        <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
-                            {t('hero.description')}
-                        </p>
+                        <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
                         <div className="flex flex-wrap gap-4">
                             <Button asChild size="lg" className="bg-[#701218] hover:bg-[#5a0e13] h-14 px-8 font-bold uppercase tracking-widest text-xs">
                                 <Link href="/contacto">{t('hero.cta')}</Link>
@@ -36,6 +38,8 @@ export default function CorporativoPage() {
                     </div>
                 </Container>
             </section>
+
+            <Breadcrumbs items={[{ label: "Trabajar y Talento", href: "/servicios/trabajar" }, { label: "Movilidad Corporativa" }]} />
 
             {/* DIFERENCIACIÓN TÉCNICA PAC vs ICT */}
             <section className="py-24 bg-white">
@@ -89,9 +93,7 @@ export default function CorporativoPage() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">{t('uge.title')}</h2>
-                            <p className="text-slate-400 mb-8 leading-relaxed">
-                                {t('uge.description')}
-                            </p>
+                            <p className="text-slate-400 mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.raw('uge.description') }} />
 
                             <div className="space-y-6">
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">

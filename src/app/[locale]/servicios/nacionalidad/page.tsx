@@ -33,7 +33,6 @@ export default function NacionalidadPage() {
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* Hero Section */}
             <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden">
-                <Breadcrumbs items={[{ label: t('breadcrumb') }]} className="relative z-30 text-white" />
                 <div className="absolute inset-0 bg-slate-900/80 z-10" />
                 <img
                     src="/images/nationality.png"
@@ -53,12 +52,12 @@ export default function NacionalidadPage() {
                         <p className="text-sm text-[#701218] font-bold mb-4 bg-[#701218]/10 px-3 py-1 rounded-sm inline-block">
                             {t('hero.subtitle')}
                         </p>
-                        <p className="text-xl text-slate-300 leading-relaxed max-w-2xl">
-                            {t('hero.description')}
-                        </p>
+                        <p className="text-xl text-slate-300 leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
                     </div>
                 </Container>
             </section>
+
+            <Breadcrumbs items={[{ label: t('breadcrumb') }]} />
 
             {/* Content Blocks */}
             <section className="py-24">
@@ -110,27 +109,19 @@ export default function NacionalidadPage() {
                         <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
                             <div>
                                 <h4 className="font-bold text-[#701218] text-sm mb-2">{t('technicalSupport.silence.title')}</h4>
-                                <p className="text-sm text-slate-600 leading-relaxed">
-                                    {t('technicalSupport.silence.description')}
-                                </p>
+                                <p className="text-sm text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.raw('technicalSupport.silence.description') }} />
                             </div>
                             <div>
                                 <h4 className="font-bold text-[#701218] text-sm mb-2">{t('technicalSupport.exams.title')}</h4>
-                                <p className="text-sm text-slate-600 leading-relaxed">
-                                    {t('technicalSupport.exams.description')}
-                                </p>
+                                <p className="text-sm text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.raw('technicalSupport.exams.description') }} />
                             </div>
                             <div>
                                 <h4 className="font-bold text-[#701218] text-sm mb-2">{t('technicalSupport.requirements.title')}</h4>
-                                <p className="text-sm text-slate-600 leading-relaxed">
-                                    {t('technicalSupport.requirements.description')}
-                                </p>
+                                <p className="text-sm text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.raw('technicalSupport.requirements.description') }} />
                             </div>
                             <div>
                                 <h4 className="font-bold text-[#701218] text-sm mb-2">{t('technicalSupport.custody.title')}</h4>
-                                <p className="text-sm text-slate-600 leading-relaxed">
-                                    {t('technicalSupport.custody.description')}
-                                </p>
+                                <p className="text-sm text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.raw('technicalSupport.custody.description') }} />
                             </div>
                         </div>
                     </div>

@@ -13,11 +13,15 @@ export default function InversionesPage() {
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* HERO SECTION - Premium & Secure */}
             <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden text-white">
-                <Breadcrumbs items={[{ label: t('breadcrumb.parent'), href: "/servicios/negocios" }, { label: t('breadcrumb.current') }]} className="relative z-30" />
-                <div className="absolute inset-0 bg-slate-900/95 z-10" />
+                <img
+                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80"
+                    alt={t('hero.imageAlt') || 'Inversiones y negocios'}
+                    className="absolute inset-0 w-full h-full object-cover opacity-40"
+                />
+                <div className="absolute inset-0 bg-slate-900/80 z-10" />
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#C5A059]/20 to-transparent z-20" />
 
-                <Container className="relative z-30">
+                <Container className="relative z-10">
                     <div className="max-w-4xl">
                         <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
                             {t('hero.badge')}
@@ -25,9 +29,7 @@ export default function InversionesPage() {
                         <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
                             {t('hero.title')}
                         </h1>
-                        <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
-                            {t('hero.description')}
-                        </p>
+                        <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
                         <div className="flex flex-wrap gap-4">
                             <Button asChild size="lg" className="bg-[#701218] hover:bg-[#5a0e13] h-14 px-8 font-bold uppercase tracking-widest text-xs">
                                 <Link href="/contacto">{t('hero.cta')}</Link>
@@ -36,6 +38,8 @@ export default function InversionesPage() {
                     </div>
                 </Container>
             </section>
+
+            <Breadcrumbs items={[{ label: "Inversión y Negocios", href: "/servicios/negocios" }, { label: "Inversores y Emprendedores" }]} />
 
             {/* DUE DILIGENCE Y PROTECCIÓN PATRIMONIAL */}
             <section className="py-24 bg-white">
@@ -87,9 +91,7 @@ export default function InversionesPage() {
                         </div>
                         <div className="relative z-10">
                             <h2 className="text-3xl font-serif font-bold mb-6">{t('defense.title')}</h2>
-                            <p className="text-slate-400 mb-8 leading-relaxed max-w-2xl">
-                                {t('defense.description')}
-                            </p>
+                            <p className="text-slate-400 mb-8 leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('defense.description') }} />
                             <Button asChild variant="outline" className="border-[#C5A059] text-[#C5A059] hover:bg-[#C5A059] hover:text-white">
                                 <Link href="/servicios/defensa-juridica" className="flex items-center gap-2">
                                     {t('defense.link')} <ArrowRight className="w-4 h-4" />

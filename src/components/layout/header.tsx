@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Link } from "@/navigation";
+import { Link, usePathname } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -22,7 +22,11 @@ import { serviceCategories } from "@/lib/constants";
 
 export function Header() {
     const t = useTranslations("Navigation");
+    const pathname = usePathname();
     const [isScrolled, setIsScrolled] = React.useState(false);
+
+    // Detect if we're on a services page
+    const isServicesPage = pathname?.includes("/servicios") && pathname !== "/servicios";
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -32,15 +36,26 @@ export function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const logoSrc = "/images/logo-horizontal.png";
+    // Determine navbar style based on page type and scroll state
+    const isLightMode = isServicesPage ? isScrolled : true;
+    const logoSrc = isLightMode 
+        ? "/images/logo-horizontal.png" 
+        : "/images/logo-horizontal-white.png";
+    
+    // Detect active navigation items
+    const isServicesActive = pathname?.includes("/servicios");
+    const isAboutActive = pathname?.includes("/sobre-nosotros");
+    const isBlogActive = pathname?.includes("/blog");
 
     return (
         <header
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 border-b",
-                isScrolled
-                    ? "border-slate-200 bg-white/90 backdrop-blur-md shadow-sm"
-                    : "border-transparent bg-white/50 backdrop-blur-sm"
+                isLightMode
+                    ? isScrolled
+                        ? "border-slate-200 bg-white/90 backdrop-blur-md shadow-sm"
+                        : "border-transparent bg-white/50 backdrop-blur-sm"
+                    : "border-transparent bg-transparent"
             )}
         >
             <Container className="flex h-20 items-center justify-between transition-all">
@@ -54,10 +69,16 @@ export function Header() {
 
                 <div className="hidden md:flex flex-1 items-center justify-center">
                     <NavigationMenu>
-                        <NavigationMenuList>
+                        <NavigationMenuList className="relative">
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger
-                                    className="bg-transparent focus:bg-transparent transition-colors text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                                    className={cn(
+                                        "bg-transparent transition-colors relative",
+                                        isLightMode
+                                            ? "text-slate-700 hover:text-slate-900 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-slate-900 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center data-[state=open]:after:scale-x-100"
+                                            : "text-white hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center data-[state=open]:after:scale-x-100 focus:outline-none",
+                                        isServicesActive && "after:scale-x-100"
+                                    )}
                                 >
                                     {t('services')}
                                 </NavigationMenuTrigger>
@@ -88,28 +109,38 @@ export function Header() {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/sobre-nosotros" legacyBehavior passHref>
-                                    <NavigationMenuLink
+                                <NavigationMenuLink asChild>
+                                    <Link 
+                                        href="/sobre-nosotros"
                                         className={cn(
                                             navigationMenuTriggerStyle(),
-                                            "bg-transparent transition-colors text-slate-700 hover:text-slate-900"
+                                            "bg-transparent transition-colors relative",
+                                            isLightMode
+                                                ? "text-slate-700 hover:text-slate-900 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-slate-900 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center"
+                                                : "text-white hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center focus:outline-none",
+                                            isAboutActive && "after:scale-x-100"
                                         )}
                                     >
                                         {t('about')}
-                                    </NavigationMenuLink>
-                                </Link>
+                                    </Link>
+                                </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/blog" legacyBehavior passHref>
-                                    <NavigationMenuLink
+                                <NavigationMenuLink asChild>
+                                    <Link 
+                                        href="/blog"
                                         className={cn(
                                             navigationMenuTriggerStyle(),
-                                            "bg-transparent transition-colors text-slate-700 hover:text-slate-900"
+                                            "bg-transparent transition-colors relative",
+                                            isLightMode
+                                                ? "text-slate-700 hover:text-slate-900 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-slate-900 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center"
+                                                : "text-white hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center focus:outline-none",
+                                            isBlogActive && "after:scale-x-100"
                                         )}
                                     >
                                         {t('blog')}
-                                    </NavigationMenuLink>
-                                </Link>
+                                    </Link>
+                                </NavigationMenuLink>
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
@@ -117,12 +148,17 @@ export function Header() {
 
                 <div className="flex items-center gap-4">
                     <div className="hidden md:flex items-center gap-4">
-                        <LanguageSwitcher />
-                        <Button asChild className="hidden md:inline-flex bg-[#701218] hover:bg-[#590e13] text-white">
+                        <LanguageSwitcher isLightMode={isLightMode} />
+                        <Button asChild className={cn(
+                            "hidden md:inline-flex",
+                            isLightMode
+                                ? "bg-[#701218] hover:bg-[#590e13] text-white"
+                                : "bg-white hover:bg-white/90 text-slate-900"
+                        )}>
                             <Link href="/contacto">{t('contact')}</Link>
                         </Button>
                     </div>
-                    <MobileMenu />
+                    <MobileMenu isLightMode={isLightMode} />
                 </div>
             </Container>
         </header>

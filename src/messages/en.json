@@ -265,7 +265,7 @@
       "badge": "Citizenship Rights",
       "title": "Get Your Spanish Passport: Technical Citizenship Management",
       "subtitle": "Spanish citizenship application files through various legal pathways",
-      "description": "Becoming a Spanish citizen means securing your future in Europe. We digitize the entire process with direct electronic submission to the Ministry of Justice to gain months of advantage in your **Favorable Resolution**.",
+      "description": "Becoming a Spanish citizen means securing your future in Europe. We digitize the entire process with direct electronic submission to the Ministry of Justice to gain months of advantage in your <strong>Favorable Resolution</strong>.",
       "imageAlt": "Spanish Passport"
     },
     "types": {
@@ -314,19 +314,19 @@
       "title": "File Guarantees and Key Concepts",
       "silence": {
         "title": "Favorable Resolution and Administrative Silence",
-        "description": "If after one year from filing the application there is no response, a negative **Administrative Silence** occurs. At this point, we recommend filing a judicial appeal to accelerate the decision."
+        "description": "If after one year from filing the application there is no response, a negative <strong>Administrative Silence</strong> occurs. At this point, we recommend filing a judicial appeal to accelerate the decision."
       },
       "exams": {
         "title": "Exams and Waivers (CCSE/DELE)",
-        "description": "We evaluate whether you meet the requirements to request a **Waiver** of integration and language exams in specific duly accredited cases."
+        "description": "We evaluate whether you meet the requirements to request a <strong>Waiver</strong> of integration and language exams in specific duly accredited cases."
       },
       "requirements": {
         "title": "Responding to Requirements",
-        "description": "An administrative **Requirement** must be addressed with absolute technical precision to avoid file closure or denial of your application."
+        "description": "An administrative <strong>Requirement</strong> must be addressed with absolute technical precision to avoid file closure or denial of your application."
       },
       "custody": {
         "title": "Security in Custody",
-        "description": "We supervise the technical validity of all documents included in your **File** to ensure the success of the administrative process."
+        "description": "We supervise the technical validity of all documents included in your <strong>File</strong> to ensure the success of the administrative process."
       }
     },
     "defense": {
@@ -349,7 +349,7 @@
     "hero": {
       "badge": "Education & Legal Mobility",
       "title": "Student Visa in Spain: Your Gateway to Europe",
-      "description": "Much more than an academic stay. We manage your **initial authorization** and design your legal strategy to convert your studies into stable residence.",
+      "description": "Much more than an academic stay. We manage your <strong>initial authorization</strong> and design your legal strategy to convert your studies into stable residence.",
       "cta": "Evaluate My Academic Viability"
     },
     "work": {
@@ -422,7 +422,7 @@
     "hero": {
       "badge": "International Mobility & Remote Work",
       "title": "Residence for Digital Nomads in Spain",
-      "description": "We achieve your legal residence in less than **90 days**. Technical management before the Large Companies Unit (UGE-CE) for international remote workers and remote professionals.",
+      "description": "We achieve your legal residence in less than <strong>90 days</strong>. Technical management before the Large Companies Unit (UGE-CE) for international remote workers and remote professionals.",
       "cta": "Evaluate Legal Viability of My Remote Work"
     },
     "profiles": {
@@ -523,7 +523,7 @@
     "specialization": {
       "title": "Talent Specialization",
       "subtitle": "Technical Management Before the Large Companies Unit (UGE)",
-      "description": "The key to success in professional authorizations lies in the correct categorization of the profile and the company. At **Abogados Watson**, we master UGE criteria to guarantee fast processes and significantly reduce waiting times.",
+      "description": "The key to success in professional authorizations lies in the correct categorization of the profile and the company. At <strong>Abogados Watson</strong>, we master UGE criteria to guarantee fast processes and significantly reduce waiting times.",
       "features": [
         "Strategic professional classification (PAC vs General Regime).",
         "Advice to human resources departments (B2B).",
@@ -550,7 +550,7 @@
       "badge": "International Mobility",
       "title": "Establish Your Residence in Spain with Legal Security",
       "subtitle": "Comprehensive Management and Advice in Immigration Regimes",
-      "description": "We simplify bureaucratic complexity so your transition to Spain is safe and efficient. We handle everything from the initial **application** to its long-term maintenance."
+      "description": "We simplify bureaucratic complexity so your transition to Spain is safe and efficient. We handle everything from the initial <strong>application</strong> to its long-term maintenance."
     },
     "services": {
       "title": "Residence Services",
@@ -595,7 +595,7 @@
     "commitment": {
       "title": "Our Technical Commitment",
       "subtitle": "Methodology for a Favorable Resolution",
-      "description": "At **Abogados Watson**, we don't just submit forms. We audit your documentation before submission to eliminate the risk of inadmissibility or unnecessary **requirements** that delay your process.",
+      "description": "At <strong>Abogados Watson</strong>, we don't just submit forms. We audit your documentation before submission to eliminate the risk of inadmissibility or unnecessary <strong>requirements</strong> that delay your process.",
       "features": [
         "Viability evaluation according to current regulations.",
         "Preparation and technical review of all documentation.",
@@ -620,7 +620,7 @@
       "badge": "Legal Security",
       "title": "Solutions When Your Legal Process Stops or Is Denied",
       "subtitle": "Administrative and Administrative-Litigation Appeals in Immigration",
-      "description": "A negative resolution or excessive delay is not the end of the road. It's time to apply solid **technical defense** to protect your rights and redirect your **application** toward success."
+      "description": "A negative resolution or excessive delay is not the end of the road. It's time to apply solid <strong>technical defense</strong> to protect your rights and redirect your <strong>application</strong> toward success."
     },
     "cases": {
       "title": "Cases We Handle",
@@ -673,7 +673,7 @@
     },
     "realistic": {
       "title": "A Realistic Approach",
-      "description1": "At **Abogados Watson**, we don't base our defense on promises of guaranteed success, but on rigorous analysis of viability.",
+      "description1": "At <strong>Abogados Watson</strong>, we don't base our defense on promises of guaranteed success, but on rigorous analysis of viability.",
       "description2": "If a file has limited legal possibilities, we will inform you honestly before initiating any costly procedure."
     },
     "appeals": {
@@ -728,7 +728,7 @@
     "hero": {
       "badge": "Right to Family Life",
       "title": "Family Reunification in Spain: Security for Your Family",
-      "description": "We understand that family unity is your priority. We manage your file with **legal rigor** to ensure that the reunion is not cut short by administrative errors.",
+      "description": "We understand that family unity is your priority. We manage your file with <strong>legal rigor</strong> to ensure that the reunion is not cut short by administrative errors.",
       "cta": "Family Viability Review"
     },
     "regimes": {
@@ -746,7 +746,7 @@
       "community": {
         "title": "Community Regime",
         "subtitle": "Relatives of EU Citizens / Family Roots",
-        "description": "For relatives of Spanish citizens or other EU States. Includes the **EU Family Member Card** and the new **Family Roots** for caregivers or children of Spanish nationals by origin.",
+        "description": "For relatives of Spanish citizens or other EU States. Includes the <strong>EU Family Member Card</strong> and the new <strong>Family Roots</strong> for caregivers or children of Spanish nationals by origin.",
         "features": [
           "Relatives: Spouse, registered partner, children under 21, and dependent ascendants.",
           "Direct processing in Spain after the relative's entry."
@@ -762,7 +762,7 @@
       },
       "housing": {
         "title": "Housing Adequacy",
-        "description": "It is mandatory to present an **Adequate Housing Report** issued by the Autonomous Community or City Council."
+        "description": "It is mandatory to present an <strong>Adequate Housing Report</strong> issued by the Autonomous Community or City Council."
       },
       "dependency": {
         "title": "Economic Dependency",
@@ -838,7 +838,7 @@
     "guarantee": {
       "title": "Investor Guarantee",
       "subtitle": "Legal Strategy for Security of Your Assets",
-      "description": "The investment process in Spain requires constant supervision. At **Abogados Watson**, we accompany the investor from purchase intention to registration. We offer **360º coordination** that includes Notary, Registry, and Tax Planning.",
+      "description": "The investment process in Spain requires constant supervision. At <strong>Abogados Watson</strong>, we accompany the investor from purchase intention to registration. We offer <strong>360º coordination</strong> that includes Notary, Registry, and Tax Planning.",
       "features": [
         "Technical audit (Due Diligence) of real estate assets.",
         "Negotiation and drafting of contracts with third parties.",
@@ -866,7 +866,7 @@
     "hero": {
       "badge": "High-Net-Worth & Business Mobility",
       "title": "Legal Protection for Global Investors and Entrepreneurs",
-      "description": "We secure your wealth and projects in Spain. Specialists in **legal Due Diligence** and investment residence management (Golden Visa) with a focus on long-term security.",
+      "description": "We secure your wealth and projects in Spain. Specialists in <strong>legal Due Diligence</strong> and investment residence management (Golden Visa) with a focus on long-term security.",
       "cta": "Analyze Legal Security of My Investment"
     },
     "dueDiligence": {
@@ -907,7 +907,7 @@
     },
     "defense": {
       "title": "Defense Against Administrative Conflicts",
-      "description": "High-value investments sometimes face registry blockages or arbitrary denials by the administration. Our **Litigation and Legal Defense** team intervenes against any legal obstacle.",
+      "description": "High-value investments sometimes face registry blockages or arbitrary denials by the administration. Our <strong>Litigation and Legal Defense</strong> team intervenes against any legal obstacle.",
       "link": "See Investor Legal Defense"
     },
     "projects": {
@@ -951,7 +951,7 @@
     "hero": {
       "badge": "Corporate Mobility & International Talent",
       "title": "Strategic Management of Highly Qualified Professionals",
-      "description": "We accelerate the incorporation of global talent into your organization. Specialists in authorizations before the **Large Companies Unit (UGE-CE)** with preferred response times.",
+      "description": "We accelerate the incorporation of global talent into your organization. Specialists in authorizations before the <strong>Large Companies Unit (UGE-CE)</strong> with preferred response times.",
       "cta": "Corporate Mobility Diagnosis"
     },
     "solutions": {
@@ -976,7 +976,7 @@
     },
     "uge": {
       "title": "Operational Excellence Before UGE",
-      "description": "The **Large Companies and Strategic Collectives Unit** requires impeccable presentation. Our methodology drastically reduces the risk of requirements that block the incorporation of your talent.",
+      "description": "The <strong>Large Companies and Strategic Collectives Unit</strong> requires impeccable presentation. Our methodology drastically reduces the risk of requirements that block the incorporation of your talent.",
       "fastTrack": {
         "title": "Fast-Track Processing",
         "description": "Resolutions within 20 business days thanks to preferred electronic management."
@@ -1005,6 +1005,128 @@
       "subtitle": "Legal Partnership for HR Departments and Executives",
       "button1": "Corporate Mobility Diagnosis",
       "button2": "Consult UGE Fees"
+    }
+  },
+  "AvisoLegalPage": {
+    "breadcrumb": "Legal Notice",
+    "title": "Legal Notice",
+    "lastUpdate": "Last updated: December 26, 2025",
+    "sections": {
+      "holder": {
+        "title": "1. Holder Information",
+        "description": "In compliance with Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSI-CE), it is informed that the owner of this website is <strong>Abogados Watson</strong> (hereinafter, \"the Firm\").",
+        "items": {
+          "name": "Company Name:",
+          "nameValue": "Watson & Asociados Jurídicos S.L. (Example)",
+          "address": "Registered Address:",
+          "addressValue": "Paseo de la Castellana, Madrid, Spain",
+          "email": "Contact Email:",
+          "emailValue": "info@abogadoswatson.com",
+          "regulation": "Professional Regulation:",
+          "regulationValue": "The practice of law is governed by the General Statute of the Spanish Bar and the Code of Ethics of the Spanish Bar."
+        }
+      },
+      "terms": {
+        "title": "2. Terms of Use",
+        "description": "Access to and use of this website attributes the condition of user, implying full and unreserved acceptance of all provisions included in this Legal Notice. The contents of this site are for informational purposes only and do not constitute, under any circumstances, the provision of professional legal advisory services."
+      },
+      "intellectual": {
+        "title": "3. Intellectual and Industrial Property",
+        "description": "All contents of this website, including but not limited to texts, images, logos, icons, graphic design, and source code, are the property of Abogados Watson or third parties who have authorized their use. Any reproduction, distribution, or transformation of these contents without the express written authorization of the owner is prohibited."
+      },
+      "liability": {
+        "title": "4. Limitation of Liability",
+        "description": "The Firm is not responsible for errors or omissions that may affect the contents of this website or other contents that may be accessed through it. External links are provided for informational purposes and do not imply any relationship or approval by the Firm."
+      },
+      "jurisdiction": {
+        "title": "5. Jurisdiction and Applicable Law",
+        "description": "For the resolution of all disputes or issues related to this website or the activities carried out on it, Spanish legislation shall apply, to which the parties expressly submit, with the Courts and Tribunals of Madrid being competent to resolve all conflicts arising from or related to its use."
+      }
+    }
+  },
+  "PrivacidadPage": {
+    "breadcrumb": "Privacy",
+    "title": "Privacy Policy",
+    "lastUpdate": "Last updated: December 26, 2025",
+    "intro": "In accordance with <strong>Regulation (EU) 2016/679 (GDPR)</strong> and <strong>Organic Law 3/2018 (LOPDGDD)</strong>, Abogados Watson informs below about its personal data protection policy.",
+    "sections": {
+      "responsible": {
+        "title": "1. Data Controller",
+        "identity": "Identity:",
+        "identityValue": "Watson & Asociados Jurídicos S.L.",
+        "email": "DP Email for exercising rights:",
+        "emailValue": "legal@abogadoswatson.com"
+      },
+      "purpose": {
+        "title": "2. Purpose of Processing",
+        "description": "We process the information you provide to us for the following purposes:",
+        "items": [
+          "Management of the professional relationship and execution of the legal assignment.",
+          "Handling of inquiries and information requests received through forms.",
+          "Compliance with legal obligations derived from anti-money laundering regulations.",
+          "Sending informative communications related to the legal field, provided we have your express consent."
+        ]
+      },
+      "legitimization": {
+        "title": "3. Legitimization",
+        "description": "The legal basis for processing your data is:",
+        "items": [
+          "The <strong>contractual relationship</strong> for the management of legal services.",
+          "<strong>Legitimate interest</strong> to respond to inquiries.",
+          "The <strong>consent</strong> of the data subject for sending commercial information."
+        ]
+      },
+      "retention": {
+        "title": "4. Data Retention",
+        "description": "The personal data provided will be retained while the professional relationship is maintained or for the years necessary to comply with legal obligations (specifically 5 years in tax and commercial matters, and up to 10 years in anti-money laundering prevention)."
+      },
+      "rights": {
+        "title": "5. Your Rights",
+        "description": "As the data subject, you may exercise at any time your rights to:",
+        "items": [
+          "Access to your personal data.",
+          "Rectification of inaccurate data.",
+          "Erasure (right to be forgotten).",
+          "Limitation of processing.",
+          "Objection to processing.",
+          "Data portability."
+        ],
+        "exercise": "To exercise these rights, you can send an email to <strong>legal@abogadoswatson.com</strong>, attaching a copy of your ID or equivalent document to verify your identity."
+      }
+    }
+  },
+  "CookiesPage": {
+    "breadcrumb": "Cookie Policy",
+    "title": "Cookie Policy",
+    "intro": "This website uses cookies to improve user experience and analyze navigation traffic. In compliance with <strong>LSSI-CE</strong>, we inform you about what they are and how we manage them.",
+    "sections": {
+      "what": {
+        "title": "What is a cookie?",
+        "description": "A cookie is a small text file that is downloaded to your browser when you access certain web pages. It allows the website to store and retrieve information about your browsing habits or your device."
+      },
+      "types": {
+        "title": "Types of Cookies We Use",
+        "technical": {
+          "title": "1. Technical Cookies",
+          "description": "Necessary for the proper functioning of the site, such as session management or language selection."
+        },
+        "analytical": {
+          "title": "2. Analytical Cookies",
+          "description": "They allow us to quantify the number of users and perform measurement and statistical analysis of how users use the service offered."
+        }
+      },
+      "management": {
+        "title": "Cookie Management",
+        "description": "You can allow, block, or delete cookies installed on your device through the settings of the browser installed on your computer:",
+        "browsers": {
+          "chrome": "Chrome:",
+          "chromeValue": "Settings - Privacy and security - Cookies.",
+          "firefox": "Firefox:",
+          "firefoxValue": "Settings - Privacy and security - Cookies and site data.",
+          "safari": "Safari:",
+          "safariValue": "Preferences - Privacy - Block all cookies."
+        }
+      }
     }
   }
 }

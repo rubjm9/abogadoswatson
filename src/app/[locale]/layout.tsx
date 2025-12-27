@@ -6,6 +6,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { FooterBar } from "@/components/layout/footer-bar";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -45,6 +46,7 @@ export default async function RootLayout({
                         {children}
                     </main>
                     <Footer />
+                    <FooterBar />
                     <WhatsAppButton />
                     <Toaster />
                 </NextIntlClientProvider>

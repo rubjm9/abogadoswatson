@@ -10,7 +10,11 @@ import { LanguageSwitcher } from "./language-switcher";
 import { serviceCategories } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-export function MobileMenu() {
+interface MobileMenuProps {
+    isLightMode?: boolean;
+}
+
+export function MobileMenu({ isLightMode = true }: MobileMenuProps) {
     const [isOpen, setIsOpen] = React.useState(false);
     const [expandedCategory, setExpandedCategory] = React.useState<string | null>(null);
     const t = useTranslations("Navigation");
@@ -36,7 +40,7 @@ export function MobileMenu() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(true)}
-                className="text-slate-700"
+                className={isLightMode ? "text-slate-700" : "text-white"}
             >
                 <Menu className="h-6 w-6" />
             </Button>
@@ -58,12 +62,14 @@ export function MobileMenu() {
                         >
                             {/* Header (Clean & Opaque) */}
                             <div className="flex items-center justify-between p-6 border-b border-slate-100 bg-white shrink-0">
-                                <Link href="/" onClick={() => setIsOpen(false)}>
-                                    <img
-                                        src="/images/logo-horizontal.png"
-                                        alt="Abogados Watson"
-                                        className="h-8 w-auto"
-                                    />
+                                <Link href="/">
+                                    <span onClick={() => setIsOpen(false)}>
+                                        <img
+                                            src="/images/logo-horizontal.png"
+                                            alt="Abogados Watson"
+                                            className="h-8 w-auto"
+                                        />
+                                    </span>
                                 </Link>
                                 <Button
                                     variant="ghost"
