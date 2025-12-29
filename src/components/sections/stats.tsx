@@ -3,15 +3,17 @@
 import { Container } from "@/components/ui/container";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 const stats = [
-    { label: "Años de Experiencia", value: "15+" },
-    { label: "Casos de Éxito", value: "2,500+" },
-    { label: "Países Atendidos", value: "30+" },
-    { label: "Satisfacción", value: "99%" },
+    { labelKey: "stats.years", value: "15+" },
+    { labelKey: "stats.cases", value: "2,500+" },
+    { labelKey: "stats.countries", value: "30+" },
+    { labelKey: "stats.satisfaction", value: "99%" },
 ];
 
 export function Stats() {
+    const t = useTranslations("HomePage");
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -31,7 +33,7 @@ export function Stats() {
                                 {stat.value}
                             </div>
                             <div className="text-sm text-slate-400 uppercase tracking-wider font-medium">
-                                {stat.label}
+                                {t(stat.labelKey)}
                             </div>
                         </motion.div>
                     ))}

@@ -1,10 +1,63 @@
 {
   "HomePage": {
-    "subtitle": "International Mobility Excellence",
-    "title": "Legal Certainty to Live and Prosper in Spain.",
+    "subtitle": "International mobility excellence",
+    "title": "Legal certainty to live and prosper in Spain.",
     "description": "Specialized firm in technical immigration, wealth investment, and corporate mobility. We transform legal complexity into a secure transition for your family or business.",
-    "ctaMain": "Schedule Technical Diagnosis",
-    "ctaSecondary": "Explore Practice Areas"
+    "ctaMain": "Schedule technical diagnosis",
+    "ctaSecondary": "Explore practice areas",
+    "heroBadge": "Years of experience in technical immigration law",
+    "stats": {
+      "years": "Years of experience",
+      "cases": "Successful cases",
+      "countries": "Countries served",
+      "satisfaction": "Satisfaction"
+    },
+    "servicesPreview": {
+      "title": "Global legal solutions",
+      "subtitle": "We simplify bureaucracy so you can focus on your new future.",
+      "service1": {
+        "title": "Establish your residence",
+        "description": "Living in Spain: Study visas, digital nomads, and family reunification."
+      },
+      "service2": {
+        "title": "Work and talent",
+        "description": "Your professional career: Highly qualified professionals and entrepreneurs."
+      },
+      "service3": {
+        "title": "Get your passport",
+        "description": "Spanish nationality: Grandchildren law, nationality by residence, and naturalization."
+      },
+      "service4": {
+        "title": "Investments and business",
+        "description": "Grow in Spain: Entrepreneur visa and real estate legal advice."
+      },
+      "moreInfo": "More information",
+      "viewAll": "View all services"
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "testimonial1": {
+        "content": "Thanks to Abogados Watson I got my Golden Visa in record time. Their professionalism and attention to detail are unmatched.",
+        "author": "Ricardo M.",
+        "role": "Investor, Mexico"
+      },
+      "testimonial2": {
+        "content": "The team guided us through every step of our relocation to Madrid. Highly recommended for any expat families.",
+        "author": "Sarah J.",
+        "role": "Digital nomad, USA"
+      },
+      "testimonial3": {
+        "content": "Excellent management of my nationality application. Always available to answer questions.",
+        "author": "Carmen R.",
+        "role": "Private client, Colombia"
+      }
+    },
+    "cta": {
+      "title": "Ready to start your process?",
+      "description": "The first consultation is the most important step. We will analyze your case in detail and design the best legal strategy for you.",
+      "button1": "Book online appointment",
+      "button2": "Contact by email"
+    }
   },
   "Navigation": {
     "home": "Home",
@@ -25,10 +78,10 @@
       "p2": "We believe that every person is unique, and so is their legal situation. Therefore, we offer a comprehensive service supported by a network of specialized collaborators to cover every need with technical solvency."
     },
     "methodology": {
-      "title": "Our Way of Working",
-      "subtitle": "Legal Rigor, Clarity, and Responsibility",
+      "title": "Our way of working",
+      "subtitle": "Legal rigor, clarity, and responsibility",
       "item1": {
-        "title": "Technical Rigor",
+        "title": "Technical rigor",
         "description": "Realistic legal diagnoses based on an exhaustive analysis of current regulations."
       },
       "item2": {
@@ -36,18 +89,18 @@
         "description": "Clear communication about scenarios, risks, and processing times."
       },
       "item3": {
-        "title": "Client Focus",
+        "title": "Client focus",
         "description": "Each case is processed with the individual attention that a life or business decision deserves."
       }
     },
     "founder": {
-      "title": "The Founder",
+      "title": "The founder",
       "name": "Watson",
       "role": "Founder and Lawyer",
       "bio": "Of international and multilingual origin, Watson brings a global vision indispensable in the mobility sector. After training in performing arts and music, she graduated in Law from the University of Valladolid and completed her Master's at the Camilo José Cela University. Her career in high-caliber multidisciplinary firms has allowed her to specialize in real estate contracting, successions, and technical immigration. Her organized and detailed vision is key to offering honest, responsible, and truly understandable legal advice."
     },
     "team": {
-      "title": "Our Team",
+      "title": "Our team",
       "subtitle": "Professionals committed to your legal security",
       "members": [
         {
@@ -100,23 +153,23 @@
     },
     "methods": {
       "whatsapp": {
-        "title": "Direct Consultation",
+        "title": "Direct consultation",
         "description": "Immediate attention to resolve preliminary doubts and schedule appointments.",
         "button": "Contact via WhatsApp"
       },
       "email": {
-        "title": "Formal Channel",
+        "title": "Formal channel",
         "description": "For sending documentation and detailed technical inquiries.",
         "button": "Send Email"
       },
       "office": {
-        "title": "Physical Presence",
+        "title": "Physical presence",
         "description": "The firm's headquarters.",
         "address": "Calle Angustias 9, Valladolid"
       }
     },
     "form": {
-      "title": "Technical Evaluation",
+      "title": "Technical evaluation",
       "name": "Full name",
       "email": "Email address",
       "phone": "Contact phone",
@@ -185,7 +238,7 @@
     "description": "Legal solutions designed for your international mobility. We simplify legal complexity so you can focus on your goals.",
     "categories": {
       "residence": {
-        "title": "Establish Your Residence",
+        "title": "Establish your residence",
         "subtitle": "Living in Spain",
         "services": {
           "students": {
@@ -204,10 +257,10 @@
       },
       "work": {
         "title": "Work and Talent",
-        "subtitle": "Your Professional Career",
+        "subtitle": "Your professional career",
         "services": {
           "qualified": {
-            "title": "Highly Qualified Professionals",
+            "title": "Highly qualified professionals",
             "description": "Fast-track permits for technical, executive, and university graduate profiles."
           },
           "corporate": {
@@ -221,8 +274,8 @@
         }
       },
       "citizenship": {
-        "title": "Obtain Your Passport",
-        "subtitle": "Spanish Citizenship",
+        "title": "Obtain your passport",
+        "subtitle": "Spanish citizenship",
         "services": {
           "grandchildren": {
             "title": "Grandchildren Law (LMD)",
@@ -1127,6 +1180,23 @@
           "safariValue": "Preferences - Privacy - Block all cookies."
         }
       }
+    }
+  },
+  "Footer": {
+    "title": "ABOGADOS WATSON",
+    "description": "Experts in immigration and international mobility.",
+    "email": "info@abogadoswatson.com",
+    "legalServices": {
+      "title": "Legal services",
+      "living": "Living in Spain",
+      "working": "Work and talent",
+      "business": "Investment and business",
+      "citizenship": "Spanish citizenship"
+    },
+    "defense": {
+      "title": "Defense and resolution",
+      "legalDefense": "Legal defense",
+      "consultDenial": "Consult denial"
     }
   }
 }

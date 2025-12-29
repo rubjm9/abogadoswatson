@@ -5,44 +5,47 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/navigation";
 import { motion } from "framer-motion";
 import { Globe2, Briefcase, Building2, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const services = [
     {
         icon: Globe2,
-        title: "Establecer tu residencia",
-        description: "Vivir en España: Visados de estudio, nómadas digitales y reagrupación familiar.",
+        titleKey: "servicesPreview.service1.title",
+        descriptionKey: "servicesPreview.service1.description",
         href: "/servicios"
     },
     {
         icon: Briefcase,
-        title: "Trabajar y talento",
-        description: "Tu carrera profesional: Profesionales altamente cualificados y emprendedores.",
+        titleKey: "servicesPreview.service2.title",
+        descriptionKey: "servicesPreview.service2.description",
         href: "/servicios"
     },
     {
         icon: Users,
-        title: "Obtener tu pasaporte",
-        description: "Nacionalidad Española: Ley de nietos, nacionalidad por residencia y carta de naturaleza.",
+        titleKey: "servicesPreview.service3.title",
+        descriptionKey: "servicesPreview.service3.description",
         href: "/servicios"
     },
     {
         icon: Building2,
-        title: "Inversiones y Negocios",
-        description: "Crecer en España: Visado de emprendedor y asesoramiento legal inmobiliario.",
+        titleKey: "servicesPreview.service4.title",
+        descriptionKey: "servicesPreview.service4.description",
         href: "/servicios"
     }
 ];
 
 export function ServicesPreview() {
+    const t = useTranslations("HomePage");
+
     return (
         <section className="py-24 bg-slate-50 relative overflow-hidden">
             <Container>
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <h2 className="text-3xl font-serif font-bold text-slate-900 sm:text-4xl mb-4">
-                        Soluciones Legales Globales
+                        {t('servicesPreview.title')}
                     </h2>
                     <p className="text-slate-600">
-                        Simplificamos la burocracia para que tú te centres en tu nuevo futuro.
+                        {t('servicesPreview.subtitle')}
                     </p>
                 </div>
 
@@ -57,13 +60,13 @@ export function ServicesPreview() {
                                 <service.icon className="w-6 h-6 text-slate-700 group-hover:text-[#701218] transition-colors" />
                             </div>
                             <h3 className="text-xl font-serif font-bold text-slate-900 mb-3 group-hover:text-[#701218] transition-colors">
-                                {service.title}
+                                {t(service.titleKey)}
                             </h3>
                             <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                                {service.description}
+                                {t(service.descriptionKey)}
                             </p>
                             <Link href={service.href} className="text-sm font-semibold text-[#701218] flex items-center gap-1 group-hover:gap-2 transition-all">
-                                Más información <span>→</span>
+                                {t('servicesPreview.moreInfo')} <span>→</span>
                             </Link>
                         </motion.div>
                     ))}
@@ -71,7 +74,7 @@ export function ServicesPreview() {
 
                 <div className="mt-16 text-center">
                     <Button asChild variant="outline" className="border-slate-300 hover:border-slate-900">
-                        <Link href="/servicios">Ver todos los servicios</Link>
+                        <Link href="/servicios">{t('servicesPreview.viewAll')}</Link>
                     </Button>
                 </div>
             </Container>

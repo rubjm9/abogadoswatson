@@ -1,10 +1,63 @@
 {
   "HomePage": {
-    "subtitle": "Excelencia en Movilidad Internacional",
-    "title": "Seguridad Jurídica para vivir y prosperar en España.",
+    "subtitle": "Excelencia en movilidad internacional",
+    "title": "Seguridad jurídica para vivir y prosperar en España.",
     "description": "Despacho especializado en extranjería técnica, inversión patrimonial y movilidad corporativa. Transformamos la complejidad legal en una transición segura para su familia o empresa.",
     "ctaMain": "Agendar diagnóstico técnico",
-    "ctaSecondary": "Explorar áreas de práctica"
+    "ctaSecondary": "Explorar áreas de práctica",
+    "heroBadge": "Años de experiencia en derecho de extranjería técnico",
+    "stats": {
+      "years": "Años de experiencia",
+      "cases": "Casos de éxito",
+      "countries": "Países atendidos",
+      "satisfaction": "Satisfacción"
+    },
+    "servicesPreview": {
+      "title": "Soluciones legales globales",
+      "subtitle": "Simplificamos la burocracia para que tú te centres en tu nuevo futuro.",
+      "service1": {
+        "title": "Establecer tu residencia",
+        "description": "Vivir en España: Visados de estudio, nómadas digitales y reagrupación familiar."
+      },
+      "service2": {
+        "title": "Trabajar y talento",
+        "description": "Tu carrera profesional: Profesionales altamente cualificados y emprendedores."
+      },
+      "service3": {
+        "title": "Obtener tu pasaporte",
+        "description": "Nacionalidad española: Ley de nietos, nacionalidad por residencia y carta de naturaleza."
+      },
+      "service4": {
+        "title": "Inversiones y negocios",
+        "description": "Crecer en España: Visado de emprendedor y asesoramiento legal inmobiliario."
+      },
+      "moreInfo": "Más información",
+      "viewAll": "Ver todos los servicios"
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros clientes",
+      "testimonial1": {
+        "content": "Gracias a Abogados Watson conseguí mi Golden Visa en tiempo récord. Su profesionalidad y atención al detalle son inigualables.",
+        "author": "Ricardo M.",
+        "role": "Inversor, México"
+      },
+      "testimonial2": {
+        "content": "El equipo nos guió en cada paso de nuestra reubicación a Madrid. Altamente recomendado para cualquier familia expatriada.",
+        "author": "Sarah J.",
+        "role": "Nómada digital, USA"
+      },
+      "testimonial3": {
+        "content": "Excelente gestión de mi expediente de nacionalidad. Siempre disponibles para resolver dudas.",
+        "author": "Carmen R.",
+        "role": "Cliente particular, Colombia"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para iniciar tu trámite?",
+      "description": "La primera consulta es el paso más importante. Analizaremos tu caso en detalle y diseñaremos la mejor estrategia legal para ti.",
+      "button1": "Reservar cita online",
+      "button2": "Contactar por email"
+    }
   },
   "Navigation": {
     "home": "Inicio",
@@ -28,7 +81,7 @@
       "title": "Nuestra forma de trabajar",
       "subtitle": "Rigor jurídico, claridad y responsabilidad",
       "item1": {
-        "title": "Rigor Técnico",
+        "title": "Rigor técnico",
         "description": "Diagnósticos legales realistas basados en un análisis exhaustivo de la normativa vigente."
       },
       "item2": {
@@ -36,18 +89,18 @@
         "description": "Comunicación clara sobre escenarios, riesgos y tiempos de procesamiento."
       },
       "item3": {
-        "title": "Foco en el Cliente",
+        "title": "Foco en el cliente",
         "description": "Cada caso es procesado con la atención individual que merece una decisión de vida o negocio."
       }
     },
     "founder": {
-      "title": "La Fundadora",
+      "title": "La fundadora",
       "name": "Watson",
       "role": "Fundadora y Abogada",
       "bio": "De origen internacional y multilingüe, Watson aporta una visión global indispensable en el sector de la movilidad. Tras formarse en artes escénicas y música, se graduó en Derecho por la Universidad de Valladolid y cursó su Máster en la Universidad Camilo José Cela. Su trayectoria en despachos multidisciplinares de alto calibre le ha permitido especializarse en contratación inmobiliaria, sucesiones y extranjería técnica. Su visión organizada y detallista es clave para ofrecer un asesoramiento legal honesto, responsable y verdaderamente comprensible."
     },
     "team": {
-      "title": "Nuestro Equipo",
+      "title": "Nuestro equipo",
       "subtitle": "Profesionales comprometidos con su seguridad jurídica",
       "members": [
         {
@@ -100,17 +153,17 @@
     },
     "methods": {
       "whatsapp": {
-        "title": "Consulta Directa",
+        "title": "Consulta directa",
         "description": "Atención inmediata para resolver dudas preliminares y agendar citas.",
         "button": "Contactar por WhatsApp"
       },
       "email": {
-        "title": "Canal Formar",
+        "title": "Canal formal",
         "description": "Para envío de documentación y consultas técnicas detalladas.",
         "button": "Enviar Email"
       },
       "office": {
-        "title": "Presencia Física",
+        "title": "Presencia física",
         "description": "Sede central del despacho.",
         "address": "Calle Angustias 9, Valladolid"
       }
@@ -207,11 +260,11 @@
         "subtitle": "Tu carrera profesional",
         "services": {
           "qualified": {
-            "title": "Profesionales Altamente Cualificados",
+            "title": "Profesionales altamente cualificados",
             "description": "Permisos rápidos para perfiles técnicos, directivos y graduados."
           },
           "corporate": {
-            "title": "Traslados Intraempresariales",
+            "title": "Traslados intraempresariales",
             "description": "Movilidad de trabajadores dentro de la misma estructura empresarial internacional."
           },
           "entrepreneurs": {
@@ -222,28 +275,28 @@
       },
       "citizenship": {
         "title": "Obtener tu pasaporte",
-        "subtitle": "Nacionalidad Española",
+        "subtitle": "Nacionalidad española",
         "services": {
           "grandchildren": {
-            "title": "Ley de Nietos (LMD)",
+            "title": "Ley de nietos (LMD)",
             "description": "Nacionalidad para hijos y nietos de españoles de origen."
           },
           "residence": {
-            "title": "Nacionalidad por Residencia",
+            "title": "Nacionalidad por residencia",
             "description": "Tramitación tras cumplir el periodo legal de estancia en España."
           },
           "nature": {
-            "title": "Carta de Naturaleza",
+            "title": "Carta de naturaleza",
             "description": "Procesos excepcionales de concesión de ciudadanía por el Gobierno."
           }
         }
       },
       "business": {
-        "title": "Inversiones y Negocios",
+        "title": "Inversiones y negocios",
         "subtitle": "Crecer en España",
         "services": {
           "investment": {
-            "title": "Inversión en Negocios",
+            "title": "Inversión en negocios",
             "description": "Asesoramiento legal para la creación o adquisición de empresas."
           },
           "realEstate": {
@@ -254,19 +307,19 @@
       }
     },
     "legalDefense": {
-      "title": "Defensa Jurídica",
+      "title": "Defensa jurídica",
       "description": "¿Han denegado tu solicitud? Gestionamos recursos administrativos y contenciosos para proteger tus derechos frente a la administración.",
       "button": "Contactar ahora"
     }
   },
   "NacionalidadPage": {
-    "breadcrumb": "Nacionalidad Española",
+    "breadcrumb": "Nacionalidad española",
     "hero": {
       "badge": "Derecho de Ciudadanía",
       "title": "Obtén tu pasaporte español: Gestión técnica de nacionalidad",
       "subtitle": "Expedientes de concesión de nacionalidad española por diversas vías legales",
       "description": "Convertirse en ciudadano español es asegurar tu futuro en Europa. Digitalizamos todo el proceso con presentación telemática directa al Ministerio de Justicia para ganar meses de ventaja en tu <strong>Resolución Favorable</strong>.",
-      "imageAlt": "Pasaporte Español"
+      "imageAlt": "Pasaporte español"
     },
     "types": {
       "descendants": {
@@ -281,7 +334,7 @@
       },
       "residence": {
         "title": "Consolidar tu vida en España",
-        "subtitle": "Nacionalidad por Residencia",
+        "subtitle": "Nacionalidad por residencia",
         "description": "La vía estándar para ciudadanos extranjeros con residencia legal continuada. El plazo general es de 10 años, reducido a 2 años para ciudadanos iberoamericanos y a 1 año para cónyuges de españoles.",
         "features": [
           "Iberoamericanos, Guinea Ecuatorial, Filipinas: 2 años",
@@ -301,7 +354,7 @@
       },
       "nature": {
         "title": "Vía de concesión estratégica",
-        "subtitle": "Nacionalidad por Carta de Naturaleza",
+        "subtitle": "Nacionalidad por carta de naturaleza",
         "description": "Concesión otorgada por el Gobierno mediante Real Decreto tras valorar circunstancias excepcionales. Es una vía discrecional y graciable de alta complejidad jurídica.",
         "features": [
           "Carácter graciable y discrecional",
@@ -313,7 +366,7 @@
     "technicalSupport": {
       "title": "Garantías del Expediente y Conceptos Clave",
       "silence": {
-        "title": "Resolución Favorable y Silencio Administrativo",
+        "title": "Resolución favorable y silencio administrativo",
         "description": "Si tras un año desde la presentación del expediente no hay respuesta, se produce un <strong>Silencio Administrativo</strong> negativo. En este punto, recomendamos interponer un recurso contencioso para acelerar la decisión."
       },
       "exams": {
@@ -321,7 +374,7 @@
         "description": "Evaluamos si cumples los requisitos para solicitar una <strong>Dispensa</strong> de los exámenes de integración y lengua en casos específicos debidamente acreditados."
       },
       "requirements": {
-        "title": "Atención a Requerimientos",
+        "title": "Atención a requerimientos",
         "description": "Un <strong>Requerimiento</strong> de la administración debe atenderse con precisión técnica absoluta para evitar el archivo o la denegación de tu solicitud."
       },
       "custody": {
@@ -437,7 +490,7 @@
         ]
       },
       "selfEmployed": {
-        "title": "Teletrabajador Autónomo",
+        "title": "Teletrabajador autónomo",
         "description": "Para profesionales independientes (freelance) con clientes internacionales. Se permite trabajar para empresas en España siempre que no supere el 20% de la facturación total.",
         "features": [
           "Acreditación de relación mercantil con clientes internacionales.",
@@ -446,14 +499,14 @@
       }
     },
     "risks": {
-      "title": "Riesgos Reales y Criterios UGE",
+      "title": "Riesgos reales y criterios UGE",
       "description": "El proceso ante la Unidad de Grandes Empresas (UGE-CE) es riguroso. Un pequeño error en la interpretación de los criterios puede suponer el archivo del expediente o una denegación inmediata.",
       "economic": {
-        "title": "Insuficiencia de Medios Económicos",
+        "title": "Insuficiencia de medios económicos",
         "description": "Es vital demostrar ingresos estables equivalentes al 200% del SMI (más porcentajes por familiares)."
       },
       "socialSecurity": {
-        "title": "Conflictos de Seguridad Social",
+        "title": "Conflictos de seguridad social",
         "description": "La falta de convenios bilaterales o certificados incorrectos es la causa #1 de requerimientos."
       }
     },
@@ -492,12 +545,12 @@
       "subtitle": "Soluciones para perfiles profesionales y emprendedores",
       "items": {
         "qualified": {
-          "title": "Profesionales Cualificados (PAC)",
+            "title": "Profesionales cualificados (PAC)",
           "subtitle": "Talento de alta cualificación",
           "description": "Tramitación de autorizaciones para perfiles directivos, técnicos o graduados de universidades prestigiosas ante la UGE."
         },
         "corporate": {
-          "title": "Movilidad Corporativa",
+            "title": "Movilidad corporativa",
           "subtitle": "Soluciones para Empresas",
           "description": "Gestión legal para el traslado de empleados entre centros de una misma empresa o grupo empresarial nacional e internacional.",
           "link": "Soluciones B2B y requisitos"
@@ -576,7 +629,7 @@
           "link": "Guía de requisitos y plazos"
         },
         "nonlucrative": {
-          "title": "Residencia No Lucrativa",
+          "title": "Residencia no lucrativa",
           "subtitle": "Residir sin trabajar",
           "description": "Para ciudadanos que disponen de medios económicos suficientes para vivir en España sin realizar actividades laborales."
         },
@@ -757,7 +810,7 @@
       "title": "Límites Reales: Ingresos y Vivienda",
       "description": "La administración aplica criterios matemáticos estrictos. No basta con el deseo de estar juntos; hay que demostrar capacidad material para el sostenimiento.",
       "income": {
-        "title": "Ingresos Económicos (IPREM)",
+        "title": "Ingresos económicos (IPREM)",
         "description": "Régimen General: 150% del IPREM para el primer familiar (aprox. 900€) y 50% extra por cada familiar adicional."
       },
       "housing": {
@@ -765,7 +818,7 @@
         "description": "Es obligatorio presentar un <strong>Informe de Vivienda Adecuada</strong> emitido por la Comunidad Autónoma o Ayuntamiento."
       },
       "dependency": {
-        "title": "Dependencia Económica",
+        "title": "Dependencia económica",
         "description": "Para ascendientes, se debe probar que viven a cargo del reagrupante mediante envíos de dinero regulares (generalmente últimos 12 meses)."
       },
       "documentation": {
@@ -779,7 +832,7 @@
           "description": "Contrato de trabajo, nóminas y última declaración de la Renta (IRPF)."
         },
         "insurance": {
-          "title": "Seguro Médico",
+          "title": "Seguro médico",
           "description": "En régimen comunitario, es vital contar con un seguro privado sin carencias ni copagos si no se trabaja."
         }
       }
@@ -808,13 +861,13 @@
       "subtitle": "Protección legal en transacciones inmobiliarias y mercantiles",
       "items": {
         "realEstate": {
-          "title": "Compraventa Inmobiliaria",
+          "title": "Compraventa inmobiliaria",
           "subtitle": "Asesoramiento legal en inversiones",
           "description": "Seguridad jurídica total en la adquisición de inmuebles en España, desde la reserva hasta la escritura pública con total transparencia.",
           "link": "Seguridad jurídica y Golden Visa"
         },
         "dueDiligence": {
-          "title": "Due Diligence Legal",
+          "title": "Due diligence legal",
           "subtitle": "Compra con ojos de experto",
           "description": "Auditoría técnica y jurídica profunda para garantizar que el activo que estás adquiriendo está libre de cargas y vicios ocultos."
         },
@@ -870,7 +923,7 @@
       "cta": "Analizar seguridad jurídica de mi inversión"
     },
     "dueDiligence": {
-      "title": "Due Diligence Legal Inmobiliaria y Mercantil",
+      "title": "Due diligence legal inmobiliaria y mercantil",
       "description": "Antes de comprometer capital, verificamos la realidad jurídica de activos y estructuras. Minimizamos riesgos registrales, cargas ocultas y contingencias fiscales.",
       "features": [
         {
@@ -906,7 +959,7 @@
       ]
     },
     "defense": {
-      "title": "Defensa Ante Conflictos Administrativos",
+      "title": "Defensa ante conflictos administrativos",
       "description": "Las inversiones de alto valor a veces enfrentan bloqueos registrales o denegaciones arbitrarias por parte de la administración. Nuestro equipo de <strong>Litigación y Defensa Jurídica</strong> interviene ante cualquier obstáculo legal.",
       "link": "Ver Defensa Jurídica Inversionista"
     },
@@ -958,7 +1011,7 @@
       "title": "Soluciones para la Movilidad Global",
       "subtitle": "Optimizamos el marco legal adecuado para cada perfil profesional y estructura empresarial.",
       "pac": {
-        "title": "Profesionales Cualificados (PAC)",
+            "title": "Profesionales cualificados (PAC)",
         "description": "Para la contratación de directivos o personal altamente cualificado por parte de empresas españolas. Requiere titulación universitaria o experiencia equivalente y un umbral salarial específico.",
         "features": [
           "Vigencia de hasta 3 años con posibilidad de renovación.",
@@ -966,7 +1019,7 @@
         ]
       },
       "ict": {
-        "title": "Traslado Intraempresarial (ICT)",
+        "title": "Traslado intraempresarial (ICT)",
         "description": "Para el desplazamiento de trabajadores dentro del mismo grupo empresarial internacional. Ideal para proyectos temporales o transferencia de conocimiento especializado.",
         "features": [
           "Gestión simplificada para grupos de empresas.",
@@ -975,7 +1028,7 @@
       }
     },
     "uge": {
-      "title": "Excelencia Operativa ante la UGE",
+      "title": "Excelencia operativa ante la UGE",
       "description": "La <strong>Unidad de Grandes Empresas y Colectivos Estratégicos</strong> requiere una presentación impecable. Nuestra metodología reduce drásticamente el riesgo de requerimientos que bloqueen la incorporación de tu talento.",
       "fastTrack": {
         "title": "Fast-Track Processing",
@@ -1009,7 +1062,7 @@
   },
   "AvisoLegalPage": {
     "breadcrumb": "Aviso Legal",
-    "title": "Aviso Legal",
+    "title": "Aviso legal",
     "lastUpdate": "Última actualización: 26 de diciembre de 2025",
     "sections": {
       "holder": {
@@ -1127,6 +1180,23 @@
           "safariValue": "Preferencias - Privacidad - Bloquear todas las cookies."
         }
       }
+    }
+  },
+  "Footer": {
+    "title": "ABOGADOS WATSON",
+    "description": "Expertos en extranjería y movilidad internacional.",
+    "email": "info@abogadoswatson.com",
+    "legalServices": {
+      "title": "Servicios jurídicos",
+      "living": "Vivir en España",
+      "working": "Trabajar y talento",
+      "business": "Inversión y negocios",
+      "citizenship": "Nacionalidad española"
+    },
+    "defense": {
+      "title": "Defensa y resolución",
+      "legalDefense": "Defensa jurídica",
+      "consultDenial": "Consultar denegación"
     }
   }
 }

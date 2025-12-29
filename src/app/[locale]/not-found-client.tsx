@@ -19,3 +19,4 @@ export function NotFoundClient({ children }: NotFoundClientProps) {
     );
 }
 
+

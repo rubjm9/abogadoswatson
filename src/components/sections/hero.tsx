@@ -149,7 +149,7 @@ export function Hero() {
                     <div className="absolute -bottom-6 -left-6 bg-white p-8 shadow-2xl border border-slate-100 max-w-[240px]">
                         <p className="text-[#701218] font-bold text-3xl font-serif mb-1">15+</p>
                         <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 leading-tight">
-                            Años de experiencia en derecho de extranjería técnico
+                            {t('heroBadge')}
                         </p>
                     </div>
                 </motion.div>
