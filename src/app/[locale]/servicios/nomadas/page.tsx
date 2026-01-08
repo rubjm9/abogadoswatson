@@ -12,7 +12,7 @@ export default function NomadasPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* HERO SECTION */}
-            <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden text-white">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden text-white">
                 <img
                     src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&q=80"
                     alt={t('hero.imageAlt') || 'Nómada digital trabajando'}
@@ -23,10 +23,10 @@ export default function NomadasPage() {
 
                 <Container className="relative z-10">
                     <div className="max-w-4xl">
-                        <span className="text-[#701218] font-bold tracking-widest uppercase text-xs mb-4 block">
+                        <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
                             {t('hero.badge')}
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
                             {t('hero.title')}
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
@@ -53,7 +53,7 @@ export default function NomadasPage() {
                         {/* Cuenta Ajena */}
                         <div className="p-10 rounded-2xl border border-slate-100 bg-slate-50 hover:border-[#701218]/30 transition-all group">
                             <Briefcase className="w-12 h-12 text-[#701218] mb-6" />
-                            <h3 className="text-2xl font-serif font-bold mb-4">{t('profiles.employed.title')}</h3>
+                            <h3 className="text-2xl font-serif font-bold mb-4 text-[#0F172A]">{t('profiles.employed.title')}</h3>
                             <p className="text-slate-600 mb-6 leading-relaxed">
                                 {t('profiles.employed.description')}
                             </p>
@@ -70,7 +70,7 @@ export default function NomadasPage() {
                         {/* Cuenta Propia */}
                         <div className="p-10 rounded-2xl border border-slate-100 bg-slate-50 hover:border-[#701218]/30 transition-all group">
                             <Globe2 className="w-12 h-12 text-[#701218] mb-6" />
-                            <h3 className="text-2xl font-serif font-bold mb-4">{t('profiles.selfEmployed.title')}</h3>
+                            <h3 className="text-2xl font-serif font-bold mb-4 text-[#0F172A]">{t('profiles.selfEmployed.title')}</h3>
                             <p className="text-slate-600 mb-6 leading-relaxed">
                                 {t('profiles.selfEmployed.description')}
                             </p>
@@ -92,21 +92,21 @@ export default function NomadasPage() {
                 <Container>
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">{t('risks.title')}</h2>
+                            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">{t('risks.title')}</h2>
                             <p className="text-slate-400 mb-8 leading-relaxed">
                                 {t('risks.description')}
                             </p>
 
                             <div className="space-y-6">
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
-                                    <AlertTriangle className="w-6 h-6 text-[#701218] shrink-0" />
+                                    <AlertTriangle className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
                                         <h4 className="font-bold mb-1">{t('risks.economic.title')}</h4>
                                         <p className="text-sm text-slate-400">{t('risks.economic.description')}</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
-                                    <ShieldAlert className="w-6 h-6 text-[#701218] shrink-0" />
+                                    <ShieldAlert className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
                                         <h4 className="font-bold mb-1">{t('risks.socialSecurity.title')}</h4>
                                         <p className="text-sm text-slate-400">{t('risks.socialSecurity.description')}</p>
@@ -116,13 +116,13 @@ export default function NomadasPage() {
                         </div>
                         <div className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
                             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                                <ShieldCheck className="w-5 h-5 text-[#701218]" />
+                                <ShieldCheck className="w-5 h-5 text-[#C5A059]" />
                                 {t('methodology.title')}
                             </h3>
                             <ul className="space-y-4">
                                 {t.raw('methodology.steps').map((step: string, i: number) => (
                                     <li key={i} className="flex gap-3 text-sm text-slate-300">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#701218] mt-1.5 shrink-0" />
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#C5A059] mt-1.5 shrink-0" />
                                         {step}
                                     </li>
                                 ))}
@@ -140,7 +140,7 @@ export default function NomadasPage() {
                             <ShieldAlert className="w-8 h-8 text-[#701218]" />
                         </div>
                         <div className="flex-grow text-center md:text-left">
-                            <h3 className="text-xl font-serif font-bold mb-2 text-slate-900">{t('defense.title')}</h3>
+                            <h3 className="text-xl font-serif font-bold mb-2 text-[#0F172A]">{t('defense.title')}</h3>
                             <p className="text-sm text-slate-600 leading-relaxed mb-4">
                                 {t('defense.description')}
                             </p>
@@ -155,7 +155,7 @@ export default function NomadasPage() {
             {/* FINAL CTA SECCIÓN */}
             <section className="py-24 bg-white border-t border-slate-100">
                 <Container className="text-center">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">{t('cta.title')}</h2>
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-[#0F172A]">{t('cta.title')}</h2>
                     <p className="text-[#701218] font-bold text-sm uppercase tracking-widest mb-12">{t('cta.subtitle')}</p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

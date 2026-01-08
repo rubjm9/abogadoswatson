@@ -33,7 +33,7 @@ export function Testimonials() {
         <section className="py-24 bg-slate-50 border-t border-slate-200">
             <Container>
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4">{t('testimonials.title')}</h2>
+                    <h2 className="text-3xl font-serif font-bold text-[#0F172A] mb-4">{t('testimonials.title')}</h2>
                     <div className="flex justify-center gap-1">
                         {[...Array(5)].map((_, i) => (
                             <Star key={i} className="w-5 h-5 fill-[#701218] text-[#701218]" />

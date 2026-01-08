@@ -28,6 +28,7 @@ export const serviceCategories: ServiceCategory[] = [
         subtitle: "Tu carrera profesional",
         services: [
             { title: "Profesionales (PAC)", href: "/servicios/corporativo", description: "Altamente cualificados y traslados.", icon: Briefcase },
+            { title: "Descendientes", href: "/servicios/trabajar", description: "Búsqueda de empleo para hijos y nietos.", icon: Users },
             { title: "Inversores", href: "/servicios/inversiones", description: "Inversión y emprendimiento internacional.", icon: Building2 },
         ]
     },
@@ -35,7 +36,6 @@ export const serviceCategories: ServiceCategory[] = [
         title: "Obtener tu pasaporte",
         subtitle: "Nacionalidad Española",
         services: [
-            { title: "Descendientes", href: "/servicios/nacionalidad", description: "Búsqueda de empleo para hijos y nietos.", icon: Users },
             { title: "Nacionalidad", href: "/servicios/nacionalidad", description: "Tramitación técnica de nacionalidad española.", icon: GraduationCap },
         ]
     },

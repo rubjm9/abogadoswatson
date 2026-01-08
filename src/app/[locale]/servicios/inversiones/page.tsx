@@ -12,7 +12,7 @@ export default function InversionesPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* HERO SECTION - Premium & Secure */}
-            <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden text-white">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden text-white">
                 <img
                     src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80"
                     alt={t('hero.imageAlt') || 'Inversiones y negocios'}

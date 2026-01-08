@@ -12,13 +12,13 @@ export function FooterBar() {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-600">
                     <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
                         <Link href="/aviso-legal" className="hover:text-[#701218] transition-colors">
-                            Aviso Legal
+                            Aviso legal
                         </Link>
                         <Link href="/privacidad" className="hover:text-[#701218] transition-colors">
                             Privacidad
                         </Link>
                         <Link href="/cookies" className="hover:text-[#701218] transition-colors">
-                            Política de Cookies
+                            Política de cookies
                         </Link>
                     </div>
                     <div className="text-slate-500">

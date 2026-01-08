@@ -111,7 +111,7 @@ export function Hero() {
                         </span>
                     </motion.div>
 
-                    <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-8">
+                    <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tight text-[#0F172A] leading-[1.1] mb-8">
                         {t('title')}
                     </h1>
 

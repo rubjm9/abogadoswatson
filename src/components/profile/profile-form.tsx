@@ -67,7 +67,7 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
                     name="name"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Nombre Completo</FormLabel>
+                            <FormLabel>Nombre completo</FormLabel>
                             <FormControl>
                                 <Input placeholder="Tu nombre" {...field} />
                             </FormControl>
@@ -146,7 +146,7 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
                     {form.formState.isSubmitting && (
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     )}
-                    Guardar Cambios
+                    Guardar cambios
                 </Button>
             </form>
         </Form>

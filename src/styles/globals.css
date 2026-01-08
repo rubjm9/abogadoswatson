@@ -4,12 +4,29 @@
     --background: #ffffff;
     --foreground: #171717;
     
-    /* Brand Colors */
+    /* Brand Colors - Sistema de 3 niveles */
+    /* Color Principal: Granate - Interacciones */
     --color-primary: #701218;
     --color-primary-hover: #590e13;
     --color-primary-light: rgba(112, 18, 24, 0.1);
+    --color-primary-focus: rgba(112, 18, 24, 0.2);
+    
+    /* Color Secundario: Azul marino - Fondos oscuros y títulos */
+    --color-secondary: #0F172A;
+    --color-secondary-hover: #1e293b;
+    --color-secondary-light: rgba(15, 23, 42, 0.1);
+    
+    /* Color Terciario: Dorado - Detalles y acentos sobre fondos oscuros */
+    --color-tertiary: #C5A059;
+    --color-tertiary-hover: #b8944f;
+    --color-tertiary-light: rgba(197, 160, 89, 0.1);
+    --color-tertiary-dark: rgba(197, 160, 89, 0.2);
+    
+    /* Text Colors */
     --color-text: #0f172a;
     --color-text-muted: #64748b;
+    --color-text-on-dark: #ffffff;
+    --color-text-accent-on-dark: #C5A059;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,11 +53,53 @@
     h5,
     h6 {
         @apply font-serif;
+        /* Títulos sobre fondo blanco/claro usan azul marino */
+        color: var(--color-secondary);
+    }
+
+    ::selection {
+        background-color: var(--color-primary);
+        color: white;
     }
 }
 
 @layer utilities {
     .text-gradient {
         @apply bg-clip-text text-transparent bg-gradient-to-r from-[#701218] to-[#D4C5A9];
+    }
+    
+    /* Utilidades para el sistema de colores */
+    .text-primary {
+        color: var(--color-primary);
+    }
+    
+    .text-secondary {
+        color: var(--color-secondary);
+    }
+    
+    .text-tertiary {
+        color: var(--color-tertiary);
+    }
+    
+    .bg-primary {
+        background-color: var(--color-primary);
+    }
+    
+    .bg-secondary {
+        background-color: var(--color-secondary);
+    }
+    
+    .bg-tertiary {
+        background-color: var(--color-tertiary);
+    }
+    
+    /* Para títulos sobre fondos oscuros (blanco) */
+    .text-on-dark {
+        color: var(--color-text-on-dark);
+    }
+    
+    /* Para acentos sobre fondos oscuros (dorado) */
+    .text-accent-on-dark {
+        color: var(--color-text-accent-on-dark);
     }
 }

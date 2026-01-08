@@ -93,16 +93,15 @@
         "description": "Each case is processed with the individual attention that a life or business decision deserves."
       }
     },
-    "founder": {
-      "title": "The founder",
-      "name": "Watson",
-      "role": "Founder and Lawyer",
-      "bio": "Of international and multilingual origin, Watson brings a global vision indispensable in the mobility sector. After training in performing arts and music, she graduated in Law from the University of Valladolid and completed her Master's at the Camilo José Cela University. Her career in high-caliber multidisciplinary firms has allowed her to specialize in real estate contracting, successions, and technical immigration. Her organized and detailed vision is key to offering honest, responsible, and truly understandable legal advice."
-    },
     "team": {
       "title": "Our team",
       "subtitle": "Professionals committed to your legal security",
       "members": [
+        {
+          "name": "Watson",
+          "role": "CEO & Managing Lawyer",
+          "bio": "Specialist in technical immigration, real estate contracting, and successions. Her international background and experience in multidisciplinary firms allow her to offer clear and truly understandable legal advice."
+        },
         {
           "name": "Rubén Jiménez",
           "role": "Chief Marketing Officer (CMO)",
@@ -246,11 +245,11 @@
             "description": "Management of initial visas, extensions, and modification to work permits."
           },
           "nomads": {
-            "title": "Digital Nomads",
+            "title": "Digital nomads",
             "description": "Residence for international remote workers and freelancers."
           },
           "family": {
-            "title": "Family Reunification",
+            "title": "Family reunification",
             "description": "Processes to bring family members of legal residents in Spain."
           }
         }
@@ -266,6 +265,10 @@
           "corporate": {
             "title": "Intra-Company Transfers",
             "description": "Mobility of workers within the same international corporate structure."
+          },
+          "descendants": {
+            "title": "Job Search for Descendants",
+            "description": "Special authorization for children and grandchildren of Spanish nationals by origin that facilitates their integration and access to citizenship."
           },
           "entrepreneurs": {
             "title": "Entrepreneurs",
@@ -307,7 +310,7 @@
       }
     },
     "legalDefense": {
-      "title": "Legal Defense",
+      "title": "Legal defense",
       "description": "Has your application been denied? We manage administrative and judicial appeals to protect your rights against the administration.",
       "button": "Contact Now"
     }
@@ -318,20 +321,10 @@
       "badge": "Citizenship Rights",
       "title": "Get Your Spanish Passport: Technical Citizenship Management",
       "subtitle": "Spanish citizenship application files through various legal pathways",
-      "description": "Becoming a Spanish citizen means securing your future in Europe. We digitize the entire process with direct electronic submission to the Ministry of Justice to gain months of advantage in your <strong>Favorable Resolution</strong>.",
+      "description": "Becoming a Spanish citizen means securing your future in Europe. We digitize the entire process with direct electronic submission to the Ministry of Justice to gain months of advantage in your <strong>favorable resolution</strong>.",
       "imageAlt": "Spanish Passport"
     },
     "types": {
-      "descendants": {
-        "title": "Job Search for Descendants",
-        "subtitle": "Children and grandchildren of Spanish nationals by origin",
-        "description": "Special authorization that allows job searching in Spain for children and grandchildren of Spanish nationals by origin, facilitating their integration and subsequent access to citizenship by residence.",
-        "features": [
-          "For direct descendants of Spanish nationals by origin",
-          "Facilitates entry into the Spanish labor market",
-          "Strategic pathway to future citizenship"
-        ]
-      },
       "residence": {
         "title": "Consolidate Your Life in Spain",
         "subtitle": "Citizenship by Residence",
@@ -366,8 +359,8 @@
     "technicalSupport": {
       "title": "File Guarantees and Key Concepts",
       "silence": {
-        "title": "Favorable Resolution and Administrative Silence",
-        "description": "If after one year from filing the application there is no response, a negative <strong>Administrative Silence</strong> occurs. At this point, we recommend filing a judicial appeal to accelerate the decision."
+        "title": "Favorable resolution and administrative silence",
+        "description": "If after one year from filing the application there is no response, a negative <strong>administrative silence</strong> occurs. At this point, we recommend filing a judicial appeal to accelerate the decision."
       },
       "exams": {
         "title": "Exams and Waivers (CCSE/DELE)",
@@ -383,9 +376,9 @@
       }
     },
     "defense": {
-      "title": "Denial or Administrative Silence?",
+      "title": "Denial or administrative silence?",
       "description": "If your citizenship application has been denied or exceeded the legal deadline without response, we activate the judicial appeal pathway to accelerate the favorable resolution.",
-      "link": "Consult Legal Defense Options"
+      "link": "Consult legal defense options"
     },
     "cta": {
       "title": "Ready for Your Legal Diagnosis?",
@@ -522,7 +515,7 @@
     "defense": {
       "title": "Denial or Failed Renewal?",
       "description": "If your digital nomad application has been denied or you have problems with renewal, our litigation unit protects your rights before the administration.",
-      "link": "See Legal Defense Options"
+      "link": "See legal defense options"
     },
     "cta": {
       "title": "Start Your Life in Spain Today",
@@ -555,6 +548,11 @@
           "description": "Legal management for transferring employees between centers of the same company or national and international corporate group.",
           "link": "B2B Solutions and Requirements"
         },
+        "descendants": {
+          "title": "Job Search for Descendants",
+          "subtitle": "Children and grandchildren of Spanish nationals by origin",
+          "description": "Special authorization that allows job searching in Spain for children and grandchildren of Spanish nationals by origin, facilitating their integration and subsequent access to citizenship by residence."
+        },
         "entrepreneurs": {
           "title": "Entrepreneurs",
           "subtitle": "Startup Law",
@@ -586,9 +584,9 @@
       "link": "Explore Investment and Business Services"
     },
     "defense": {
-      "title": "Unfavorable Resolution?",
+      "title": "Unfavorable resolution?",
       "description": "In talent processes, a denial can impact your career or business. We have technical resources to reverse erroneous administrative decisions and protect your professional mobility.",
-      "link": "Consult Legal Defense Options"
+      "link": "Consult legal defense options"
     },
     "cta": {
       "title": "Unlock Your Professional Future",
@@ -647,7 +645,7 @@
     },
     "commitment": {
       "title": "Our Technical Commitment",
-      "subtitle": "Methodology for a Favorable Resolution",
+      "subtitle": "Methodology for a favorable resolution",
       "description": "At <strong>Abogados Watson</strong>, we don't just submit forms. We audit your documentation before submission to eliminate the risk of inadmissibility or unnecessary <strong>requirements</strong> that delay your process.",
       "features": [
         "Viability evaluation according to current regulations.",
@@ -659,7 +657,7 @@
     "defense": {
       "title": "Problems with Your Application?",
       "description": "If your residence application has been denied or you experience unjustified delays, we have a specialized unit in appeals and challenges to protect your right to live in Spain.",
-      "link": "Consult Legal Defense Options"
+      "link": "Consult legal defense options"
     },
     "cta": {
       "title": "Start Your Process with Security",
@@ -687,7 +685,7 @@
         },
         "delays": {
           "title": "Unjustified Delays",
-          "subtitle": "Administrative Silence",
+          "subtitle": "Administrative silence",
           "description": "When the legal response deadline has expired, administrative silence allows action to force a decision."
         },
         "requirements": {
@@ -867,7 +865,7 @@
           "link": "Legal Security and Golden Visa"
         },
         "dueDiligence": {
-          "title": "Legal Due Diligence",
+          "title": "Legal due diligence",
           "subtitle": "Buy with Expert Eyes",
           "description": "Deep technical and legal audit to ensure that the asset you are acquiring is free of liens and hidden defects."
         },
@@ -893,7 +891,7 @@
       "subtitle": "Legal Strategy for Security of Your Assets",
       "description": "The investment process in Spain requires constant supervision. At <strong>Abogados Watson</strong>, we accompany the investor from purchase intention to registration. We offer <strong>360º coordination</strong> that includes Notary, Registry, and Tax Planning.",
       "features": [
-        "Technical audit (Due Diligence) of real estate assets.",
+        "Technical audit (due diligence) of real estate assets.",
         "Negotiation and drafting of contracts with third parties.",
         "Complete notarial and registry coordination.",
         "Legal representation for non-resident investors."
@@ -902,7 +900,7 @@
     "defense": {
       "title": "Investment at Risk?",
       "description": "We protect your assets against any administrative conflict, licensing issues, or contractual breaches. Our legal defense unit is prepared to act with technical rigor.",
-      "link": "Consult Legal Defense Options"
+      "link": "Consult legal defense options"
     },
     "cta": {
       "title": "Secure Your Investment Today",
@@ -919,11 +917,11 @@
     "hero": {
       "badge": "High-Net-Worth & Business Mobility",
       "title": "Legal Protection for Global Investors and Entrepreneurs",
-      "description": "We secure your wealth and projects in Spain. Specialists in <strong>legal Due Diligence</strong> and investment residence management (Golden Visa) with a focus on long-term security.",
+      "description": "We secure your wealth and projects in Spain. Specialists in <strong>legal due diligence</strong> and investment residence management (Golden Visa) with a focus on long-term security.",
       "cta": "Analyze Legal Security of My Investment"
     },
     "dueDiligence": {
-      "title": "Legal Real Estate and Commercial Due Diligence",
+      "title": "Legal real estate and commercial due diligence",
       "description": "Before committing capital, we verify the legal reality of assets and structures. We minimize registry risks, hidden liens, and tax contingencies.",
       "features": [
         {
@@ -960,8 +958,8 @@
     },
     "defense": {
       "title": "Defense Against Administrative Conflicts",
-      "description": "High-value investments sometimes face registry blockages or arbitrary denials by the administration. Our <strong>Litigation and Legal Defense</strong> team intervenes against any legal obstacle.",
-      "link": "See Investor Legal Defense"
+      "description": "High-value investments sometimes face registry blockages or arbitrary denials by the administration. Our <strong>litigation and legal defense</strong> team intervenes against any legal obstacle.",
+      "link": "See investor legal defense"
     },
     "projects": {
       "title": "Development of Projects of Economic Interest",

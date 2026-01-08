@@ -93,16 +93,15 @@
         "description": "Cada caso es procesado con la atención individual que merece una decisión de vida o negocio."
       }
     },
-    "founder": {
-      "title": "La fundadora",
-      "name": "Watson",
-      "role": "Fundadora y Abogada",
-      "bio": "De origen internacional y multilingüe, Watson aporta una visión global indispensable en el sector de la movilidad. Tras formarse en artes escénicas y música, se graduó en Derecho por la Universidad de Valladolid y cursó su Máster en la Universidad Camilo José Cela. Su trayectoria en despachos multidisciplinares de alto calibre le ha permitido especializarse en contratación inmobiliaria, sucesiones y extranjería técnica. Su visión organizada y detallista es clave para ofrecer un asesoramiento legal honesto, responsable y verdaderamente comprensible."
-    },
     "team": {
       "title": "Nuestro equipo",
       "subtitle": "Profesionales comprometidos con su seguridad jurídica",
       "members": [
+        {
+          "name": "Watson",
+          "role": "CEO & Managing Lawyer",
+          "bio": "Especialista en extranjería técnica, contratación inmobiliaria y sucesiones. Su formación internacional y experiencia en despachos multidisciplinares le permiten ofrecer un asesoramiento legal claro y verdaderamente comprensible."
+        },
         {
           "name": "Rubén Jiménez",
           "role": "Chief Marketing Officer (CMO)",
@@ -160,7 +159,7 @@
       "email": {
         "title": "Canal formal",
         "description": "Para envío de documentación y consultas técnicas detalladas.",
-        "button": "Enviar Email"
+        "button": "Enviar email"
       },
       "office": {
         "title": "Presencia física",
@@ -267,6 +266,10 @@
             "title": "Traslados intraempresariales",
             "description": "Movilidad de trabajadores dentro de la misma estructura empresarial internacional."
           },
+          "descendants": {
+            "title": "Búsqueda de empleo para descendientes",
+            "description": "Autorización especial para hijos y nietos de españoles de origen que facilita su integración y acceso a la nacionalidad."
+          },
           "entrepreneurs": {
             "title": "Emprendedores",
             "description": "Visado para el lanzamiento de proyectos innovadores en territorio español."
@@ -315,23 +318,13 @@
   "NacionalidadPage": {
     "breadcrumb": "Nacionalidad española",
     "hero": {
-      "badge": "Derecho de Ciudadanía",
+      "badge": "Derecho de ciudadanía",
       "title": "Obtén tu pasaporte español: Gestión técnica de nacionalidad",
       "subtitle": "Expedientes de concesión de nacionalidad española por diversas vías legales",
-      "description": "Convertirse en ciudadano español es asegurar tu futuro en Europa. Digitalizamos todo el proceso con presentación telemática directa al Ministerio de Justicia para ganar meses de ventaja en tu <strong>Resolución Favorable</strong>.",
+      "description": "Convertirse en ciudadano español es asegurar tu futuro en Europa. Digitalizamos todo el proceso con presentación telemática directa al Ministerio de Justicia para ganar meses de ventaja en tu <strong>resolución favorable</strong>.",
       "imageAlt": "Pasaporte español"
     },
     "types": {
-      "descendants": {
-        "title": "Búsqueda de empleo para descendientes",
-        "subtitle": "Hijos y nietos de españoles de origen",
-        "description": "Autorización especial que permite la búsqueda de empleo en España a hijos y nietos de españoles de origen, facilitando su integración y posterior acceso a la nacionalidad por residencia.",
-        "features": [
-          "Para descendientes directos de españoles de origen",
-          "Facilita la incorporación al mercado laboral español",
-          "Vía estratégica para la futura ciudadanía"
-        ]
-      },
       "residence": {
         "title": "Consolidar tu vida en España",
         "subtitle": "Nacionalidad por residencia",
@@ -364,28 +357,28 @@
       }
     },
     "technicalSupport": {
-      "title": "Garantías del Expediente y Conceptos Clave",
+      "title": "Garantías del expediente y conceptos clave",
       "silence": {
         "title": "Resolución favorable y silencio administrativo",
-        "description": "Si tras un año desde la presentación del expediente no hay respuesta, se produce un <strong>Silencio Administrativo</strong> negativo. En este punto, recomendamos interponer un recurso contencioso para acelerar la decisión."
+        "description": "Si tras un año desde la presentación del expediente no hay respuesta, se produce un <strong>silencio administrativo</strong> negativo. En este punto, recomendamos interponer un recurso contencioso para acelerar la decisión."
       },
       "exams": {
         "title": "Exámenes y Dispensas (CCSE/DELE)",
-        "description": "Evaluamos si cumples los requisitos para solicitar una <strong>Dispensa</strong> de los exámenes de integración y lengua en casos específicos debidamente acreditados."
+        "description": "Evaluamos si cumples los requisitos para solicitar una <strong>dispensa</strong> de los exámenes de integración y lengua en casos específicos debidamente acreditados."
       },
       "requirements": {
         "title": "Atención a requerimientos",
-        "description": "Un <strong>Requerimiento</strong> de la administración debe atenderse con precisión técnica absoluta para evitar el archivo o la denegación de tu solicitud."
+        "description": "Un <strong>requerimiento</strong> de la administración debe atenderse con precisión técnica absoluta para evitar el archivo o la denegación de tu solicitud."
       },
       "custody": {
-        "title": "Seguridad en la Custodia",
-        "description": "Supervisamos la validez técnica de todos los documentos integrados en tu <strong>Expediente</strong> para asegurar el éxito del proceso administrativo."
+        "title": "Seguridad en la custodia",
+        "description": "Supervisamos la validez técnica de todos los documentos integrados en tu <strong>expediente</strong> para asegurar el éxito del proceso administrativo."
       }
     },
     "defense": {
-      "title": "¿Denegación o Silencio Administrativo?",
+      "title": "¿Denegación o silencio administrativo?",
       "description": "Si tu expediente de nacionalidad ha sido denegado o ha superado el plazo legal sin respuesta, activamos la vía del recurso contencioso para acelerar la resolución favorable.",
-      "link": "Consultar opciones de Defensa Jurídica"
+      "link": "Consultar opciones de defensa jurídica"
     },
     "cta": {
       "title": "¿Preparado para tu diagnóstico jurídico?",
@@ -400,13 +393,13 @@
       "current": "Estudiantes"
     },
     "hero": {
-      "badge": "Formación & Movilidad Legal",
-      "title": "Visado de Estudiante en España: Tu puerta a Europa",
+      "badge": "Formación & movilidad legal",
+      "title": "Visado de estudiante en España: tu puerta a Europa",
       "description": "Mucho más que una estancia académica. Gestionamos tu <strong>autorización inicial</strong> y diseñamos tu estrategia legal para convertir tus estudios en una residencia estable.",
       "cta": "Evaluar mi viabilidad académica"
     },
     "work": {
-      "title": "Trabajar con Visado de Estudiante",
+      "title": "Trabajar con visado de estudiante",
       "description": "Desde la última reforma, los estudiantes en España cuentan con una autorización de trabajo automática y compatible con sus estudios.",
       "features": [
         {
@@ -447,17 +440,17 @@
       "jobSearch": {
         "title": "Búsqueda de Empleo",
         "description": "Tras finalizar grado o master, tienes 1 año para buscar trabajo o emprender sin necesidad de visado previo.",
-        "badge": "Opción Post-Grado"
+        "badge": "Opción post-grado"
       },
       "modification": {
         "title": "Modificación Directa",
         "description": "Paso directo a residencia y trabajo si cuentas con una oferta laboral firme, sin esperas de 3 años.",
-        "link": "O ver Nómada Digital"
+        "link": "O ver nómada digital"
       },
       "citizenship": {
         "title": "Nacionalidad",
         "description": "Aunque los años de estudio no computan para nacionalidad, te ayudamos a \"empezar el reloj\" lo antes posible.",
-        "link": "Ver Nacionalidad"
+        "link": "Ver nacionalidad"
       }
     },
     "cta": {
@@ -473,8 +466,8 @@
       "current": "Nómadas Digitales"
     },
     "hero": {
-      "badge": "Movilidad Internacional & Teletrabajo",
-      "title": "Residencia para Nómadas Digitales en España",
+      "badge": "Movilidad internacional & teletrabajo",
+      "title": "Residencia para nómadas digitales en España",
       "description": "Logramos tu residencia legal en menos de <strong>90 días</strong>. Gestión técnica ante la Unidad de Grandes Empresas (UGE-CE) para teletrabajadores internacionales y profesionales remotos.",
       "cta": "Evaluar viabilidad legal de mi teletrabajo"
     },
@@ -482,7 +475,7 @@
       "title": "Diferenciación de Perfiles Profesionales",
       "subtitle": "La clave del éxito reside en la correcta categorización de tu vínculo contractual.",
       "employed": {
-        "title": "Teletrabajador por Cuenta Ajena",
+        "title": "Teletrabajador por cuenta ajena",
         "description": "Para empleados de empresas extranjeras que permiten el trabajo en remoto desde España. Requiere que la empresa tenga al menos 1 año de antigüedad y certifique la posibilidad de teletrabajo.",
         "features": [
           "Certificado de cobertura de Seguridad Social o alta en España.",
@@ -522,7 +515,7 @@
     "defense": {
       "title": "¿Denegación o renovación fallida?",
       "description": "Si tu solicitud de nómada digital ha sido denegada o tienes problemas en la renovación, nuestra unidad de litigios protege tus derechos ante la administración.",
-      "link": "Ver opciones de Defensa Jurídica"
+      "link": "Ver opciones de defensa jurídica"
     },
     "cta": {
       "title": "Empieza hoy tu vida en España",
@@ -535,7 +528,7 @@
   "TrabajarPage": {
     "breadcrumb": "Trabajar y Talento",
     "hero": {
-      "badge": "Carrera Profesional",
+      "badge": "Carrera profesional",
       "title": "Impulsa tu carrera y talento profesional en España",
       "subtitle": "Autorizaciones de trabajo por cuenta propia, ajena y Ley de Startups",
       "description": "Acompañamos a profesionales y empresas en la gestión del talento global. Aseguramos la legalidad de tu actividad profesional con un enfoque en la agilidad y el cumplimiento normativo."
@@ -555,11 +548,16 @@
           "description": "Gestión legal para el traslado de empleados entre centros de una misma empresa o grupo empresarial nacional e internacional.",
           "link": "Soluciones B2B y requisitos"
         },
+        "descendants": {
+          "title": "Búsqueda de empleo para descendientes",
+          "subtitle": "Hijos y nietos de españoles de origen",
+          "description": "Autorización especial que permite la búsqueda de empleo en España a hijos y nietos de españoles de origen, facilitando su integración y posterior acceso a la nacionalidad por residencia."
+        },
         "entrepreneurs": {
           "title": "Emprendedores",
           "subtitle": "Ley de Startups",
           "description": "Asesoramiento para lanzar proyectos empresariales de carácter innovador y especial interés económico para España.",
-          "link": "Ley de Startups y visados"
+          "link": "Ley de startups y visados"
         },
         "investors": {
           "title": "Inversores (Ley 14/2013)",
@@ -567,7 +565,7 @@
           "description": "Autorizaciones para proyectos empresariales, capital o inversión en activos financieros. Gestionamos tu perfil inversor y tu patrimonio inmobiliario."
         },
         "uge": {
-          "title": "Unidad de Grandes Empresas",
+          "title": "Unidad de grandes empresas",
           "subtitle": "Tramitación ante la UGE-CE",
           "description": "Gestión directa ante el órgano especializado para agilizar procesos de talento internacional con criterios técnicos precisos."
         }
@@ -583,12 +581,12 @@
         "Elaboración de planes de negocio para emprendedores e inversores.",
         "Gestión integral de la documentación corporativa y personal."
       ],
-      "link": "Explorar servicios de Inversión y Negocios"
+      "link": "Explorar servicios de inversión y negocios"
     },
     "defense": {
       "title": "¿Resolución desfavorable?",
       "description": "En procesos de talento, una denegación puede impactar en tu carrera o negocio. Disponemos de recursos técnicos para revertir decisiones administrativas erróneas y proteger tu movilidad profesional.",
-      "link": "Consultar opciones de Defensa Jurídica"
+      "link": "Consultar opciones de defensa jurídica"
     },
     "cta": {
       "title": "Desbloquea tu futuro profesional",
@@ -600,7 +598,7 @@
   "VivirPage": {
     "breadcrumb": "Vivir en España",
     "hero": {
-      "badge": "Movilidad Internacional",
+      "badge": "Movilidad internacional",
       "title": "Establecer tu residencia en España con seguridad jurídica",
       "subtitle": "Gestión y asesoramiento integral en regímenes de extranjería",
       "description": "Simplificamos la complejidad burocrática para que tu transición a España sea segura y eficiente. Resolvemos desde la obtención inicial del <strong>expediente</strong> hasta su mantenimiento a largo plazo."
@@ -617,7 +615,7 @@
           "link": "Guía técnica y requisitos"
         },
         "students": {
-          "title": "Estudiantes y Formación",
+          "title": "Estudiantes y formación",
           "subtitle": "Visado de Estudios",
           "description": "Gestión de estancias por estudios, prórrogas y planificación de tu futuro profesional hacia la residencia de larga duración o la nacionalidad española.",
           "link": "Guía de visado y trabajo"
@@ -634,12 +632,12 @@
           "description": "Para ciudadanos que disponen de medios económicos suficientes para vivir en España sin realizar actividades laborales."
         },
         "roots": {
-          "title": "Arraigo y Circunstancias Excepcionales",
+          "title": "Arraigo y circunstancias excepcionales",
           "subtitle": "Regularización administrativa",
           "description": "Procedimientos de arraigo social, laboral, familiar o para la formación. Evaluamos la viabilidad de tu expediente."
         },
         "renewals": {
-          "title": "Renovaciones y Larga Duración",
+          "title": "Renovaciones y larga duración",
           "subtitle": "Mantenimiento del estatus legal",
           "description": "Gestión de renovaciones de permisos y obtención de la residencia de larga duración tras 5 años de residencia legal y continuada."
         }
@@ -659,7 +657,7 @@
     "defense": {
       "title": "¿Problemas con tu solicitud?",
       "description": "Si tu solicitud de residencia ha sido denegada o experimentas retrasos injustificados, contamos con una unidad especializada en recursos y apelaciones para proteger tu derecho a vivir en España.",
-      "link": "Consultar opciones de Defensa Jurídica"
+      "link": "Consultar opciones de defensa jurídica"
     },
     "cta": {
       "title": "Inicia tu proceso con seguridad",
@@ -670,7 +668,7 @@
   },
   "DefensaJuridicaPage": {
     "hero": {
-      "badge": "Seguridad Jurídica",
+      "badge": "Seguridad jurídica",
       "title": "Soluciones cuando tu proceso legal se detiene o es denegado",
       "subtitle": "Recursos administrativos y contencioso-administrativos en extranjería",
       "description": "Una resolución negativa o un retraso excesivo no es el final del camino. Es el momento de aplicar una <strong>defensa técnica</strong> sólida para proteger tus derechos y reconducir tu <strong>expediente</strong> hacia el éxito."
@@ -719,7 +717,7 @@
           "description": "Redactamos la fundamentación jurídica basada en jurisprudencia y normativa vigente para garantizar el rigor."
         },
         "monitoring": {
-          "title": "Seguimiento y Medidas Cautelares",
+          "title": "Seguimiento y medidas cautelares",
           "description": "Monitorizamos cada paso y solicitamos la suspensión de efectos negativos de la resolución cuando la ley lo permite."
         }
       }
@@ -745,13 +743,13 @@
           "description": "Se interpone ante el superior jerárquico del órgano que denegó tu solicitud para buscar una visión jurídica diferente."
         },
         "contencioso": {
-          "title": "Intervención de los Tribunales",
-          "subtitle": "Recurso Contencioso-Administrativo",
+          "title": "Intervención de los tribunales",
+          "subtitle": "Recurso contencioso-administrativo",
           "description": "Iniciamos la vía judicial ante los jueces españoles para que evalúen la legalidad de la resolución de extranjería."
         },
         "cautelares": {
           "title": "Protección durante el proceso",
-          "subtitle": "Medidas Cautelares",
+          "subtitle": "Medidas cautelares",
           "description": "Solicitamos la suspensión temporal de los efectos de una denegación para que puedas mantener tus derechos mientras se resuelve el juicio."
         }
       }
@@ -762,7 +760,7 @@
         "Especialización exclusiva en litigios de extranjería y nacionalidad.",
         "Transparencia absoluta sobre las posibilidades reales de éxito.",
         "Rigor técnico en la redacción de fundamentos jurídicos.",
-        "Información constante sobre el estado de tu Recurso."
+        "Información constante sobre el estado de tu recurso."
       ]
     },
     "cta": {
@@ -779,7 +777,7 @@
       "current": "Reagrupación Familiar"
     },
     "hero": {
-      "badge": "Derecho a la Vida Familiar",
+      "badge": "Derecho a la vida familiar",
       "title": "Reagrupación Familiar en España: Seguridad para tu familia",
       "description": "Entendemos que la unión familiar es tu prioridad. Gestionamos tu expediente con <strong>rigor jurídico</strong> para asegurar que el reencuentro no se vea truncado por errores administrativos.",
       "cta": "Revisión de viabilidad familiar"
@@ -799,7 +797,7 @@
       "community": {
         "title": "Régimen Comunitario",
         "subtitle": "Familiares de ciudadanos UE / Arraigo Familiar",
-        "description": "Para familiares de ciudadanos españoles o de otros Estados UE. Incluye la <strong>Tarjeta de Familiar de Ciudadano de la Unión</strong> y el nuevo <strong>Arraigo Familiar</strong> para cuidadores o hijos de españoles de origen.",
+        "description": "Para familiares de ciudadanos españoles o de otros Estados UE. Incluye la <strong>tarjeta de familiar de ciudadano de la Unión</strong> y el nuevo <strong>arraigo familiar</strong> para cuidadores o hijos de españoles de origen.",
         "features": [
           "Familiares: Cónyuge, pareja de hecho, hijos menores de 21 y ascendientes a cargo.",
           "Tramitación directa en España tras la entrada del familiar."
@@ -815,7 +813,7 @@
       },
       "housing": {
         "title": "Adecuación de Vivienda",
-        "description": "Es obligatorio presentar un <strong>Informe de Vivienda Adecuada</strong> emitido por la Comunidad Autónoma o Ayuntamiento."
+        "description": "Es obligatorio presentar un <strong>informe de vivienda adecuada</strong> emitido por la Comunidad Autónoma o Ayuntamiento."
       },
       "dependency": {
         "title": "Dependencia económica",
@@ -828,7 +826,7 @@
           "description": "Certificados de matrimonio o nacimiento debidamente apostillados o legalizados y traducidos."
         },
         "means": {
-          "title": "Medios de Vida",
+          "title": "Medios de vida",
           "description": "Contrato de trabajo, nóminas y última declaración de la Renta (IRPF)."
         },
         "insurance": {
@@ -851,7 +849,7 @@
   "NegociosPage": {
     "breadcrumb": "Inversión y Negocios",
     "hero": {
-      "badge": "Inversión y Patrimonio",
+      "badge": "Inversión y patrimonio",
       "title": "Invierte y haz crecer tu patrimonio en España con protección legal",
       "subtitle": "Asesoramiento jurídico mercantil e inmobiliario para extranjeros",
       "description": "Transformamos la inversión en seguridad jurídica. Protegemos tus activos y facilitamos tu entrada en el mercado español con un rigor técnico impecable."
@@ -873,7 +871,7 @@
         },
         "companies": {
           "title": "Constitución de Sociedades",
-          "subtitle": "Derecho Mercantil",
+          "subtitle": "Derecho mercantil",
           "description": "Creación y estructura legal de empresas para inversores extranjeros que desean operar en el mercado español con garantías."
         },
         "nie": {
@@ -893,7 +891,7 @@
       "subtitle": "Estrategia legal para la seguridad de tus activos",
       "description": "El proceso de inversión en España requiere una supervisión constante. En <strong>Abogados Watson</strong>, acompañamos al inversor desde la intención de compra hasta la inscripción registral. Ofrecemos una <strong>coordinación 360º</strong> que incluye Notaría, Registro y Planificación Fiscal.",
       "features": [
-        "Auditoría técnica (Due Diligence) de activos inmobiliarios.",
+        "Auditoría técnica (due diligence) de activos inmobiliarios.",
         "Negociación y redacción de contratos con terceros.",
         "Coordinación notarial y registral completa.",
         "Representación legal para inversores no residentes."
@@ -902,7 +900,7 @@
     "defense": {
       "title": "¿Inversión en riesgo?",
       "description": "Protegemos tus activos ante cualquier conflicto administrativo, de licencias o incumplimientos contractuales. Nuestra unidad de defensa jurídica está preparada para actuar con rigor técnico.",
-      "link": "Consultar opciones de Defensa Jurídica"
+      "link": "Consultar opciones de defensa jurídica"
     },
     "cta": {
       "title": "Asegura tu inversión hoy",
@@ -919,7 +917,7 @@
     "hero": {
       "badge": "High-Net-Worth & Business Mobility",
       "title": "Protección Juridica para Inversores y Emprendedores Globales",
-      "description": "Aseguramos tu patrimonio y tus proyectos en España. Especialistas en <strong>Due Diligence legal</strong> y gestión de residencias por inversión (Golden Visa) con un enfoque en la seguridad a largo plazo.",
+      "description": "Aseguramos tu patrimonio y tus proyectos en España. Especialistas en <strong>due diligence legal</strong> y gestión de residencias por inversión (Golden Visa) con un enfoque en la seguridad a largo plazo.",
       "cta": "Analizar seguridad jurídica de mi inversión"
     },
     "dueDiligence": {
@@ -941,7 +939,7 @@
       ]
     },
     "protection": {
-      "title": "Blindaje y Protección Patrimonial",
+      "title": "Blindaje y protección patrimonial",
       "description": "Implementamos estrategias legales para salvaguardar tus activos internacionales y locales bajo el marco jurídico español y europeo.",
       "features": [
         {
@@ -960,11 +958,11 @@
     },
     "defense": {
       "title": "Defensa ante conflictos administrativos",
-      "description": "Las inversiones de alto valor a veces enfrentan bloqueos registrales o denegaciones arbitrarias por parte de la administración. Nuestro equipo de <strong>Litigación y Defensa Jurídica</strong> interviene ante cualquier obstáculo legal.",
-      "link": "Ver Defensa Jurídica Inversionista"
+      "description": "Las inversiones de alto valor a veces enfrentan bloqueos registrales o denegaciones arbitrarias por parte de la administración. Nuestro equipo de <strong>litigación y defensa jurídica</strong> interviene ante cualquier obstáculo legal.",
+      "link": "Ver defensa jurídica inversionista"
     },
     "projects": {
-      "title": "Desarrollo de Proyectos de Interés Económico",
+      "title": "Desarrollo de proyectos de interés económico",
       "description": "No solo gestionamos el visado; validamos la viabilidad legal y técnica de tu plan de negocio en España ante Enisa y otros organismos reguladores.",
       "features": [
         "Análisis de carácter innovador y escalabilidad para la Ley de Startups.",
@@ -972,7 +970,7 @@
       ],
       "items": {
         "entrepreneur": {
-          "title": "Visado de Emprendedor",
+          "title": "Visado de emprendedor",
           "subtitle": "Ley 14/2013"
         },
         "financial": {
@@ -1003,9 +1001,9 @@
     },
     "hero": {
       "badge": "Corporate Mobility & International Talent",
-      "title": "Gestión Estratégica de Profesionales Altamente Cualificados",
+      "title": "Gestión estratégica de profesionales altamente cualificados",
       "description": "Aceleramos la incorporación de talento global en tu organización. Especialistas en autorizaciones ante la <strong>Unidad de Grandes Empresas (UGE-CE)</strong> con tiempos de respuesta preferentes.",
-      "cta": "Diagnóstico de Movilidad Corporativa"
+      "cta": "Diagnóstico de movilidad corporativa"
     },
     "solutions": {
       "title": "Soluciones para la Movilidad Global",
@@ -1051,13 +1049,13 @@
     "business": {
       "title": "¿Creando una estructura en España?",
       "description": "Si el traslado de profesionales requiere la constitución de una filial o una inversión inmobiliaria corporativa, coordinamos la parte mercantil y fiscal de forma integrada.",
-      "link": "Explorar servicios de Inversión y Negocios"
+      "link": "Explorar servicios de inversión y negocios"
     },
     "cta": {
       "title": "Optimiza tu gestión de talento global",
       "subtitle": "Partnership legal para departamentos de RRHH y Directivos",
-      "button1": "Diagnóstico de Movilidad Corporativa",
-      "button2": "Consultar Cuotas UGE"
+      "button1": "Diagnóstico de movilidad corporativa",
+      "button2": "Consultar cuotas UGE"
     }
   },
   "AvisoLegalPage": {
@@ -1158,7 +1156,7 @@
         "description": "Una cookie es un pequeño archivo de texto que se descarga en su navegador cuando accede a determinadas páginas web. Permite a la web almacenar y recuperar información sobre sus hábitos de navegación o sobre su equipo."
       },
       "types": {
-        "title": "Tipos de Cookies que utilizamos",
+        "title": "Tipos de cookies que utilizamos",
         "technical": {
           "title": "1. Cookies Técnicas",
           "description": "Necesarias para el correcto funcionamiento del sitio, como la gestión de sesiones o la elección del idioma."

@@ -12,7 +12,7 @@ export default function EstudiantesPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* HERO SECTION */}
-            <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden text-white">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden text-white">
                 <img
                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80"
                     alt={t('hero.imageAlt') || 'Estudiantes internacionales'}
@@ -23,10 +23,10 @@ export default function EstudiantesPage() {
 
                 <Container className="relative z-10">
                     <div className="max-w-4xl">
-                        <span className="text-[#701218] font-bold tracking-widest uppercase text-xs mb-4 block">
+                        <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
                             {t('hero.badge')}
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
                             {t('hero.title')}
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
@@ -48,7 +48,7 @@ export default function EstudiantesPage() {
                         {/* Trabajo Compatible */}
                         <div className="p-10 rounded-2xl border border-slate-100 bg-slate-50">
                             <Briefcase className="w-12 h-12 text-[#701218] mb-6" />
-                            <h2 className="text-2xl font-serif font-bold mb-4">{t('work.title')}</h2>
+                            <h2 className="text-2xl font-serif font-bold mb-4 text-[#0F172A]">{t('work.title')}</h2>
                             <p className="text-slate-600 mb-6 leading-relaxed">
                                 {t('work.description')}
                             </p>
@@ -65,7 +65,7 @@ export default function EstudiantesPage() {
                         {/* Renovaciones y Prórrogas */}
                         <div className="p-10 rounded-2xl border border-slate-100 bg-slate-50">
                             <RefreshCw className="w-12 h-12 text-[#701218] mb-6" />
-                            <h2 className="text-2xl font-serif font-bold mb-4">{t('renewal.title')}</h2>
+                            <h2 className="text-2xl font-serif font-bold mb-4 text-[#0F172A]">{t('renewal.title')}</h2>
                             <p className="text-slate-600 mb-6 leading-relaxed">
                                 {t('renewal.description')}
                             </p>
@@ -88,30 +88,30 @@ export default function EstudiantesPage() {
             <section className="py-24 bg-slate-900 text-white">
                 <Container>
                     <div className="max-w-3xl mx-auto text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">{t('bridge.title')}</h2>
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white">{t('bridge.title')}</h2>
                         <p className="text-slate-400">{t('bridge.subtitle')}</p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {/* Búsqueda de Empleo */}
                         <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all text-center">
-                            <h3 className="text-xl font-serif font-bold mb-4">{t('bridge.jobSearch.title')}</h3>
+                            <h3 className="text-xl font-serif font-bold mb-4 text-white">{t('bridge.jobSearch.title')}</h3>
                             <p className="text-sm text-slate-400 mb-6">{t('bridge.jobSearch.description')}</p>
-                            <span className="text-xs font-bold text-[#701218] uppercase tracking-widest">{t('bridge.jobSearch.badge')}</span>
+                            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">{t('bridge.jobSearch.badge')}</span>
                         </div>
 
                         {/* Modificación a Residencia */}
                         <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all text-center">
-                            <h3 className="text-xl font-serif font-bold mb-4">{t('bridge.modification.title')}</h3>
+                            <h3 className="text-xl font-serif font-bold mb-4 text-white">{t('bridge.modification.title')}</h3>
                             <p className="text-sm text-slate-400 mb-6">{t('bridge.modification.description')}</p>
-                            <Link href="/servicios/nomadas" className="text-xs font-bold text-[#701218] uppercase tracking-widest hover:underline">{t('bridge.modification.link')}</Link>
+                            <Link href="/servicios/nomadas" className="text-xs font-bold text-[#C5A059] uppercase tracking-widest hover:underline">{t('bridge.modification.link')}</Link>
                         </div>
 
                         {/* Nacionalidad */}
                         <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all text-center">
-                            <h3 className="text-xl font-serif font-bold mb-4">{t('bridge.citizenship.title')}</h3>
+                            <h3 className="text-xl font-serif font-bold mb-4 text-white">{t('bridge.citizenship.title')}</h3>
                             <p className="text-sm text-slate-400 mb-6">{t('bridge.citizenship.description')}</p>
-                            <Link href="/servicios/nacionalidad" className="text-xs font-bold text-[#701218] uppercase tracking-widest hover:underline">{t('bridge.citizenship.link')}</Link>
+                            <Link href="/servicios/nacionalidad" className="text-xs font-bold text-[#C5A059] uppercase tracking-widest hover:underline">{t('bridge.citizenship.link')}</Link>
                         </div>
                     </div>
                 </Container>
@@ -120,7 +120,7 @@ export default function EstudiantesPage() {
             {/* CTA SECCIÓN */}
             <section className="py-24 bg-white border-t border-slate-100">
                 <Container className="text-center">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">{t('cta.title')}</h2>
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-[#0F172A]">{t('cta.title')}</h2>
                     <p className="text-[#701218] font-bold text-sm uppercase tracking-widest mb-12">{t('cta.subtitle')}</p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

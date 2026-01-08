@@ -41,7 +41,7 @@ export function ServicesPreview() {
         <section className="py-24 bg-slate-50 relative overflow-hidden">
             <Container>
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl font-serif font-bold text-slate-900 sm:text-4xl mb-4">
+                    <h2 className="text-3xl font-serif font-bold text-[#0F172A] sm:text-4xl mb-4">
                         {t('servicesPreview.title')}
                     </h2>
                     <p className="text-slate-600">
@@ -59,7 +59,7 @@ export function ServicesPreview() {
                             <div className="w-12 h-12 bg-slate-50 rounded-md flex items-center justify-center mb-6 group-hover:bg-[#701218]/10 transition-colors duration-300">
                                 <service.icon className="w-6 h-6 text-slate-700 group-hover:text-[#701218] transition-colors" />
                             </div>
-                            <h3 className="text-xl font-serif font-bold text-slate-900 mb-3 group-hover:text-[#701218] transition-colors">
+                            <h3 className="text-xl font-serif font-bold text-[#0F172A] mb-3 group-hover:text-[#701218] transition-colors">
                                 {t(service.titleKey)}
                             </h3>
                             <p className="text-slate-600 text-sm leading-relaxed mb-6">

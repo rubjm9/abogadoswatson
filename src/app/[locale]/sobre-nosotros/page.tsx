@@ -25,7 +25,7 @@ export default function AboutPage() {
     };
 
     return (
-        <main className="pt-24">
+        <main className="pt-20 bg-white">
             {/* Hero Section */}
             <section className="relative py-24 bg-white overflow-hidden">
                 <div className="absolute inset-0 z-0">
@@ -37,7 +37,7 @@ export default function AboutPage() {
                         <span className="inline-block px-0 mb-6 text-xs font-bold tracking-[0.2em] text-[#701218] uppercase border-b-2 border-[#701218]/20 pb-1">
                             {t('hero.subtitle')}
                         </span>
-                        <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-8">
+                        <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tight text-[#0F172A] leading-[1.1] mb-8">
                             {t('hero.title')}
                         </h1>
                         <p className="text-xl text-slate-600 max-w-xl leading-relaxed italic border-l-4 border-[#701218]/20 pl-6">
@@ -57,7 +57,7 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h2 className="font-serif text-4xl font-bold text-slate-900 leading-tight">
+                            <h2 className="font-serif text-4xl font-bold text-[#0F172A] leading-tight">
                                 {t('intro.title')}
                             </h2>
                             <div className="mt-8 w-20 h-1 bg-[#701218]" />
@@ -81,7 +81,7 @@ export default function AboutPage() {
             <section className="py-24 bg-white">
                 <Container>
                     <div className="text-center max-w-2xl mx-auto mb-16">
-                        <h2 className="font-serif text-4xl font-bold text-slate-900 mb-4">{t('methodology.title')}</h2>
+                        <h2 className="font-serif text-4xl font-bold text-[#0F172A] mb-4">{t('methodology.title')}</h2>
                         <p className="text-[#701218] font-bold tracking-widest uppercase text-xs">
                             {t('methodology.subtitle')}
                         </p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
                                 <div className="w-12 h-12 bg-white rounded-md flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#701218]/10 transition-colors duration-300">
                                     <item.icon className="w-6 h-6 text-[#701218]" />
                                 </div>
-                                <h3 className="font-serif text-xl font-bold text-slate-900 mb-4">
+                                <h3 className="font-serif text-xl font-bold text-[#0F172A] mb-4">
                                     {t(`methodology.${item.key}.title`)}
                                 </h3>
                                 <p className="text-slate-600 leading-relaxed">
@@ -119,56 +119,11 @@ export default function AboutPage() {
                 </Container>
             </section>
 
-            {/* Founder Section */}
-            <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
-                <Container>
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1 }}
-                            className="relative order-2 lg:order-1 flex justify-end"
-                        >
-                            <div className="aspect-[4/5] bg-slate-800 overflow-hidden shadow-2xl relative group w-full max-w-sm">
-                                <img
-                                    src="/images/zhinelia-watson.jpg"
-                                    alt={t('founder.name')}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                                <div className="absolute bottom-8 left-8">
-                                    <p className="font-serif text-3xl font-bold text-white">{t('founder.name')}</p>
-                                    <p className="text-[#701218] font-bold tracking-widest uppercase text-xs mt-1">{t('founder.role')}</p>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="order-1 lg:order-2"
-                        >
-                            <h2 className="font-serif text-4xl font-bold mb-8 text-white">
-                                {t('founder.title')}
-                            </h2>
-                            <div className="space-y-6 text-slate-300 text-lg leading-relaxed font-light">
-                                <p className="first-letter:text-5xl first-letter:font-serif first-letter:text-[#701218] first-letter:float-left first-letter:mr-3 first-letter:font-bold">
-                                    {t('founder.bio')}
-                                </p>
-                            </div>
-                        </motion.div>
-                    </div>
-                </Container>
-            </section>
-
             {/* Team Section */}
             <section className="py-24 bg-white">
                 <Container>
                     <div className="text-center max-w-2xl mx-auto mb-16">
-                        <h2 className="font-serif text-4xl font-bold text-slate-900 mb-4">{t('team.title')}</h2>
+                        <h2 className="font-serif text-4xl font-bold text-[#0F172A] mb-4">{t('team.title')}</h2>
                         <p className="text-slate-600">
                             {t('team.subtitle')}
                         </p>
@@ -177,13 +132,14 @@ export default function AboutPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                         {/* Member cards mapped manually for clarity */}
                         {[
-                            { index: 0, image: "/images/ruben-jimenez.jpg" },
-                            { index: 1, image: null },
-                            { index: 2, image: null },
-                            { index: 3, image: null },
-                            { index: 4, image: null },
-                            { index: 5, image: null },
-                            { index: 6, image: null }
+                            { index: 0, image: "/images/zhinelia-watson.jpg" },
+                            { index: 1, image: "/images/ruben-jimenez.jpg" },
+                            { index: 2, image: "/images/ana-c-gonzalez.png" },
+                            { index: 3, image: "/images/monica-garcimartin.png" },
+                            { index: 4, image: "/images/lidia-ramos.png" },
+                            { index: 5, image: "/images/beatriz-martinez.png" },
+                            { index: 6, image: "/images/rafael-mena.png" },
+                            { index: 7, image: "/images/carolina-galvez.jpg" }
                         ].map((member) => (
                             <motion.div
                                 key={member.index}
@@ -207,7 +163,7 @@ export default function AboutPage() {
                                     )}
                                     <div className="absolute inset-0 bg-[#701218]/5 group-hover:bg-transparent transition-colors" />
                                 </div>
-                                <h3 className="font-serif text-2xl font-bold text-slate-900 mb-1">
+                                <h3 className="font-serif text-2xl font-bold text-[#0F172A] mb-1">
                                     {t.raw('team.members')[member.index].name}
                                 </h3>
                                 <p className="text-[#701218] font-bold text-xs uppercase tracking-widest mb-4">
@@ -234,7 +190,7 @@ export default function AboutPage() {
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#701218]/5 rounded-full -mr-16 -mt-16" />
                         <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#701218]/5 rounded-full -ml-16 -mb-16" />
 
-                        <h2 className="font-serif text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+                        <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#0F172A] mb-6">
                             {t('cta.title')}
                         </h2>
                         <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">

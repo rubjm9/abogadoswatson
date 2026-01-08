@@ -75,7 +75,7 @@ export function Header() {
                                     className={cn(
                                         "bg-transparent transition-colors relative",
                                         isLightMode
-                                            ? "text-slate-700 hover:text-slate-900 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-slate-900 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center data-[state=open]:after:scale-x-100"
+                                            ? "text-slate-700 hover:text-[#0F172A] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#0F172A] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center data-[state=open]:after:scale-x-100"
                                             : "text-white hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center data-[state=open]:after:scale-x-100 focus:outline-none",
                                         isServicesActive && "after:scale-x-100"
                                     )}
@@ -83,7 +83,7 @@ export function Header() {
                                     {t('services')}
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <div className="w-[600px] p-6 lg:w-[800px] bg-white text-slate-900 shadow-2xl border border-slate-100">
+                                    <div className="w-[600px] p-6 lg:w-[800px] bg-white text-[#0F172A] shadow-2xl border border-slate-100">
                                         <div className="grid grid-cols-2 gap-x-8 gap-y-10">
                                             {serviceCategories.map((category) => (
                                                 <div key={category.title}>
@@ -116,7 +116,7 @@ export function Header() {
                                             navigationMenuTriggerStyle(),
                                             "bg-transparent transition-colors relative",
                                             isLightMode
-                                                ? "text-slate-700 hover:text-slate-900 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-slate-900 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center"
+                                                ? "text-slate-700 hover:text-[#0F172A] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#0F172A] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center"
                                                 : "text-white hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center focus:outline-none",
                                             isAboutActive && "after:scale-x-100"
                                         )}
@@ -133,7 +133,7 @@ export function Header() {
                                             navigationMenuTriggerStyle(),
                                             "bg-transparent transition-colors relative",
                                             isLightMode
-                                                ? "text-slate-700 hover:text-slate-900 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-slate-900 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center"
+                                                ? "text-slate-700 hover:text-[#0F172A] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#0F172A] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center"
                                                 : "text-white hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center focus:outline-none",
                                             isBlogActive && "after:scale-x-100"
                                         )}
@@ -153,7 +153,7 @@ export function Header() {
                             "hidden md:inline-flex",
                             isLightMode
                                 ? "bg-[#701218] hover:bg-[#590e13] text-white"
-                                : "bg-white hover:bg-white/90 text-slate-900"
+                                : "bg-white hover:bg-white/90 text-[#0F172A]"
                         )}>
                             <Link href="/contacto">{t('contact')}</Link>
                         </Button>
@@ -185,7 +185,7 @@ const ListItem = React.forwardRef<
                         <div className="p-1 rounded bg-[#701218]/10 group-hover:bg-[#701218] transition-colors">
                             <Icon className="w-4 h-4 text-[#701218] group-hover:text-white transition-colors" />
                         </div>
-                        <div className="text-sm font-medium leading-none text-slate-900">{title}</div>
+                        <div className="text-sm font-medium leading-none text-[#0F172A]">{title}</div>
                     </div>
                     <p className="line-clamp-2 text-xs leading-snug text-slate-500 pl-8">
                         {children}

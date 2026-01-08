@@ -12,10 +12,6 @@ export default function NacionalidadPage() {
 
     const types = [
         {
-            key: "descendants",
-            icon: ScrollText
-        },
-        {
             key: "residence",
             icon: Timer
         },
@@ -32,7 +28,7 @@ export default function NacionalidadPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* Hero Section */}
-            <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden">
                 <div className="absolute inset-0 bg-slate-900/80 z-10" />
                 <img
                     src="/images/nationality.png"
@@ -43,13 +39,13 @@ export default function NacionalidadPage() {
 
                 <Container className="relative z-10">
                     <div className="max-w-3xl">
-                        <span className="text-[#701218] font-bold tracking-widest uppercase text-xs mb-4 block">
+                        <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
                             {t('hero.badge')}
                         </span>
                         <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
                             {t('hero.title')}
                         </h1>
-                        <p className="text-sm text-[#701218] font-bold mb-4 bg-[#701218]/10 px-3 py-1 rounded-sm inline-block">
+                        <p className="text-sm text-[#C5A059] font-bold mb-4 bg-[#C5A059]/10 px-3 py-1 rounded-sm inline-block">
                             {t('hero.subtitle')}
                         </p>
                         <p className="text-xl text-slate-300 leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
@@ -72,7 +68,7 @@ export default function NacionalidadPage() {
                                     <div className="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-6 border border-slate-100 group-hover:bg-[#701218] group-hover:border-[#701218] transition-all duration-300">
                                         <type.icon className="w-7 h-7 text-[#701218] group-hover:text-white transition-colors" />
                                     </div>
-                                    <h2 className="text-2xl font-serif font-bold text-slate-900 mb-1 leading-tight">
+                                    <h2 className="text-2xl font-serif font-bold text-[#0F172A] mb-1 leading-tight">
                                         {t(`types.${type.key}.title`)}
                                     </h2>
                                     <p className="text-xs font-bold text-[#701218] uppercase tracking-wider mb-4">
@@ -102,7 +98,7 @@ export default function NacionalidadPage() {
 
                     {/* Technical Support Section */}
                     <div className="mt-20 p-10 bg-white border border-slate-200 rounded-2xl">
-                        <h3 className="text-xl font-serif font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <h3 className="text-xl font-serif font-bold text-[#0F172A] mb-6 flex items-center gap-2">
                             <span className="w-1 h-6 bg-[#701218] rounded-full" />
                             {t('technicalSupport.title')}
                         </h3>
@@ -136,7 +132,7 @@ export default function NacionalidadPage() {
                             <ShieldAlert className="w-8 h-8 text-[#701218]" />
                         </div>
                         <div className="flex-grow text-center md:text-left">
-                            <h3 className="text-xl font-serif font-bold mb-2 text-slate-900">{t('defense.title')}</h3>
+                            <h3 className="text-xl font-serif font-bold mb-2 text-[#0F172A]">{t('defense.title')}</h3>
                             <p className="text-sm text-slate-600 leading-relaxed mb-4">
                                 {t('defense.description')}
                             </p>
@@ -152,7 +148,7 @@ export default function NacionalidadPage() {
             <section className="py-24 bg-[#701218] relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10" />
                 <Container className="relative z-10 text-center text-white">
-                    <h2 className="text-4xl font-serif font-bold mb-6">{t('cta.title')}</h2>
+                    <h2 className="text-4xl font-serif font-bold mb-6 text-white">{t('cta.title')}</h2>
                     <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
                         {t('cta.description')}
                     </p>

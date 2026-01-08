@@ -119,7 +119,7 @@ export function CreateCaseForm() {
                         name="status"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Estado Inicial</FormLabel>
+                                <FormLabel>Estado inicial</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
@@ -128,7 +128,7 @@ export function CreateCaseForm() {
                                     </FormControl>
                                     <SelectContent>
                                         <SelectItem value={CaseStatus.OPEN}>Abierto</SelectItem>
-                                        <SelectItem value={CaseStatus.IN_PROGRESS}>En Progreso</SelectItem>
+                                        <SelectItem value={CaseStatus.IN_PROGRESS}>En progreso</SelectItem>
                                         <SelectItem value={CaseStatus.CLOSED}>Cerrado</SelectItem>
                                         <SelectItem value={CaseStatus.ARCHIVED}>Archivado</SelectItem>
                                     </SelectContent>
@@ -142,7 +142,7 @@ export function CreateCaseForm() {
                     {form.formState.isSubmitting && (
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     )}
-                    Crear Caso
+                    Crear caso
                 </Button>
             </form>
         </Form>

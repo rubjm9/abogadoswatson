@@ -21,7 +21,7 @@ export default function NegociosPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* SECCIÓN 1 — HERO */}
-            <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden">
                 <img
                     src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&q=80"
                     alt={t('hero.imageAlt') || 'Negocios y emprendimiento'}
@@ -32,13 +32,13 @@ export default function NegociosPage() {
 
                 <Container className="relative z-10">
                     <div className="max-w-3xl">
-                        <span className="text-[#701218] font-bold tracking-widest uppercase text-xs mb-4 block">
+                        <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
                             {t('hero.badge')}
                         </span>
                         <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
                             {t('hero.title')}
                         </h1>
-                        <p className="text-sm text-[#701218] font-bold mb-4 bg-[#701218]/10 px-3 py-1 rounded-sm inline-block">
+                        <p className="text-sm text-[#C5A059] font-bold mb-4 bg-[#C5A059]/10 px-3 py-1 rounded-sm inline-block">
                             {t('hero.subtitle')}
                         </p>
                         <p className="text-xl text-slate-300 leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
@@ -52,7 +52,7 @@ export default function NegociosPage() {
             <section className="py-24">
                 <Container>
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-3xl font-serif font-bold mb-2">{t('services.title')}</h2>
+                        <h2 className="text-3xl font-serif font-bold mb-2 text-[#0F172A]">{t('services.title')}</h2>
                         <p className="text-[#701218] font-bold text-sm uppercase tracking-widest mb-6">{t('services.subtitle')}</p>
                     </div>
 
@@ -60,7 +60,7 @@ export default function NegociosPage() {
                         {services.map((item) => (
                             <div key={item.key} className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:border-[#701218]/30 transition-all group">
                                 <item.icon className="w-8 h-8 text-[#701218] mb-6" />
-                                <h3 className="text-lg font-serif font-bold mb-1 leading-tight">{t(`services.items.${item.key}.title`)}</h3>
+                                <h3 className="text-lg font-serif font-bold mb-1 leading-tight text-[#0F172A]">{t(`services.items.${item.key}.title`)}</h3>
                                 <p className="text-[10px] font-bold text-[#701218] uppercase tracking-wider mb-4">{t(`services.items.${item.key}.subtitle`)}</p>
                                 <p className="text-sm text-slate-600 leading-relaxed">{t(`services.items.${item.key}.description`)}</p>
                                 {item.key === "realEstate" && (
@@ -81,7 +81,7 @@ export default function NegociosPage() {
                 <Container>
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-3xl font-serif font-bold mb-2">{t('guarantee.title')}</h2>
+                            <h2 className="text-3xl font-serif font-bold mb-2 text-[#0F172A]">{t('guarantee.title')}</h2>
                             <p className="text-[#701218] font-bold text-sm uppercase tracking-widest mb-8">{t('guarantee.subtitle')}</p>
                             <p className="text-slate-600 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: t.raw('guarantee.description') }} />
                             <ul className="space-y-4">
@@ -111,7 +111,7 @@ export default function NegociosPage() {
                             <ShieldAlert className="w-8 h-8 text-[#701218]" />
                         </div>
                         <div className="flex-grow text-center md:text-left">
-                            <h3 className="text-xl font-serif font-bold mb-2 text-slate-900">{t('defense.title')}</h3>
+                            <h3 className="text-xl font-serif font-bold mb-2 text-[#0F172A]">{t('defense.title')}</h3>
                             <p className="text-sm text-slate-600 leading-relaxed mb-4">
                                 {t('defense.description')}
                             </p>
@@ -126,7 +126,7 @@ export default function NegociosPage() {
             {/* SECCIÓN 5 — CTA SOBRIO */}
             <section className="py-24 bg-white">
                 <Container className="text-center">
-                    <h2 className="text-3xl font-serif font-bold mb-2">{t('cta.title')}</h2>
+                    <h2 className="text-3xl font-serif font-bold mb-2 text-[#0F172A]">{t('cta.title')}</h2>
                     <p className="text-[#701218] font-bold text-sm uppercase tracking-widest mb-10">{t('cta.subtitle')}</p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

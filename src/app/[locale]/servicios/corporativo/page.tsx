@@ -12,7 +12,7 @@ export default function CorporativoPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* HERO SECTION - B2B Focus */}
-            <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden text-white">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden text-white">
                 <img
                     src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&q=80"
                     alt={t('hero.imageAlt') || 'Movilidad corporativa'}
@@ -23,10 +23,10 @@ export default function CorporativoPage() {
 
                 <Container className="relative z-10">
                     <div className="max-w-4xl">
-                        <span className="text-[#701218] font-bold tracking-widest uppercase text-xs mb-4 block">
+                        <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
                             {t('hero.badge')}
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
                             {t('hero.title')}
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
@@ -45,7 +45,7 @@ export default function CorporativoPage() {
             <section className="py-24 bg-white">
                 <Container>
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">{t('solutions.title')}</h2>
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-[#0F172A]">{t('solutions.title')}</h2>
                         <p className="text-slate-600">{t('solutions.subtitle')}</p>
                     </div>
 
@@ -53,7 +53,7 @@ export default function CorporativoPage() {
                         {/* PAC */}
                         <div className="p-10 rounded-2xl border border-slate-100 bg-slate-50 hover:border-[#701218]/30 transition-all group">
                             <Zap className="w-12 h-12 text-[#701218] mb-6" />
-                            <h3 className="text-2xl font-serif font-bold mb-4">{t('solutions.pac.title')}</h3>
+                            <h3 className="text-2xl font-serif font-bold mb-4 text-[#0F172A]">{t('solutions.pac.title')}</h3>
                             <p className="text-slate-600 mb-6 leading-relaxed text-sm">
                                 {t('solutions.pac.description')}
                             </p>
@@ -70,7 +70,7 @@ export default function CorporativoPage() {
                         {/* ICT */}
                         <div className="p-10 rounded-2xl border border-slate-100 bg-slate-50 hover:border-[#701218]/30 transition-all group">
                             <Building2 className="w-12 h-12 text-[#701218] mb-6" />
-                            <h3 className="text-2xl font-serif font-bold mb-4">{t('solutions.ict.title')}</h3>
+                            <h3 className="text-2xl font-serif font-bold mb-4 text-[#0F172A]">{t('solutions.ict.title')}</h3>
                             <p className="text-slate-600 mb-6 leading-relaxed text-sm">
                                 {t('solutions.ict.description')}
                             </p>
@@ -92,19 +92,19 @@ export default function CorporativoPage() {
                 <Container>
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">{t('uge.title')}</h2>
+                            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">{t('uge.title')}</h2>
                             <p className="text-slate-400 mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.raw('uge.description') }} />
 
                             <div className="space-y-6">
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
-                                    <ShieldCheck className="w-6 h-6 text-[#701218] shrink-0" />
+                                    <ShieldCheck className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
                                         <h4 className="font-bold mb-1">{t('uge.fastTrack.title')}</h4>
                                         <p className="text-sm text-slate-400">{t('uge.fastTrack.description')}</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
-                                    <Building className="w-6 h-6 text-[#701218] shrink-0" />
+                                    <Building className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
                                         <h4 className="font-bold mb-1">{t('uge.audit.title')}</h4>
                                         <p className="text-sm text-slate-400">{t('uge.audit.description')}</p>
@@ -135,7 +135,7 @@ export default function CorporativoPage() {
                             <Globe className="w-8 h-8 text-[#701218]" />
                         </div>
                         <div className="flex-grow text-center md:text-left">
-                            <h3 className="text-xl font-serif font-bold mb-2 text-slate-900">{t('business.title')}</h3>
+                            <h3 className="text-xl font-serif font-bold mb-2 text-[#0F172A]">{t('business.title')}</h3>
                             <p className="text-sm text-slate-600 leading-relaxed mb-4">
                                 {t('business.description')}
                             </p>
@@ -150,7 +150,7 @@ export default function CorporativoPage() {
             {/* FINAL CTA - B2B Focus */}
             <section className="py-24 bg-white border-t border-slate-100">
                 <Container className="text-center">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">{t('cta.title')}</h2>
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-[#0F172A]">{t('cta.title')}</h2>
                     <p className="text-[#701218] font-bold text-sm uppercase tracking-widest mb-12">{t('cta.subtitle')}</p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -12,7 +12,7 @@ export default function FamiliaPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* HERO SECTION */}
-            <section className="relative pt-24 pb-24 bg-slate-900 overflow-hidden text-white">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden text-white">
                 <img
                     src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1920&q=80"
                     alt={t('hero.imageAlt') || 'Reagrupación familiar'}
@@ -23,10 +23,10 @@ export default function FamiliaPage() {
 
                 <Container className="relative z-10">
                     <div className="max-w-4xl">
-                        <span className="text-[#701218] font-bold tracking-widest uppercase text-xs mb-4 block">
+                        <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
                             {t('hero.badge')}
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
                             {t('hero.title')}
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
@@ -45,7 +45,7 @@ export default function FamiliaPage() {
             <section className="py-24 bg-white">
                 <Container>
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">{t('regimes.title')}</h2>
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-[#0F172A]">{t('regimes.title')}</h2>
                         <p className="text-slate-600">{t('regimes.subtitle')}</p>
                     </div>
 
@@ -53,7 +53,7 @@ export default function FamiliaPage() {
                         {/* Régimen General */}
                         <div className="p-10 rounded-2xl border border-slate-100 bg-slate-50 hover:border-[#701218]/30 transition-all">
                             <Scale className="w-12 h-12 text-[#701218] mb-6" />
-                            <h3 className="text-2xl font-serif font-bold mb-4">{t('regimes.general.title')}</h3>
+                            <h3 className="text-2xl font-serif font-bold mb-4 text-[#0F172A]">{t('regimes.general.title')}</h3>
                             <p className="text-sm text-[#701218] font-bold mb-4 uppercase tracking-wider">{t('regimes.general.subtitle')}</p>
                             <p className="text-slate-600 mb-6 leading-relaxed">
                                 {t('regimes.general.description')}
@@ -71,7 +71,7 @@ export default function FamiliaPage() {
                         {/* Régimen Comunitario */}
                         <div className="p-10 rounded-2xl border border-slate-100 bg-slate-50 hover:border-[#701218]/30 transition-all">
                             <Users className="w-12 h-12 text-[#701218] mb-6" />
-                            <h3 className="text-2xl font-serif font-bold mb-4">{t('regimes.community.title')}</h3>
+                            <h3 className="text-2xl font-serif font-bold mb-4 text-[#0F172A]">{t('regimes.community.title')}</h3>
                             <p className="text-sm text-[#701218] font-bold mb-4 uppercase tracking-wider">{t('regimes.community.subtitle')}</p>
                                 <p className="text-slate-600 mb-6 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.raw('regimes.community.description') }} />
                             <ul className="space-y-3 mb-8 text-sm">
@@ -92,14 +92,14 @@ export default function FamiliaPage() {
                 <Container>
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">{t('requirements.title')}</h2>
+                            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">{t('requirements.title')}</h2>
                             <p className="text-slate-400 mb-8 leading-relaxed">
                                 {t('requirements.description')}
                             </p>
 
                             <div className="space-y-6">
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
-                                    <Landmark className="w-6 h-6 text-[#701218] shrink-0" />
+                                    <Landmark className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
                                         <h4 className="font-bold mb-1">{t('requirements.income.title')}</h4>
                                         <p className="text-sm text-slate-400">
@@ -108,14 +108,14 @@ export default function FamiliaPage() {
                                     </div>
                                 </div>
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
-                                    <Home className="w-6 h-6 text-[#701218] shrink-0" />
+                                    <Home className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
                                         <h4 className="font-bold mb-1">{t('requirements.housing.title')}</h4>
                                         <p className="text-sm text-slate-400" dangerouslySetInnerHTML={{ __html: t.raw('requirements.housing.description') }} />
                                     </div>
                                 </div>
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
-                                    <Heart className="w-6 h-6 text-[#701218] shrink-0" />
+                                    <Heart className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
                                         <h4 className="font-bold mb-1">{t('requirements.dependency.title')}</h4>
                                         <p className="text-sm text-slate-400">
@@ -127,7 +127,7 @@ export default function FamiliaPage() {
                         </div>
                         <div className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
                             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                                <FileText className="w-5 h-5 text-[#701218]" />
+                                <FileText className="w-5 h-5 text-[#C5A059]" />
                                 {t('requirements.documentation.title')}
                             </h3>
                             <div className="space-y-4 text-sm text-slate-300">
@@ -164,7 +164,7 @@ export default function FamiliaPage() {
             {/* CTA SECCIÓN */}
             <section className="py-24 bg-slate-50 border-t border-slate-100">
                 <Container className="text-center">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">{t('cta.title')}</h2>
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-[#0F172A]">{t('cta.title')}</h2>
                     <p className="text-slate-600 mb-12 max-w-2xl mx-auto">{t('cta.description')}</p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
