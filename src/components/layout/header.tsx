@@ -45,7 +45,6 @@ export function Header() {
     // Detect active navigation items
     const isServicesActive = pathname?.includes("/servicios");
     const isAboutActive = pathname?.includes("/sobre-nosotros");
-    const isBlogActive = pathname?.includes("/blog");
 
     return (
         <header
@@ -122,23 +121,6 @@ export function Header() {
                                         )}
                                     >
                                         {t('about')}
-                                    </Link>
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <NavigationMenuLink asChild>
-                                    <Link 
-                                        href="/blog"
-                                        className={cn(
-                                            navigationMenuTriggerStyle(),
-                                            "bg-transparent transition-colors relative",
-                                            isLightMode
-                                                ? "text-slate-700 hover:text-[#0F172A] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#0F172A] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center"
-                                                : "text-white hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center focus:outline-none",
-                                            isBlogActive && "after:scale-x-100"
-                                        )}
-                                    >
-                                        {t('blog')}
                                     </Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>

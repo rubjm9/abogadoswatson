@@ -63,7 +63,6 @@
     "home": "Inicio",
     "services": "Servicios",
     "about": "Nosotros",
-    "blog": "Blog",
     "contact": "Contacto"
   },
   "AboutPage": {
@@ -305,6 +304,10 @@
           "realEstate": {
             "title": "Inmuebles",
             "description": "Due diligence técnica y legal para la compra segura de activos inmobiliarios."
+          },
+          "inmobiliario": {
+            "title": "Derecho inmobiliario",
+            "description": "Asesoramiento integral en compraventa, arrendamiento y gestión de inmuebles."
           }
         }
       }
@@ -907,6 +910,46 @@
       "subtitle": "Análisis inicial de mercado y diagnóstico jurídico de inversión",
       "button1": "Evaluar viabilidad legal",
       "button2": "Diagnóstico jurídico de tu caso"
+    }
+  },
+  "InmobiliarioPage": {
+    "breadcrumb": "Derecho Inmobiliario",
+    "hero": {
+      "badge": "Derecho Civil",
+      "title": "Derecho inmobiliario",
+      "subtitle": "Cómo podemos ayudarte",
+      "description": "En <strong>Abogados Watson</strong> ofrecemos un servicio integral que abarca todo el proceso. Nuestros <strong>abogados están especializados en derecho inmobiliario</strong> y cuentan con los conocimientos necesarios para acompañarte en la compraventa, el arrendamiento y la gestión de tu patrimonio inmobiliario.",
+      "imageAlt": "Derecho inmobiliario"
+    },
+    "intro": {
+      "title": "Qué es el derecho inmobiliario",
+      "description": "El derecho inmobiliario es el conjunto de normas que afectan a los bienes inmuebles y regula la propiedad, los derechos reales y los negocios jurídicos sobre ellos: contratos de adquisición, venta, multipropiedad, arrendamiento, etc. También comprende la gestión (licencias urbanas, licencias de obras, comunidades de propietarios) y la normativa urbanística."
+    },
+    "purchase": {
+      "title": "Asesoramiento íntegro en la compraventa de inmuebles",
+      "subtitle": "Seguridad jurídica en cada paso",
+      "definition": "La <strong>compraventa</strong> es un contrato <strong>consensual</strong>, <strong>bilateral, oneroso y generalmente conmutativo</strong> por el que uno de los contratantes se obliga a entregar una cosa determinada y el otro a pagar por ella un cierto precio, transmitiendo el dominio.",
+      "intro": "Tras una breve reunión contigo, comenzamos nuestro trabajo con una comprobación de todos los aspectos administrativos y jurídicos del inmueble, para asegurar que tu operación sea lo más sencilla y enriquecedora posible.",
+      "steps": {
+        "registral": "Chequeamos el estado registral, catastral y técnico del inmueble.",
+        "legal": "Analizamos la situación jurídica del inmueble.",
+        "contracts": "Redactamos el documento de reserva y el contrato de compraventa, y gestionamos la firma de la escritura pública con tu notaría de elección.",
+        "coordination": "Coordinamos y preparamos la documentación necesaria para la operación de compraventa.",
+        "tax": "Planificamos el impacto fiscal de la compraventa.",
+        "registration": "Registramos tu propiedad para que conste ante terceros.",
+        "utilities": "Gestionamos el cambio de titularidad de luz, agua, IBI y cuotas de comunidad."
+      }
+    },
+    "defense": {
+      "title": "¿Conflictos o incumplimientos?",
+      "description": "Ante litigios inmobiliarios, incumplimientos contractuales o problemas con licencias y comunidades, nuestra unidad de defensa jurídica interviene para proteger tus derechos.",
+      "link": "Consultar opciones de defensa jurídica"
+    },
+    "cta": {
+      "title": "Escríbenos y cuéntanos tu caso",
+      "subtitle": "Asesoramiento jurídico inmobiliario",
+      "button1": "Solicitar información",
+      "button2": "Contactar por WhatsApp"
     }
   },
   "InversionesPage": {

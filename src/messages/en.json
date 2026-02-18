@@ -63,7 +63,6 @@
     "home": "Home",
     "services": "Services",
     "about": "About Us",
-    "blog": "Blog",
     "contact": "Contact"
   },
   "AboutPage": {
@@ -305,6 +304,10 @@
           "realEstate": {
             "title": "Real Estate",
             "description": "Technical and legal due diligence for secure purchase of real estate assets."
+          },
+          "inmobiliario": {
+            "title": "Real estate law",
+            "description": "Full advisory on purchase and sale, leasing and property management."
           }
         }
       }
@@ -907,6 +910,46 @@
       "subtitle": "Initial Market Analysis and Investment Legal Diagnosis",
       "button1": "Evaluate Legal Viability",
       "button2": "Legal Diagnosis of Your Case"
+    }
+  },
+  "InmobiliarioPage": {
+    "breadcrumb": "Real Estate Law",
+    "hero": {
+      "badge": "Civil Law",
+      "title": "Real estate law",
+      "subtitle": "How we can help you",
+      "description": "At <strong>Abogados Watson</strong> we offer a comprehensive service covering the entire process. Our <strong>lawyers specialise in real estate law</strong> and have the expertise to support you in purchase and sale, leasing, and the management of your real estate assets.",
+      "imageAlt": "Real estate law"
+    },
+    "intro": {
+      "title": "What is real estate law",
+      "description": "Real estate law is the set of rules governing immovable property, including ownership, property rights, and legal transactions such as acquisition, sale, timeshare, and lease. It also covers management (planning permits, building licences, owners’ associations) and planning regulations."
+    },
+    "purchase": {
+      "title": "Full advisory on property purchase and sale",
+      "subtitle": "Legal certainty at every step",
+      "definition": "A <strong>purchase and sale</strong> is a <strong>consensual</strong>, <strong>bilateral, onerous and generally commutative</strong> contract by which one party undertakes to deliver a specified asset and the other to pay an agreed price, transferring ownership.",
+      "intro": "After a short meeting with you, we begin by checking all administrative and legal aspects of the property, so that your transaction is as simple and beneficial as possible.",
+      "steps": {
+        "registral": "We check the land registry, cadastral and technical status of the property.",
+        "legal": "We analyse the legal situation of the property.",
+        "contracts": "We draft the reservation document and the purchase agreement, and arrange signing of the public deed with your chosen notary.",
+        "coordination": "We coordinate and prepare the documentation required for the purchase.",
+        "tax": "We plan the tax impact of the purchase.",
+        "registration": "We register your property so it is on the public record.",
+        "utilities": "We handle the change of ownership for utilities, water, property tax (IBI) and community fees."
+      }
+    },
+    "defense": {
+      "title": "Disputes or breaches?",
+      "description": "In the event of real estate litigation, contractual breaches, or issues with licences and owners’ associations, our legal defence unit steps in to protect your rights.",
+      "link": "Consult legal defence options"
+    },
+    "cta": {
+      "title": "Get in touch and tell us your case",
+      "subtitle": "Real estate legal advice",
+      "button1": "Request information",
+      "button2": "Contact via WhatsApp"
     }
   },
   "InversionesPage": {

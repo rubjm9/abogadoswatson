@@ -1,4 +1,4 @@
-import { Briefcase, Globe2, GraduationCap, Users, Building2, Gavel, LucideIcon } from "lucide-react";
+import { Briefcase, Globe2, GraduationCap, Users, Building2, Gavel, Home, LucideIcon } from "lucide-react";
 
 export interface Service {
     title: string;
@@ -44,6 +44,13 @@ export const serviceCategories: ServiceCategory[] = [
         subtitle: "Solucionar denegaciones",
         services: [
             { title: "Protección Jurídica", href: "/servicios/defensa-juridica", description: "Defensa ante denegaciones y conflictos.", icon: Gavel },
+        ]
+    },
+    {
+        title: "Derecho Inmobiliario",
+        subtitle: "Compraventa y asesoramiento",
+        services: [
+            { title: "Derecho Inmobiliario", href: "/servicios/inmobiliario", description: "Asesoramiento integral en compraventa y gestión de inmuebles.", icon: Home },
         ]
     }
 ];

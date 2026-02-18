@@ -116,9 +116,6 @@ export function MobileMenu({ isLightMode = true }: MobileMenuProps) {
                                         <Link href="/sobre-nosotros" className="block text-xl font-bold text-slate-900 hover:text-[#701218] transition-colors">
                                             {t('about')}
                                         </Link>
-                                        <Link href="/blog" className="block text-xl font-bold text-slate-900 hover:text-[#701218] transition-colors">
-                                            {t('blog')}
-                                        </Link>
                                     </div>
 
                                     {/* Language Selector */}

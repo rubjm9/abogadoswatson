@@ -5,8 +5,33 @@ import { NextResponse } from 'next/server';
 
 const intlMiddleware = createMiddleware(routing);
 
+// 301 redirects: sitio antiguo -> nueva web
+const LEGACY_REDIRECTS: Record<string, string> = {
+    contacta: 'contacto',
+    colabora: 'contacto',
+    extranjeria: 'servicios',
+    civil: 'servicios',
+    inmobiliario: 'servicios/inmobiliario',
+};
+
 export default auth((req) => {
     const { nextUrl } = req;
+    const pathname = nextUrl.pathname;
+    const pathParts = pathname.split('/').filter(Boolean); // ['contacta'] or ['es', 'contacta']
+
+    const isLocale = (s: string) => routing.locales.includes(s as (typeof routing.locales)[number]);
+    const firstSegment = pathParts.length > 0 ? pathParts[0] : '';
+    const hasLocaleInPath = isLocale(firstSegment);
+    const localeFromPath = hasLocaleInPath ? firstSegment : 'es'; // legacy URLs sin locale -> español
+    const oldPath = hasLocaleInPath ? pathParts.slice(1).join('/') : pathParts.join('/');
+
+    const newPath = oldPath ? LEGACY_REDIRECTS[oldPath.split('/')[0]] : null;
+    if (newPath) {
+        const targetPath = `/${localeFromPath}/${newPath}`;
+        const res = NextResponse.redirect(new URL(targetPath, nextUrl.origin), 301);
+        return res;
+    }
+
     const isLoggedIn = !!req.auth;
 
     // Protected routes configuration
@@ -29,11 +54,11 @@ export default auth((req) => {
     }
 
     // Ghost routes redirection to specific Service Hubs
-    const pathParts = nextUrl.pathname.split('/'); // ['', locale, 'servicios', 'service']
-    const locale = pathParts[1] || 'es';
+    const segments = nextUrl.pathname.split('/'); // ['', locale, 'servicios', 'service']
+    const locale = segments[1] || 'es';
 
-    if (pathParts[2] === 'servicios') {
-        const service = pathParts[3];
+    if (segments[2] === 'servicios') {
+        const service = segments[3];
         const vivreRoutes: string[] = [];
         const trabajarRoutes: string[] = [];
 
