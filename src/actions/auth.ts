@@ -79,3 +79,9 @@ export async function logout() {
         return { success: false, error: 'Failed to logout' };
     }
 }
+
+export async function logoutAndRedirect() {
+    await signOut({ redirect: false });
+    const { redirect } = await import('next/navigation');
+    redirect('/');
+}
