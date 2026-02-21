@@ -119,8 +119,8 @@ export default function AboutPage() {
                 </Container>
             </section>
 
-            {/* Team Section */}
-            <section className="py-24 bg-white">
+            {/* Team Section — sin fotografías: avatar con inicial */}
+            <section className="py-24 bg-slate-50">
                 <Container>
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="font-serif text-4xl font-bold text-[#0F172A] mb-4">{t('team.title')}</h2>
@@ -129,48 +129,32 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-                        {/* Member cards mapped manually for clarity */}
-                        {[
-                            { index: 0, image: "/images/zhinelia-watson.jpg" },
-                            { index: 1, image: "/images/ruben-jimenez.jpg" },
-                            { index: 2, image: "/images/ana-c-gonzalez.png" },
-                            { index: 3, image: "/images/monica-garcimartin.png" },
-                            { index: 4, image: "/images/lidia-ramos.png" },
-                            { index: 5, image: "/images/beatriz-martinez.png" },
-                            { index: 6, image: "/images/rafael-mena.png" },
-                            { index: 7, image: "/images/carolina-galvez.jpg" }
-                        ].map((member) => (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        {t.raw('team.members').map((member: { name: string; role: string; bio: string }, index: number) => (
                             <motion.div
-                                key={member.index}
+                                key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: member.index * 0.1 }}
-                                className="flex flex-col group"
+                                transition={{ delay: index * 0.08 }}
+                                className="bg-white border border-slate-100 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col"
                             >
-                                <div className="aspect-square bg-slate-100 mb-6 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
-                                    {member.image ? (
-                                        <img
-                                            src={member.image}
-                                            alt={t.raw('team.members')[member.index].name}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    ) : (
-                                        <div className="absolute inset-0 flex items-center justify-center text-slate-300 font-serif text-6xl">
-                                            {t.raw('team.members')[member.index].name.charAt(0)}
-                                        </div>
-                                    )}
-                                    <div className="absolute inset-0 bg-[#701218]/5 group-hover:bg-transparent transition-colors" />
+                                <div
+                                    className="w-16 h-16 rounded-full bg-[#701218]/10 flex items-center justify-center mb-6 flex-shrink-0"
+                                    aria-hidden
+                                >
+                                    <span className="font-serif text-2xl font-bold text-[#701218]">
+                                        {member.name.trim().charAt(0)}
+                                    </span>
                                 </div>
-                                <h3 className="font-serif text-2xl font-bold text-[#0F172A] mb-1">
-                                    {t.raw('team.members')[member.index].name}
+                                <h3 className="font-serif text-xl font-bold text-[#0F172A] mb-1">
+                                    {member.name}
                                 </h3>
                                 <p className="text-[#701218] font-bold text-xs uppercase tracking-widest mb-4">
-                                    {t.raw('team.members')[member.index].role}
+                                    {member.role}
                                 </p>
                                 <p className="text-slate-600 text-sm leading-relaxed">
-                                    {t.raw('team.members')[member.index].bio}
+                                    {member.bio}
                                 </p>
                             </motion.div>
                         ))}

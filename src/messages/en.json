@@ -97,7 +97,7 @@
       "subtitle": "Professionals committed to your legal security",
       "members": [
         {
-          "name": "Watson",
+          "name": "Zhinelia Watson",
           "role": "CEO & Managing Lawyer",
           "bio": "Specialist in technical immigration, real estate contracting, and successions. Her international background and experience in multidisciplinary firms allow her to offer clear and truly understandable legal advice."
         },
@@ -107,27 +107,32 @@
           "bio": "Brand and communication strategist, responsible for projecting the firm's values of transparency and rigor in the digital and international environment."
         },
         {
+          "name": "Claudia González",
+          "role": "Immigration and International Mobility Lawyer",
+          "bio": "Specialized in digital nomad visas and non-lucrative residence permits. She supports international clients through every stage of the process with clarity and technical rigor."
+        },
+        {
           "name": "Ana C. González",
           "role": "Lawyer",
           "bio": "Specialist in immigration law and international mobility, with extensive experience in managing complex cases for technical profiles and families."
         },
         {
-          "name": "Mónica Garcimartín Rivas",
+          "name": "Mónica Garcimartín",
           "role": "Lawyer",
           "bio": "With more than 20 years of experience, she specializes in civil, criminal, and administrative litigation. She has intervened in numerous judicial processes throughout Spain and served as a substitute judge."
         },
         {
-          "name": "Lidia Ramos Palacios",
+          "name": "Lidia Ramos",
           "role": "Lawyer and Mediator",
           "bio": "Specialist in consumer protection, banking law, and housing debt mediation. She brings a decisive vision to debt claims, evictions, and financial crimes."
         },
         {
-          "name": "Beatriz Martínez Lora",
+          "name": "Beatriz Martínez",
           "role": "Lawyer",
           "bio": "Specialist in criminal law, gender violence, and family law. Her approach combines legal firmness with support in situations of vulnerability."
         },
         {
-          "name": "Rafael Mena Peinado",
+          "name": "Rafael Mena",
           "role": "Lawyer",
           "bio": "Specialist in civil, criminal, banking, and commercial law. His double training in Law and Business Administration (ADE) allows him to offer comprehensive advice to businesses and investors."
         },
@@ -135,6 +140,11 @@
           "name": "Carolina P. Gálvez",
           "role": "Customer Service and Quality",
           "bio": "Responsible for administrative management and service quality, ensuring that each client receives impeccable attention from the first contact."
+        },
+        {
+          "name": "Rosa Ruiz",
+          "role": "Social Media and Marketing Assistant",
+          "bio": "Responsible for the firm's digital presence and marketing and communications support, helping our message reach clients and partners clearly and professionally."
         }
       ]
     },

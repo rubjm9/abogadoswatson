@@ -97,7 +97,7 @@
       "subtitle": "Profesionales comprometidos con su seguridad jurídica",
       "members": [
         {
-          "name": "Watson",
+          "name": "Zhinelia Watson",
           "role": "CEO & Managing Lawyer",
           "bio": "Especialista en extranjería técnica, contratación inmobiliaria y sucesiones. Su formación internacional y experiencia en despachos multidisciplinares le permiten ofrecer un asesoramiento legal claro y verdaderamente comprensible."
         },
@@ -107,27 +107,32 @@
           "bio": "Estratega de marca y comunicación, responsable de proyectar los valores de transparencia y rigor del despacho en el entorno digital e internacional."
         },
         {
+          "name": "Claudia González",
+          "role": "Abogada de Extranjería y Movilidad Internacional",
+          "bio": "Especializada en visados para nómadas digitales y residencias no lucrativas. Acompaña a clientes internacionales en cada etapa del proceso con claridad y rigor técnico."
+        },
+        {
           "name": "Ana C. González",
           "role": "Abogada",
           "bio": "Especialista en derecho de extranjería y movilidad internacional, con amplia experiencia en la gestión de expedientes complejos para perfiles técnicos y familias."
         },
         {
-          "name": "Mónica Garcimartín Rivas",
+          "name": "Mónica Garcimartín",
           "role": "Abogada",
           "bio": "Con más de 20 años de experiencia, se especializa en el ámbito procesal civil, penal y contencioso-administrativo. Ha intervenido en numerosos procesos judiciales en toda la geografía española y ejerció como juez sustituta."
         },
         {
-          "name": "Lidia Ramos Palacios",
+          "name": "Lidia Ramos",
           "role": "Abogada y Mediadora",
           "bio": "Especialista en defensa de consumidores, derecho bancario y mediación en deudas de vivienda. Aporta una visión resolutiva en reclamaciones de cantidad, desahucios y delitos económicos."
         },
         {
-          "name": "Beatriz Martínez Lora",
+          "name": "Beatriz Martínez",
           "role": "Abogada",
           "bio": "Especialista en derecho penal, violencia de género y derecho de familia. Su enfoque combina la firmeza jurídica con el acompañamiento en situaciones de vulnerabilidad."
         },
         {
-          "name": "Rafael Mena Peinado",
+          "name": "Rafael Mena",
           "role": "Abogado",
           "bio": "Especialista en derecho civil, penal, bancario y mercantil. Su doble formación en Derecho y Administración de Empresas (ADE) le permite ofrecer un asesoramiento integral a negocios e inversores."
         },
@@ -135,6 +140,11 @@
           "name": "Carolina P. Gálvez",
           "role": "Atención al Cliente y Calidad",
           "bio": "Responsable de la gestión administrativa y la calidad del servicio, asegurando que cada cliente reciba una atención impecable desde el primer contacto."
+        },
+        {
+          "name": "Rosa Ruiz",
+          "role": "Asistente de Redes Sociales y Marketing",
+          "bio": "Responsable de la presencia digital del despacho y del apoyo en comunicación y marketing, contribuyendo a que nuestro mensaje llegue de forma clara y profesional."
         }
       ]
     },
