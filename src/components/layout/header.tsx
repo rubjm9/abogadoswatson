@@ -22,7 +22,19 @@ import { serviceCategories } from "@/lib/constants";
 
 export function Header() {
     const t = useTranslations("Navigation");
+    const tServices = useTranslations("ServicesPage");
     const pathname = usePathname();
+
+    const navCategories = serviceCategories.map((cat) => ({
+        title: tServices(`categories.${cat.key}.title`),
+        subtitle: tServices(`categories.${cat.key}.subtitle`),
+        services: cat.services.map((svc) => ({
+            title: tServices(`categories.${cat.key}.services.${svc.key}.title`),
+            description: tServices(`categories.${cat.key}.services.${svc.key}.description`),
+            href: svc.href,
+            icon: cat.icon,
+        })),
+    }));
     const [isScrolled, setIsScrolled] = React.useState(false);
 
     // Detect if we're on a services page
@@ -84,7 +96,7 @@ export function Header() {
                                 <NavigationMenuContent>
                                     <div className="w-[600px] p-6 lg:w-[800px] bg-white text-[#0F172A] shadow-2xl border border-slate-100">
                                         <div className="grid grid-cols-2 gap-x-8 gap-y-10">
-                                            {serviceCategories.map((category) => (
+                                            {navCategories.map((category) => (
                                                 <div key={category.title}>
                                                     <h4 className="text-[10px] uppercase tracking-widest text-[#701218] font-bold mb-4 px-3">
                                                         {category.subtitle}

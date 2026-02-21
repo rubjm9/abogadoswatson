@@ -170,10 +170,10 @@
         "description": "For sending documentation and detailed technical inquiries.",
         "button": "Send Email"
       },
-      "office": {
-        "title": "Physical presence",
-        "description": "The firm's headquarters.",
-        "address": "Calle Angustias 9, Valladolid"
+      "whatsappWrite": {
+        "title": "Write to us on WhatsApp",
+        "description": "Direct contact on the same number as the corner button. We answer queries and schedule appointments.",
+        "button": "Write on WhatsApp"
       }
     },
     "form": {
@@ -238,7 +238,8 @@
     "placeholders": {
       "name": "John Doe",
       "email": "john@example.com",
-      "phone": "+1 234 567 890",
+      "phonePrefix": "Prefix",
+      "phone": "234 567 890",
       "message": "Tell us about your inquiry..."
     }
   },

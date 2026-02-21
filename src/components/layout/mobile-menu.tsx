@@ -18,7 +18,16 @@ export function MobileMenu({ isLightMode = true }: MobileMenuProps) {
     const [isOpen, setIsOpen] = React.useState(false);
     const [expandedCategory, setExpandedCategory] = React.useState<string | null>(null);
     const t = useTranslations("Navigation");
+    const tServices = useTranslations("ServicesPage");
     const pathname = usePathname();
+
+    const navCategories = serviceCategories.map((cat) => ({
+        title: tServices(`categories.${cat.key}.title`),
+        services: cat.services.map((svc) => ({
+            title: tServices(`categories.${cat.key}.services.${svc.key}.title`),
+            href: svc.href,
+        })),
+    }));
 
     // Close menu when pathname changes
     React.useEffect(() => {
@@ -90,7 +99,7 @@ export function MobileMenu({ isLightMode = true }: MobileMenuProps) {
                                             {t('services')}
                                         </h3>
                                         <div className="grid gap-8">
-                                            {serviceCategories.map((category) => (
+                                            {navCategories.map((category) => (
                                                 <div key={category.title} className="space-y-4">
                                                     <h4 className="text-sm font-bold text-slate-900 border-l-2 border-[#701218] pl-4">
                                                         {category.title}

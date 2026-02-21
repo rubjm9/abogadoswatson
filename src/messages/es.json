@@ -170,10 +170,10 @@
         "description": "Para envío de documentación y consultas técnicas detalladas.",
         "button": "Enviar email"
       },
-      "office": {
-        "title": "Presencia física",
-        "description": "Sede central del despacho.",
-        "address": "Calle Angustias 9, Valladolid"
+      "whatsappWrite": {
+        "title": "Escríbenos por WhatsApp",
+        "description": "Atención directa al mismo número del botón de la esquina. Resolvemos dudas y agendamos citas.",
+        "button": "Escribir por WhatsApp"
       }
     },
     "form": {
@@ -238,7 +238,8 @@
     "placeholders": {
       "name": "Juan Pérez",
       "email": "juan@ejemplo.com",
-      "phone": "+34 600 000 000",
+      "phonePrefix": "Prefijo",
+      "phone": "600 000 000",
       "message": "Cuéntenos sobre su consulta..."
     }
   },

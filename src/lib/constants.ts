@@ -1,56 +1,52 @@
-import { Briefcase, Globe2, GraduationCap, Users, Building2, Gavel, Home, LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { Globe2, Briefcase, Building2, Users } from "lucide-react";
 
-export interface Service {
-    title: string;
-    href: string;
-    description: string;
+/** Número de WhatsApp para contacto (sin +). Usado en botón flotante y página de contacto. */
+export const CONTACT_WHATSAPP_NUMBER = "34637058570";
+
+export const WHATSAPP_URL = `https://wa.me/${CONTACT_WHATSAPP_NUMBER}`;
+
+/** Categorías de servicios para navegación (header y menú móvil). Los textos se obtienen de ServicesPage.categories en i18n. */
+export const serviceCategories: {
+    key: string;
     icon: LucideIcon;
-}
-
-export interface ServiceCategory {
-    title: string;
-    subtitle: string;
-    services: Service[];
-}
-
-export const serviceCategories: ServiceCategory[] = [
+    services: { key: string; href: string }[];
+}[] = [
     {
-        title: "Establecer tu residencia",
-        subtitle: "Vivir en España",
+        key: "residence",
+        icon: Globe2,
         services: [
-            { title: "Estudiantes", href: "/servicios/estudiantes", description: "Visados, prórrogas y búsqueda de empleo.", icon: GraduationCap },
-            { title: "Nómadas Digitales", href: "/servicios/nomadas", description: "Teletrabajo internacional en España.", icon: Globe2 },
-            { title: "Reagrupación Familiar", href: "/servicios/familia", description: "Trae a tus seres queridos contigo.", icon: Users },
-        ]
+            { key: "students", href: "/servicios/estudiantes" },
+            { key: "nomads", href: "/servicios/nomadas" },
+            { key: "family", href: "/servicios/familia" },
+        ],
     },
     {
-        title: "Trabajar y talento",
-        subtitle: "Tu carrera profesional",
+        key: "work",
+        icon: Briefcase,
         services: [
-            { title: "Profesionales (PAC)", href: "/servicios/corporativo", description: "Altamente cualificados y traslados.", icon: Briefcase },
-            { title: "Descendientes", href: "/servicios/trabajar", description: "Búsqueda de empleo para hijos y nietos.", icon: Users },
-            { title: "Inversores", href: "/servicios/inversiones", description: "Inversión y emprendimiento internacional.", icon: Building2 },
-        ]
+            { key: "qualified", href: "/servicios/trabajar" },
+            { key: "corporate", href: "/servicios/corporativo" },
+            { key: "descendants", href: "/servicios/nacionalidad" },
+            { key: "entrepreneurs", href: "/servicios/inversiones" },
+        ],
     },
     {
-        title: "Obtener tu pasaporte",
-        subtitle: "Nacionalidad Española",
+        key: "citizenship",
+        icon: Users,
         services: [
-            { title: "Nacionalidad", href: "/servicios/nacionalidad", description: "Tramitación técnica de nacionalidad española.", icon: GraduationCap },
-        ]
+            { key: "grandchildren", href: "/servicios/nacionalidad" },
+            { key: "residence", href: "/servicios/nacionalidad" },
+            { key: "nature", href: "/servicios/nacionalidad" },
+        ],
     },
     {
-        title: "Defensa Jurídica",
-        subtitle: "Solucionar denegaciones",
+        key: "business",
+        icon: Building2,
         services: [
-            { title: "Protección Jurídica", href: "/servicios/defensa-juridica", description: "Defensa ante denegaciones y conflictos.", icon: Gavel },
-        ]
+            { key: "investment", href: "/servicios/inversiones" },
+            { key: "realEstate", href: "/servicios/inversiones" },
+            { key: "inmobiliario", href: "/servicios/inmobiliario" },
+        ],
     },
-    {
-        title: "Derecho Inmobiliario",
-        subtitle: "Compraventa y asesoramiento",
-        services: [
-            { title: "Derecho Inmobiliario", href: "/servicios/inmobiliario", description: "Asesoramiento integral en compraventa y gestión de inmuebles.", icon: Home },
-        ]
-    }
 ];

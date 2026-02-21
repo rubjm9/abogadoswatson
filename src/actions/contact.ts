@@ -1,6 +1,7 @@
 'use server';
 
 import { z } from 'zod';
+import { Resend } from 'resend';
 
 // Schema de validación para el formulario de contacto
 const ContactFormSchema = z.object({
@@ -10,11 +11,8 @@ const ContactFormSchema = z.object({
     email: z.string()
         .email('Por favor ingrese un correo electrónico válido')
         .max(255, 'El correo electrónico es demasiado largo'),
-    phone: z.string()
-        .optional()
-        .refine((val) => !val || val === '' || /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/.test(val), {
-            message: 'Por favor ingrese un número de teléfono válido'
-        }),
+    phonePrefix: z.string().optional(),
+    phone: z.string().optional(),
     message: z.string()
         .min(10, 'El mensaje debe tener al menos 10 caracteres')
         .max(2000, 'El mensaje es demasiado largo'),
@@ -22,8 +20,9 @@ const ContactFormSchema = z.object({
 
 export type ContactFormData = z.infer<typeof ContactFormSchema>;
 
+const CONTACT_EMAIL_TO = ['info@abogadoswatson.com', 'ruben@abogadoswatson.com'] as const;
+
 export async function submitContactForm(data: ContactFormData) {
-    // Validar datos
     const result = ContactFormSchema.safeParse(data);
 
     if (!result.success) {
@@ -33,23 +32,45 @@ export async function submitContactForm(data: ContactFormData) {
         };
     }
 
+    const { name, email, message, phonePrefix, phone } = result.data;
+    const fullPhone = [phonePrefix, phone].filter(Boolean).join(' ').trim();
+
     try {
-        // TODO: Implementar envío de email
-        // Por ahora, solo validamos y retornamos éxito
-        // Ejemplo de integración futura con Resend:
-        // await sendEmail({
-        //     to: 'info@abogadoswatson.com',
-        //     subject: `Nueva consulta de ${result.data.name}`,
-        //     html: `...`
-        // });
+        const apiKey = process.env.RESEND_API_KEY;
+        if (!apiKey) {
+            console.error('RESEND_API_KEY no configurada');
+            return {
+                success: false,
+                error: 'Hubo un problema al enviar su mensaje. Por favor intente nuevamente.',
+            };
+        }
 
-        // TODO: Opcionalmente guardar en base de datos
-        // await prisma.contactSubmission.create({
-        //     data: result.data
-        // });
+        const resend = new Resend(apiKey);
+        const from = process.env.RESEND_FROM ?? 'Abogados Watson <onboarding@resend.dev>';
 
-        // Simular delay de red
-        await new Promise(resolve => setTimeout(resolve, 500));
+        const html = `
+            <h2>Nueva consulta desde el formulario de contacto</h2>
+            <p><strong>Nombre:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+            ${fullPhone ? `<p><strong>Teléfono:</strong> ${escapeHtml(fullPhone)}</p>` : ''}
+            <p><strong>Mensaje:</strong></p>
+            <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
+        `;
+
+        const { error } = await resend.emails.send({
+            from,
+            to: [...CONTACT_EMAIL_TO],
+            subject: `Nueva consulta de ${name}`,
+            html,
+        });
+
+        if (error) {
+            console.error('Resend error:', error);
+            return {
+                success: false,
+                error: 'Hubo un problema al enviar su mensaje. Por favor intente nuevamente.',
+            };
+        }
 
         return {
             success: true,
@@ -62,5 +83,14 @@ export async function submitContactForm(data: ContactFormData) {
             error: 'Hubo un problema al enviar su mensaje. Por favor intente nuevamente.',
         };
     }
+}
+
+function escapeHtml(text: string): string {
+    return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
 }
 
