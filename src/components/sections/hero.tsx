@@ -145,8 +145,8 @@ export function Hero() {
                         <div className="absolute inset-0 border-[20px] border-white/10" />
                     </div>
 
-                    {/* Floating Authority Badge */}
-                    <div className="absolute -bottom-6 -left-6 bg-white p-8 shadow-2xl border border-slate-100 max-w-[240px]">
+                    {/* Floating Authority Badge - alineado a la derecha de la imagen */}
+                    <div className="absolute -bottom-6 -right-6 bg-white p-8 shadow-2xl border border-slate-100 max-w-[240px]">
                         <p className="text-[#701218] font-bold text-3xl font-serif mb-1">15+</p>
                         <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 leading-tight">
                             {t('heroBadge')}
