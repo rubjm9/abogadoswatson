@@ -39,17 +39,19 @@ export default auth((req) => {
     const isOnAdmin = nextUrl.pathname.includes('/admin');
     const isProtectedRoute = isOnDashboard || isOnAdmin;
 
-    // Role-based access control
+    // Role-based access control (locale para redirect: si la primera parte no es locale, usar 'es')
+    const localeForRedirect = isLocale(firstSegment) ? firstSegment : 'es';
+
     if (isProtectedRoute && !isLoggedIn) {
-        const locale = nextUrl.pathname.split('/')[1] || 'es';
-        return NextResponse.redirect(new URL(`/${locale}/login`, nextUrl));
+        const loginUrl = new URL(`/${localeForRedirect}/login`, nextUrl);
+        loginUrl.searchParams.set('callbackUrl', pathname);
+        return NextResponse.redirect(loginUrl);
     }
 
     if (isOnAdmin && isLoggedIn) {
         const userRole = req.auth?.user?.role;
         if (userRole !== 'ADMIN') {
-            const locale = nextUrl.pathname.split('/')[1] || 'es';
-            return NextResponse.redirect(new URL(`/${locale}/unauthorized`, nextUrl));
+            return NextResponse.redirect(new URL(`/${localeForRedirect}/unauthorized`, nextUrl));
         }
     }
 

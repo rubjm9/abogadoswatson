@@ -9,6 +9,7 @@ export type ServiceRow = {
   id: string;
   slug: string;
   name: string;
+  summary: string | null;
   description: string | null;
   image_url: string | null;
   price: number;
@@ -31,6 +32,7 @@ export type ServiceOrderRow = {
 export type ServiceInsert = {
   slug: string;
   name: string;
+  summary?: string | null;
   description?: string | null;
   image_url?: string | null;
   price: number;
@@ -105,6 +107,7 @@ export async function createService(payload: ServiceInsert): Promise<ServiceRow>
     .insert({
       slug: payload.slug,
       name: payload.name,
+      summary: payload.summary ?? null,
       description: payload.description ?? null,
       image_url: payload.image_url ?? null,
       price: payload.price,
@@ -124,6 +127,7 @@ export async function updateService(id: string, payload: ServiceUpdate): Promise
   const update: Record<string, unknown> = { updated_at: new Date().toISOString() };
   if (payload.slug !== undefined) update.slug = payload.slug;
   if (payload.name !== undefined) update.name = payload.name;
+  if (payload.summary !== undefined) update.summary = payload.summary;
   if (payload.description !== undefined) update.description = payload.description;
   if (payload.image_url !== undefined) update.image_url = payload.image_url;
   if (payload.price !== undefined) update.price = payload.price;
@@ -155,6 +159,7 @@ export async function createServiceFromForm(
     await requireAdmin();
     const name = (formData.get("name") as string)?.trim();
     const slug = (formData.get("slug") as string)?.trim().toLowerCase().replace(/\s+/g, "-");
+    const summary = (formData.get("summary") as string)?.trim() || null;
     const description = (formData.get("description") as string)?.trim() || null;
     const price = Number(formData.get("price"));
     const active = formData.get("active") === "on" || formData.get("active") === "true";
@@ -171,6 +176,7 @@ export async function createServiceFromForm(
     await createService({
       name,
       slug,
+      summary,
       description,
       image_url,
       price,
@@ -194,6 +200,7 @@ export async function updateServiceFromForm(
     await requireAdmin();
     const name = (formData.get("name") as string)?.trim();
     const slug = (formData.get("slug") as string)?.trim().toLowerCase().replace(/\s+/g, "-");
+    const summary = (formData.get("summary") as string)?.trim() || null;
     const description = (formData.get("description") as string)?.trim() || null;
     const price = Number(formData.get("price"));
     const active = formData.get("active") === "on" || formData.get("active") === "true";
@@ -213,6 +220,7 @@ export async function updateServiceFromForm(
     await updateService(serviceId, {
       name,
       slug,
+      summary,
       description,
       image_url,
       price,

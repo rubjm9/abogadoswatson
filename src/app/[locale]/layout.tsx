@@ -4,11 +4,7 @@ import "@/styles/globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { FooterBar } from "@/components/layout/footer-bar";
-import { WhatsAppButton } from "@/components/ui/whatsapp-button";
-import { Toaster } from "@/components/ui/toaster";
+import { ConditionalPublicShell } from "@/components/layout/conditional-public-shell";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -41,14 +37,9 @@ export default async function RootLayout({
         <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
             <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-slate-50 text-slate-900 flex min-h-screen flex-col`}>
                 <NextIntlClientProvider messages={messages}>
-                    <Header />
-                    <main className="flex-1">
+                    <ConditionalPublicShell>
                         {children}
-                    </main>
-                    <Footer />
-                    <FooterBar />
-                    <WhatsAppButton />
-                    <Toaster />
+                    </ConditionalPublicShell>
                 </NextIntlClientProvider>
             </body>
         </html>

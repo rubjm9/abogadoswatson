@@ -66,8 +66,10 @@ export async function register(data: z.infer<typeof RegisterSchema>) {
         });
 
         return { success: true, data: { id: user.id, email: user.email } };
-    } catch (_error) {
-        return { success: false, error: 'Failed to create user' };
+    } catch (err) {
+        console.error('Register error:', err);
+        const message = err instanceof Error ? err.message : 'Failed to create user';
+        return { success: false, error: process.env.NODE_ENV === 'development' ? message : 'Failed to create user' };
     }
 }
 

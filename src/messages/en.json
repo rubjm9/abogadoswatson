@@ -211,10 +211,35 @@
     "login": {
       "title": "Authentication required",
       "description": "You must log in to access this page.",
+      "signInTitle": "Sign in",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "invalidCredentials": "Invalid email or password.",
+      "emailInvalid": "Please enter a valid email address.",
+      "passwordMin": "Password must be at least 6 characters.",
       "backHome": "Back to home",
       "contact": "Contact",
-      "helpText": "If you need access, please contact our team."
+      "helpText": "If you need access, please contact our team.",
+      "createAccount": "Create account",
+      "registerSuccess": "Account created. You can now sign in."
     }
+  },
+  "RegisterPage": {
+    "title": "Create account",
+    "description": "Register to access your client panel.",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "passwordConfirm": "Confirm password",
+    "submit": "Register",
+    "successMessage": "Account created. You can now sign in.",
+    "alreadyExists": "An account with this email already exists.",
+    "nameRequired": "Name is required.",
+    "emailInvalid": "Please enter a valid email address.",
+    "passwordMin": "Password must be at least 6 characters.",
+    "passwordMismatch": "Passwords do not match.",
+    "backToLogin": "Back to sign in"
   },
   "ContactForm": {
     "validation": {

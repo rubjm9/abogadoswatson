@@ -3,6 +3,7 @@
 import { Link } from "@/navigation";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { imagePath } from "@/lib/constants";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
@@ -137,7 +138,7 @@ export function Hero() {
                 >
                     <div className="relative aspect-[4/5] w-full max-w-md ml-auto overflow-hidden shadow-2xl rounded-sm">
                         <img
-                            src="/images/hero-main-human.png"
+                            src={imagePath("hero-main-human.png")}
                             alt="Profesional internacional en España"
                             className="absolute inset-0 w-full h-full object-cover"
                         />

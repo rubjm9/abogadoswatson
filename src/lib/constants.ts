@@ -1,6 +1,20 @@
 import type { LucideIcon } from "lucide-react";
 import { Globe2, Briefcase, Building2, Users } from "lucide-react";
 
+/**
+ * Prefijo base para assets estáticos (imágenes en public).
+ * Por defecto '' (Next sirve public en la raíz: /images/...).
+ * Si en producción los estáticos se sirven bajo /public, define NEXT_PUBLIC_STATIC_BASE=/public
+ */
+export const STATIC_BASE = process.env.NEXT_PUBLIC_STATIC_BASE ?? "";
+
+/** Ruta pública de una imagen (ej: imagePath("logo.png") => "/images/logo.png") */
+export function imagePath(path: string): string {
+    const base = STATIC_BASE.replace(/\/$/, "");
+    const segment = path.startsWith("/") ? path : `/images/${path}`;
+    return base ? `${base}${segment}` : segment;
+}
+
 /** Número de WhatsApp para contacto (sin +). Usado en botón flotante y página de contacto. */
 export const CONTACT_WHATSAPP_NUMBER = "34637058570";
 

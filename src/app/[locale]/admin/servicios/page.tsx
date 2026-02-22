@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Plus, Pencil } from "lucide-react";
+import { Plus, Pencil, ExternalLink } from "lucide-react";
 import { DeleteServiceForm } from "./delete-service-form";
 
 export default async function AdminServiciosPage() {
@@ -81,6 +81,11 @@ export default async function AdminServiciosPage() {
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
+                      <Button variant="ghost" size="icon" asChild title="Ver en la página pública">
+                        <Link href={`/contratar/${s.slug}`} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                        </Link>
+                      </Button>
                       <Button variant="ghost" size="icon" asChild>
                         <Link href={`/admin/servicios/${s.id}/edit`}>
                           <Pencil className="h-4 w-4" />

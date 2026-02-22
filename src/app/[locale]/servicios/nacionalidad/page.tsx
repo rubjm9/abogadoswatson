@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/navigation";
 import { CheckCircle2, FileText, ScrollText, Timer, ShieldAlert, ArrowRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
+import { imagePath } from "@/lib/constants";
 import { useTranslations } from "next-intl";
 
 export default function NacionalidadPage() {
@@ -31,7 +32,7 @@ export default function NacionalidadPage() {
             <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden">
                 <div className="absolute inset-0 bg-slate-900/80 z-10" />
                 <img
-                    src="/images/nationality.png"
+                    src={imagePath("nationality.png")}
                     alt={t('hero.imageAlt')}
                     className="absolute inset-0 w-full h-full object-cover opacity-40"
                 />

@@ -57,7 +57,7 @@ export async function submitContactForm(data: ContactFormData) {
             <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
         `;
 
-        const { error } = await resend.emails.send({
+        const { data, error } = await resend.emails.send({
             from,
             to: [...CONTACT_EMAIL_TO],
             subject: `Nueva consulta de ${name}`,
@@ -65,10 +65,13 @@ export async function submitContactForm(data: ContactFormData) {
         });
 
         if (error) {
+            const message = typeof error === 'object' && error !== null && 'message' in error
+                ? String((error as { message?: string }).message)
+                : JSON.stringify(error);
             console.error('Resend error:', error);
             return {
                 success: false,
-                error: 'Hubo un problema al enviar su mensaje. Por favor intente nuevamente.',
+                error: process.env.NODE_ENV === 'development' ? message : 'Hubo un problema al enviar su mensaje. Por favor intente nuevamente.',
             };
         }
 
@@ -77,10 +80,11 @@ export async function submitContactForm(data: ContactFormData) {
             message: 'Mensaje enviado correctamente',
         };
     } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
         console.error('Error al enviar formulario de contacto:', error);
         return {
             success: false,
-            error: 'Hubo un problema al enviar su mensaje. Por favor intente nuevamente.',
+            error: process.env.NODE_ENV === 'development' ? message : 'Hubo un problema al enviar su mensaje. Por favor intente nuevamente.',
         };
     }
 }

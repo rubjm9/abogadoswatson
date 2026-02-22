@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
             unit_amount: amountCents,
             product_data: {
               name: service.name,
-              description: service.description || undefined,
+              description: service.summary || service.description || undefined,
               images: service.image_url ? [service.image_url] : undefined,
             },
           },

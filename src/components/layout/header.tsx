@@ -18,7 +18,7 @@ import {
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 import { MobileMenu } from "./mobile-menu";
-import { serviceCategories } from "@/lib/constants";
+import { serviceCategories, imagePath } from "@/lib/constants";
 
 export function Header() {
     const t = useTranslations("Navigation");
@@ -37,22 +37,24 @@ export function Header() {
     }));
     const [isScrolled, setIsScrolled] = React.useState(false);
 
-    // Detect if we're on a services page
-    const isServicesPage = pathname?.includes("/servicios") && pathname !== "/servicios";
+    // Páginas con hero a toda altura: navbar transparente + texto blanco al inicio, blanco al hacer scroll
+    const isHeroPage =
+        (pathname?.includes("/servicios") && pathname !== "/servicios") ||
+        pathname?.includes("/contratar");
 
     React.useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
         };
         window.addEventListener("scroll", handleScroll);
+        handleScroll(); // estado inicial
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Determine navbar style based on page type and scroll state
-    const isLightMode = isServicesPage ? isScrolled : true;
+    const isLightMode = isHeroPage ? isScrolled : true;
     const logoSrc = isLightMode 
-        ? "/images/logo-horizontal.png" 
-        : "/images/logo-horizontal-white.png";
+        ? imagePath("logo-horizontal.png") 
+        : imagePath("logo-horizontal-white.png");
     
     // Detect active navigation items
     const isServicesActive = pathname?.includes("/servicios");

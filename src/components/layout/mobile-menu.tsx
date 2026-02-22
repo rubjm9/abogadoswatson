@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "./language-switcher";
-import { serviceCategories } from "@/lib/constants";
+import { serviceCategories, imagePath } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
@@ -74,7 +74,7 @@ export function MobileMenu({ isLightMode = true }: MobileMenuProps) {
                                 <Link href="/">
                                     <span onClick={() => setIsOpen(false)}>
                                         <img
-                                            src="/images/logo-horizontal.png"
+                                            src={imagePath("logo-horizontal.png")}
                                             alt="Abogados Watson"
                                             className="h-8 w-auto"
                                         />

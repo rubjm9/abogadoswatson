@@ -46,22 +46,22 @@ const PHONE_PREFIXES = [
     { value: "+351", label: "Portugal (+351)" },
 ] as const;
 
-// Schema de validación
-const createContactSchema = (t: any) => z.object({
+// Schema de validación (t está en namespace ContactForm)
+const createContactSchema = (t: (key: string) => string) => z.object({
     name: z.string()
-        .min(2, t('ContactForm.validation.nameMin'))
+        .min(2, t('validation.nameMin'))
         .max(100, 'El nombre es demasiado largo'),
     email: z.string()
-        .email(t('ContactForm.validation.emailInvalid'))
-        .min(1, t('ContactForm.validation.emailRequired')),
+        .email(t('validation.emailInvalid'))
+        .min(1, t('validation.emailRequired')),
     phonePrefix: z.string().optional(),
     phone: z.string()
         .optional()
         .refine((val) => !val || val === '' || /^[0-9\s\-()]{6,20}$/.test(val), {
-            message: t('ContactForm.validation.phoneInvalid')
+            message: t('validation.phoneInvalid')
         }),
     message: z.string()
-        .min(10, t('ContactForm.validation.messageMin'))
+        .min(10, t('validation.messageMin'))
         .max(2000, 'El mensaje es demasiado largo'),
 });
 

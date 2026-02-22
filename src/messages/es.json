@@ -211,10 +211,35 @@
     "login": {
       "title": "Autenticación requerida",
       "description": "Debe iniciar sesión para acceder a esta página.",
+      "signInTitle": "Iniciar sesión",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Entrar",
+      "invalidCredentials": "Correo o contraseña incorrectos.",
+      "emailInvalid": "Introduzca un correo válido.",
+      "passwordMin": "La contraseña debe tener al menos 6 caracteres.",
       "backHome": "Volver al inicio",
       "contact": "Contactar",
-      "helpText": "Si necesita acceso, por favor contacte con nuestro equipo."
+      "helpText": "Si necesita acceso, por favor contacte con nuestro equipo.",
+      "createAccount": "Crear cuenta",
+      "registerSuccess": "Cuenta creada. Ya puede iniciar sesión."
     }
+  },
+  "RegisterPage": {
+    "title": "Crear cuenta",
+    "description": "Regístrese para acceder a su panel de cliente.",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "passwordConfirm": "Repetir contraseña",
+    "submit": "Registrarse",
+    "successMessage": "Cuenta creada. Ya puede iniciar sesión.",
+    "alreadyExists": "Ya existe una cuenta con este correo.",
+    "nameRequired": "El nombre es obligatorio.",
+    "emailInvalid": "Introduzca un correo válido.",
+    "passwordMin": "La contraseña debe tener al menos 6 caracteres.",
+    "passwordMismatch": "Las contraseñas no coinciden.",
+    "backToLogin": "Volver a iniciar sesión"
   },
   "ContactForm": {
     "validation": {
