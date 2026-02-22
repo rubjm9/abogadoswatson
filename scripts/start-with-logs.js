@@ -2,28 +2,45 @@
 /**
  * Wrapper para "next start" que escribe logs en archivo y stderr.
  * Útil en hosting (ej. Hostinger) para ver por qué falla el arranque (503).
- * Logs: stderr + archivo en ./logs/server.log (o LOG_FILE)
+ * Logs: stderr + ./logs/server.log (o LOG_FILE) + fallback ./startup.log en la raíz del proyecto.
  */
 const { spawn } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
+const cwd = process.cwd();
 const PORT = process.env.PORT || "3000";
-const LOG_FILE = process.env.LOG_FILE || path.join(process.cwd(), "logs", "server.log");
+const LOG_FILE = process.env.LOG_FILE || path.join(cwd, "logs", "server.log");
+const FALLBACK_LOG = path.join(cwd, "startup.log");
+
+function writeToFile(filePath, line) {
+  try {
+    if (filePath.includes("logs")) {
+      fs.mkdirSync(path.dirname(filePath), { recursive: true });
+    }
+    fs.appendFileSync(filePath, line);
+  } catch (_) {}
+}
 
 function log(msg, alsoStdout = false) {
   const line = `[${new Date().toISOString()}] ${msg}\n`;
   process.stderr.write(line);
   if (alsoStdout) process.stdout.write(line);
-  try {
-    fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
-    fs.appendFileSync(LOG_FILE, line);
-  } catch (e) {
-    process.stderr.write(`[start-with-logs] No se pudo escribir en ${LOG_FILE}: ${e.message}\n`);
-  }
+  writeToFile(LOG_FILE, line);
+  if (LOG_FILE !== FALLBACK_LOG) writeToFile(FALLBACK_LOG, line);
 }
 
-log(`PORT=${PORT} NODE_ENV=${process.env.NODE_ENV} cwd=${process.cwd()} LOG_FILE=${LOG_FILE}`);
+// Crear carpeta logs y primer log al instante (para que exista aunque el proceso falle después)
+try {
+  fs.mkdirSync(path.join(cwd, "logs"), { recursive: true });
+  const firstLine = `[${new Date().toISOString()}] start-with-logs.js iniciado cwd=${cwd} PORT=${PORT} LOG_FILE=${LOG_FILE}\n`;
+  fs.writeFileSync(LOG_FILE, firstLine);
+  fs.writeFileSync(FALLBACK_LOG, firstLine);
+} catch (e) {
+  process.stderr.write(`[start-with-logs] No se pudo crear logs: ${e.message}\n`);
+}
+
+log(`PORT=${PORT} NODE_ENV=${process.env.NODE_ENV} cwd=${cwd} LOG_FILE=${LOG_FILE}`);
 log("Iniciando next start...");
 
 const nextBin = path.join(process.cwd(), "node_modules", "next", "dist", "bin", "next");
@@ -40,19 +57,15 @@ const child = spawn(
 child.stdout.on("data", (data) => {
   const s = data.toString();
   process.stdout.write(s);
-  try {
-    fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
-    fs.appendFileSync(LOG_FILE, s);
-  } catch (_) {}
+  writeToFile(LOG_FILE, s);
+  writeToFile(FALLBACK_LOG, s);
 });
 
 child.stderr.on("data", (data) => {
   const s = data.toString();
   process.stderr.write(s);
-  try {
-    fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
-    fs.appendFileSync(LOG_FILE, s);
-  } catch (_) {}
+  writeToFile(LOG_FILE, s);
+  writeToFile(FALLBACK_LOG, s);
 });
 
 child.on("error", (err) => {

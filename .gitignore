@@ -22,6 +22,7 @@
 
 # logs (start-with-logs.js en producción)
 /logs
+/startup.log
 
 # misc
 .DS_Store
