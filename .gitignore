@@ -20,6 +20,9 @@
 # production
 /build
 
+# logs (start-with-logs.js en producción)
+/logs
+
 # misc
 .DS_Store
 *.pem
