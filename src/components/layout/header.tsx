@@ -18,7 +18,7 @@ import {
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 import { MobileMenu } from "./mobile-menu";
-import { serviceCategories, imagePath } from "@/lib/constants";
+import { serviceCategories, serviceMenuColumnKeys, imagePath } from "@/lib/constants";
 
 export function Header() {
     const t = useTranslations("Navigation");
@@ -26,6 +26,7 @@ export function Header() {
     const pathname = usePathname();
 
     const navCategories = serviceCategories.map((cat) => ({
+        key: cat.key,
         title: tServices(`categories.${cat.key}.title`),
         subtitle: tServices(`categories.${cat.key}.subtitle`),
         services: cat.services.map((svc) => ({
@@ -35,6 +36,9 @@ export function Header() {
             icon: cat.icon,
         })),
     }));
+    const menuColumns = serviceMenuColumnKeys.map((colKeys) =>
+        colKeys.map((k) => navCategories.find((c) => c.key === k)).filter(Boolean)
+    );
     const [isScrolled, setIsScrolled] = React.useState(false);
 
     // Páginas con hero a toda altura: navbar transparente + texto blanco al inicio, blanco al hacer scroll
@@ -96,25 +100,31 @@ export function Header() {
                                     {t('services')}
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <div className="w-[600px] p-6 lg:w-[800px] bg-white text-[#0F172A] shadow-2xl border border-slate-100">
-                                        <div className="grid grid-cols-2 gap-x-8 gap-y-10">
-                                            {navCategories.map((category) => (
-                                                <div key={category.title}>
-                                                    <h4 className="text-[10px] uppercase tracking-widest text-[#701218] font-bold mb-4 px-3">
-                                                        {category.subtitle}
-                                                    </h4>
-                                                    <ul className="space-y-1">
-                                                        {category.services.map((service) => (
-                                                            <ListItem
-                                                                key={service.title}
-                                                                title={service.title}
-                                                                href={service.href}
-                                                                icon={service.icon}
-                                                            >
-                                                                {service.description}
-                                                            </ListItem>
-                                                        ))}
-                                                    </ul>
+                                    <div className="w-[600px] p-6 lg:w-[900px] bg-white text-[#0F172A] shadow-2xl border border-slate-100">
+                                        <div className="grid grid-cols-3 gap-x-8 gap-y-10">
+                                            {menuColumns.map((column, colIndex) => (
+                                                <div key={colIndex} className="space-y-8">
+                                                    {column.map((category) => (
+                                                        category && (
+                                                            <div key={category.key}>
+                                                                <h4 className="text-[10px] uppercase tracking-widest text-[#701218] font-bold mb-4 px-3">
+                                                                    {category.subtitle}
+                                                                </h4>
+                                                                <ul className="space-y-1">
+                                                                    {category.services.map((service) => (
+                                                                        <ListItem
+                                                                            key={service.title}
+                                                                            title={service.title}
+                                                                            href={service.href}
+                                                                            icon={service.icon}
+                                                                        >
+                                                                            {service.description}
+                                                                        </ListItem>
+                                                                    ))}
+                                                                </ul>
+                                                            </div>
+                                                        )
+                                                    ))}
                                                 </div>
                                             ))}
                                         </div>

@@ -21,6 +21,7 @@ import { submitContactForm } from "@/actions/contact";
 import { toast } from "sonner";
 import { useState } from "react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { Link } from "@/navigation";
 
 // Prefijos internacionales habituales
 const PHONE_PREFIXES = [
@@ -63,6 +64,9 @@ const createContactSchema = (t: (key: string) => string) => z.object({
     message: z.string()
         .min(10, t('validation.messageMin'))
         .max(2000, 'El mensaje es demasiado largo'),
+    acceptPrivacy: z.boolean().refine((v) => v === true, {
+        message: t('validation.acceptPrivacyRequired'),
+    }),
 });
 
 type ContactFormData = z.infer<ReturnType<typeof createContactSchema>>;
@@ -81,6 +85,7 @@ export default function ContactPage() {
             phonePrefix: '+34',
             phone: '',
             message: '',
+            acceptPrivacy: false,
         },
         mode: 'onBlur', // Validar al perder el foco
     });
@@ -131,26 +136,26 @@ export default function ContactPage() {
     return (
         <main className="pt-24 bg-white">
             {/* Hero Section */}
-            <section className="py-24 border-b border-slate-50">
+            <section className="pt-12 pb-8 md:pt-16 md:pb-10 border-b border-slate-50">
                 <Container>
                     <motion.div {...fadeIn} className="max-w-3xl">
-                        <h1 className="font-serif text-5xl md:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+                        <h1 className="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-4 md:mb-6 leading-tight">
                             {t('hero.title')}
                         </h1>
-                        <p className="text-xl text-slate-600 leading-relaxed border-l-4 border-[#701218]/20 pl-6">
+                        <p className="text-lg md:text-xl text-slate-600 leading-relaxed border-l-4 border-[#701218]/20 pl-6">
                             {t('hero.subtitle')}
                         </p>
                     </motion.div>
                 </Container>
             </section>
 
-            <section className="py-24">
+            <section className="py-12 md:py-16">
                 <Container>
-                    <div className="grid lg:grid-cols-12 gap-16">
+                    <div className="grid lg:grid-cols-12 gap-10 md:gap-12">
                         {/* Contact Methods */}
-                        <div className="lg:col-span-5 space-y-12">
+                        <div className="lg:col-span-5 space-y-8">
                             <motion.div {...fadeIn} transition={{ delay: 0.1 }}>
-                                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-[#701218] mb-10">
+                                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-[#701218] mb-6">
                                     Canales de comunicación
                                 </h2>
 
@@ -205,37 +210,6 @@ export default function ContactPage() {
                                                 >
                                                     info@abogadoswatson.com
                                                 </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Escríbenos por WhatsApp (mismo número que botón flotante) */}
-                                    <div className="group pt-10 border-t border-slate-50">
-                                        <div className="flex gap-6 items-start">
-                                            <div className="w-12 h-12 bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-[#701218]/5 transition-colors">
-                                                <MessageCircle className="w-6 h-6 text-[#701218]" />
-                                            </div>
-                                            <div>
-                                                <h3 className="font-serif text-xl font-bold text-slate-900 mb-2">
-                                                    {t('methods.whatsappWrite.title')}
-                                                </h3>
-                                                <p className="text-slate-600 mb-6 leading-relaxed">
-                                                    {t('methods.whatsappWrite.description')}
-                                                </p>
-                                                <Button 
-                                                    asChild 
-                                                    variant="outline"
-                                                    className="border-[#701218] text-[#701218] hover:bg-[#701218]/5 px-6 py-5 h-auto uppercase tracking-widest text-[10px] font-bold focus:outline-none focus:ring-2 focus:ring-[#701218] focus:ring-offset-2"
-                                                >
-                                                    <a 
-                                                        href={WHATSAPP_URL} 
-                                                        target="_blank" 
-                                                        rel="noopener noreferrer"
-                                                        aria-label={t('methods.whatsappWrite.button')}
-                                                    >
-                                                        {t('methods.whatsappWrite.button')}
-                                                    </a>
-                                                </Button>
                                             </div>
                                         </div>
                                     </div>
@@ -427,6 +401,34 @@ export default function ContactPage() {
                                         {form.formState.errors.message && (
                                             <p id="message-error" className="text-xs text-red-500 mt-1" role="alert">
                                                 {form.formState.errors.message.message}
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <div className="flex items-start gap-3">
+                                            <input
+                                                id="acceptPrivacy"
+                                                type="checkbox"
+                                                {...form.register('acceptPrivacy')}
+                                                className="mt-1 h-4 w-4 rounded border-slate-300 text-[#701218] focus:ring-[#701218] focus:ring-offset-0"
+                                                aria-invalid={form.formState.errors.acceptPrivacy ? 'true' : 'false'}
+                                                aria-describedby={form.formState.errors.acceptPrivacy ? 'acceptPrivacy-error' : undefined}
+                                            />
+                                            <label
+                                                htmlFor="acceptPrivacy"
+                                                className="text-[11px] text-slate-600 leading-relaxed cursor-pointer"
+                                            >
+                                                {tForm('acceptPrivacyLabel')}{' '}
+                                                <Link href="/privacidad" className="text-[#701218] font-medium underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-[#701218] focus:ring-offset-1 rounded">
+                                                    {tForm('acceptPrivacyLink')}
+                                                </Link>
+                                                . <span className="text-red-500">*</span>
+                                            </label>
+                                        </div>
+                                        {form.formState.errors.acceptPrivacy && (
+                                            <p id="acceptPrivacy-error" className="text-xs text-red-500 mt-1" role="alert">
+                                                {form.formState.errors.acceptPrivacy.message}
                                             </p>
                                         )}
                                     </div>

@@ -44,7 +44,7 @@ export default async function UnauthorizedPage() {
                                     asChild
                                     className="bg-[#701218] hover:bg-[#590e13] text-white px-8 py-6 h-auto uppercase tracking-widest text-[11px] font-bold shadow-lg shadow-[#701218]/10 transition-all duration-300 hover:-translate-y-1"
                                 >
-                                    <Link href="/dashboard">
+                                    <Link href="/admin">
                                         <ArrowLeft className="mr-2 h-4 w-4 inline" />
                                         {t('backDashboard')}
                                     </Link>

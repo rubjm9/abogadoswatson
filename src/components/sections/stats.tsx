@@ -7,9 +7,9 @@ import { useTranslations } from "next-intl";
 
 const stats = [
     { labelKey: "stats.years", value: "15+" },
-    { labelKey: "stats.cases", value: "2,500+" },
-    { labelKey: "stats.countries", value: "30+" },
-    { labelKey: "stats.satisfaction", value: "99%" },
+    { labelKey: "stats.expedients", value: "500+" },
+    { labelKey: "stats.countries", value: "25+" },
+    { labelKey: "stats.reviews", value: "4.9" },
 ];
 
 export function Stats() {

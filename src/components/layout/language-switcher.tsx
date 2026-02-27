@@ -31,7 +31,7 @@ export function LanguageSwitcher({ isLightMode = true }: LanguageSwitcherProps) 
                     : "text-white hover:text-white/80 hover:bg-white/10"
             )}
         >
-            {locale === "es" ? "EN" : "ES"}
+            {locale === "es" ? "ENGLISH" : "ESPAÑOL"}
         </Button>
     );
 }

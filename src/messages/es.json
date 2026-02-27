@@ -8,9 +8,9 @@
     "heroBadge": "Años de experiencia en derecho de extranjería técnico",
     "stats": {
       "years": "Años de experiencia",
-      "cases": "Casos de éxito",
+      "expedients": "Expedientes cada año",
       "countries": "Países atendidos",
-      "satisfaction": "Satisfacción"
+      "reviews": "Estrellas en reseñas"
     },
     "servicesPreview": {
       "title": "Soluciones legales globales",
@@ -209,8 +209,8 @@
       "helpText": "Si cree que esto es un error, por favor contacte con el administrador del sistema."
     },
     "login": {
-      "title": "Autenticación requerida",
-      "description": "Debe iniciar sesión para acceder a esta página.",
+      "welcomeTitle": "Iniciar sesión",
+      "welcomeDescription": "Introduce tus datos para acceder a tu cuenta.",
       "signInTitle": "Iniciar sesión",
       "email": "Correo electrónico",
       "password": "Contraseña",
@@ -249,8 +249,11 @@
       "emailInvalid": "Por favor ingrese un correo electrónico válido",
       "phoneInvalid": "Por favor ingrese un número de teléfono válido",
       "messageRequired": "El mensaje es obligatorio",
-      "messageMin": "El mensaje debe tener al menos 10 caracteres"
+      "messageMin": "El mensaje debe tener al menos 10 caracteres",
+      "acceptPrivacyRequired": "Debe aceptar la política de privacidad y protección de datos para enviar el formulario."
     },
+    "acceptPrivacyLabel": "He leído y acepto la",
+    "acceptPrivacyLink": "política de privacidad y protección de datos",
     "success": {
       "title": "Mensaje enviado",
       "message": "Gracias por contactarnos. Nos pondremos en contacto con usted pronto."
@@ -344,6 +347,16 @@
           "inmobiliario": {
             "title": "Derecho inmobiliario",
             "description": "Asesoramiento integral en compraventa, arrendamiento y gestión de inmuebles."
+          }
+        }
+      },
+      "defense": {
+        "title": "Defensa jurídica",
+        "subtitle": "Solucionar denegaciones",
+        "services": {
+          "legalDefense": {
+            "title": "Protección jurídica",
+            "description": "Defensa ante denegaciones y conflictos."
           }
         }
       }

@@ -29,6 +29,11 @@ export default function ServicesPage() {
             key: "business",
             icon: Building2,
             services: ["investment", "realEstate", "inmobiliario"]
+        },
+        {
+            key: "defense",
+            icon: Gavel,
+            services: ["legalDefense"]
         }
     ];
 

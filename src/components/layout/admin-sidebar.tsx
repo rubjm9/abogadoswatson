@@ -2,31 +2,42 @@
 
 import { Link } from "@/navigation";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, LogOut } from "lucide-react";
+import { LayoutDashboard, Briefcase, User, ShoppingBag, FileText, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { imagePath } from "@/lib/constants";
 import { logoutAndRedirect } from "@/actions/auth";
 
-const adminSidebarItems = [
-  {
-    title: "Servicios",
-    href: "/admin/servicios",
-    icon: ShoppingBag,
-  },
+const baseItems = [
+  { title: "Inicio", href: "/admin", icon: LayoutDashboard },
+  { title: "Expedientes", href: "/admin/expedientes", icon: Briefcase },
+  { title: "Perfil", href: "/admin/profile", icon: User },
 ];
 
-export function AdminSidebar() {
+const adminOnlyItems = [
+  { title: "Contrataciones", href: "/admin/contrataciones", icon: FileText },
+  { title: "Servicios", href: "/admin/servicios", icon: ShoppingBag },
+];
+
+export function AdminSidebar({ role }: { role?: string | null }) {
   const pathname = usePathname();
+  const isAdmin = role === "ADMIN";
+  const items = [...baseItems, ...(isAdmin ? adminOnlyItems : [])];
 
   return (
     <div className="flex h-full w-64 flex-col bg-slate-900 text-white">
-      <div className="flex h-20 items-center justify-center border-b border-slate-800 px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-          <span className="text-xl">Abogados Watson</span>
+      <div className="flex h-20 items-center justify-center border-b border-slate-800 px-4">
+        <Link href="/" className="block w-full max-w-[180px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={imagePath("logo-horizontal-white.png")}
+            alt="Abogados Watson"
+            className="h-10 w-auto object-contain object-center"
+          />
         </Link>
       </div>
       <div className="flex-1 px-4 py-6">
         <nav className="flex flex-col gap-2">
-          {adminSidebarItems.map((item) => {
+          {items.map((item) => {
             const Icon = item.icon;
             const isActive =
               pathname === item.href || pathname?.startsWith(`${item.href}/`);

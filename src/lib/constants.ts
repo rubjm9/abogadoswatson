@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Globe2, Briefcase, Building2, Users } from "lucide-react";
+import { Globe2, Briefcase, Building2, Users, Gavel } from "lucide-react";
 
 /**
  * Prefijo base para assets estáticos (imágenes en public).
@@ -49,9 +49,9 @@ export const serviceCategories: {
         key: "citizenship",
         icon: Users,
         services: [
-            { key: "grandchildren", href: "/servicios/nacionalidad" },
             { key: "residence", href: "/servicios/nacionalidad" },
             { key: "nature", href: "/servicios/nacionalidad" },
+            { key: "grandchildren", href: "/servicios/nacionalidad" },
         ],
     },
     {
@@ -63,4 +63,18 @@ export const serviceCategories: {
             { key: "inmobiliario", href: "/servicios/inmobiliario" },
         ],
     },
+    {
+        key: "defense",
+        icon: Gavel,
+        services: [
+            { key: "legalDefense", href: "/servicios/defensa-juridica" },
+        ],
+    },
+];
+
+/** Agrupación del menú Servicios en 3 columnas (desktop). */
+export const serviceMenuColumnKeys: string[][] = [
+    ["residence", "business"],   // Col 1: Vivir en España, Crecer en España
+    ["citizenship", "defense"],  // Col 2: Nacionalidad española, Solucionar Denegaciones
+    ["work"],                    // Col 3: Tu carrera profesional
 ];

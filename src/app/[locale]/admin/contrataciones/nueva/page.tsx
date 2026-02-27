@@ -1,0 +1,28 @@
+import { Link } from "@/navigation";
+import { getServices } from "@/actions/services";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
+import { NuevaContratacionForm } from "../nueva-contractacion-form";
+
+export default async function NuevaContratacionPage() {
+  const services = await getServices();
+
+  return (
+    <div className="space-y-8">
+      <div>
+        <Button variant="ghost" size="sm" asChild>
+          <Link href="/admin/contrataciones" className="flex items-center gap-1 text-slate-600">
+            <ChevronLeft className="h-4 w-4" /> Volver a contrataciones
+          </Link>
+        </Button>
+        <h2 className="text-3xl font-bold tracking-tight mt-2">Nueva contratación</h2>
+        <p className="text-slate-500 mt-1">
+          Registre una contratación realizada fuera de la web. Se creará un expediente asociado.
+        </p>
+      </div>
+      <div className="rounded-lg border border-slate-200 bg-white p-6 md:p-8">
+        <NuevaContratacionForm services={services.map((s) => ({ id: s.id, name: s.name }))} />
+      </div>
+    </div>
+  );
+}

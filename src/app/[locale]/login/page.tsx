@@ -16,7 +16,7 @@ export default function LoginPage() {
     const t = useTranslations('ErrorPages.login');
     const router = useRouter();
     const searchParams = useSearchParams();
-    const callbackUrl = searchParams.get('callbackUrl') ?? '/dashboard';
+    const callbackUrl = searchParams.get('callbackUrl') ?? '/admin';
     const registered = searchParams.get('registered') === '1';
     const [error, setError] = useState<string | null>(null);
 
@@ -52,34 +52,27 @@ export default function LoginPage() {
                         transition={{ duration: 0.6 }}
                         className="space-y-8"
                     >
-                        {/* Icono */}
-                        <div className="flex justify-center mb-8">
+                        {/* Encabezado acogedor */}
+                        <div className="flex justify-center mb-6">
                             <div className="relative">
-                                <div className="absolute inset-0 bg-[#701218]/10 rounded-full blur-3xl" />
-                                <div className="relative bg-[#701218]/5 p-8 rounded-full">
-                                    <Lock className="w-16 h-16 text-[#701218]" />
+                                <div className="absolute inset-0 bg-[#701218]/10 rounded-full blur-2xl" />
+                                <div className="relative bg-slate-50 border border-slate-100 p-6 rounded-full">
+                                    <Lock className="w-12 h-12 text-[#701218]" strokeWidth={1.5} />
                                 </div>
                             </div>
                         </div>
 
-                        {/* Título */}
-                        <div className="space-y-4">
-                            <h1 className="font-serif text-5xl md:text-6xl font-bold text-slate-900">
-                                401
+                        <div className="space-y-2 mb-8">
+                            <h1 className="font-serif text-3xl md:text-4xl font-bold text-slate-900">
+                                {t('welcomeTitle')}
                             </h1>
-                            <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900">
-                                {t('title')}
-                            </h2>
-                            <p className="text-lg text-slate-600 leading-relaxed max-w-md mx-auto">
-                                {t('description')}
+                            <p className="text-slate-600 max-w-sm mx-auto">
+                                {t('welcomeDescription')}
                             </p>
                         </div>
 
-                        {/* Formulario de inicio de sesión */}
-                        <div className="max-w-sm mx-auto text-left pt-4">
-                            <h3 className="text-lg font-semibold text-slate-900 mb-4 text-center">
-                                {t('signInTitle')}
-                            </h3>
+                        {/* Formulario */}
+                        <div className="max-w-sm mx-auto text-left">
                             <form action={handleSubmit} className="space-y-4">
                                 {registered && (
                                     <p className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-md px-3 py-2" role="status">

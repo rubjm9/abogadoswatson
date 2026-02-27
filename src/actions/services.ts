@@ -2,6 +2,7 @@
 
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { requireAdmin } from "@/lib/auth-helpers";
+import { prisma } from "@/lib/prisma";
 
 const BUCKET = "service-images";
 
@@ -27,7 +28,11 @@ export type ServiceOrderRow = {
   amount: number;
   status: string;
   created_at: string;
+  case_id: string | null;
 };
+
+/** Contratación para listado: orden + nombre del servicio */
+export type ContratacionRow = ServiceOrderRow & { service_name: string };
 
 export type ServiceInsert = {
   slug: string;
@@ -234,22 +239,66 @@ export async function updateServiceFromForm(
   }
 }
 
+/** Lista contrataciones (órdenes) con nombre del servicio (admin). */
+export async function getContrataciones(): Promise<ContratacionRow[]> {
+  await requireAdmin();
+  const supabase = createServerSupabaseClient();
+  const { data: orders, error: ordersError } = await supabase
+    .from("service_orders")
+    .select("*")
+    .order("created_at", { ascending: false });
+  if (ordersError) throw new Error(ordersError.message);
+  const list = (orders ?? []) as ServiceOrderRow[];
+  if (list.length === 0) return [];
+  const serviceIds = [...new Set(list.map((o) => o.service_id))];
+  const { data: services } = await supabase.from("services").select("id, name").in("id", serviceIds);
+  const nameById = new Map((services ?? []).map((s: { id: string; name: string }) => [s.id, s.name]));
+  return list.map((o) => ({
+    ...o,
+    service_name: nameById.get(o.service_id) ?? "—",
+  }));
+}
+
 /** Crea una orden pendiente (usado desde la API de checkout). */
 export async function createServiceOrder(params: {
   service_id: string;
   email: string | null;
   stripe_session_id: string | null;
   amount: number;
+  case_id?: string | null;
 }): Promise<ServiceOrderRow> {
+  const supabase = createServerSupabaseClient();
+  const row: Record<string, unknown> = {
+    service_id: params.service_id,
+    email: params.email,
+    stripe_session_id: params.stripe_session_id ?? null,
+    amount: params.amount,
+    status: "PENDING",
+  };
+  if (params.case_id != null) row.case_id = params.case_id;
+  const { data, error } = await supabase.from("service_orders").insert(row).select().single();
+  if (error) throw new Error(error.message);
+  return data as ServiceOrderRow;
+}
+
+/** Crea una contratación manual (admin): orden en Supabase con case_id. */
+export async function createManualServiceOrder(params: {
+  service_id: string;
+  email: string | null;
+  amount: number;
+  case_id: string;
+}): Promise<ServiceOrderRow> {
+  await requireAdmin();
   const supabase = createServerSupabaseClient();
   const { data, error } = await supabase
     .from("service_orders")
     .insert({
       service_id: params.service_id,
       email: params.email,
-      stripe_session_id: params.stripe_session_id,
+      stripe_session_id: null,
       amount: params.amount,
-      status: "PENDING",
+      status: "PAID",
+      case_id: params.case_id,
     })
     .select()
     .single();
@@ -257,12 +306,67 @@ export async function createServiceOrder(params: {
   return data as ServiceOrderRow;
 }
 
-/** Marca una orden como pagada por stripe_session_id (webhook). */
+/** Obtiene una orden por stripe_session_id (para webhook). */
+export async function getOrderBySessionId(stripeSessionId: string): Promise<ServiceOrderRow | null> {
+  const supabase = createServerSupabaseClient();
+  const { data, error } = await supabase
+    .from("service_orders")
+    .select("*")
+    .eq("stripe_session_id", stripeSessionId)
+    .single();
+  if (error || !data) return null;
+  return data as ServiceOrderRow;
+}
+
+/** Marca una orden como pagada y crea expediente + cliente si aplica (webhook). */
 export async function markOrderPaidBySessionId(stripeSessionId: string): Promise<void> {
   const supabase = createServerSupabaseClient();
+  const order = await getOrderBySessionId(stripeSessionId);
+  if (!order) {
+    const { error } = await supabase
+      .from("service_orders")
+      .update({ status: "PAID" })
+      .eq("stripe_session_id", stripeSessionId);
+    if (error) throw new Error(error.message);
+    return;
+  }
+
+  let caseId: string | null = null;
+  const email = order.email?.trim().toLowerCase();
+  if (email) {
+    const { data: serviceRow } = await supabase
+      .from("services")
+      .select("name")
+      .eq("id", order.service_id)
+      .single();
+    const serviceName = (serviceRow as { name?: string } | null)?.name ?? "Servicio";
+
+    let client = await prisma.client.findUnique({ where: { email } });
+    if (!client) {
+      client = await prisma.client.create({
+        data: {
+          firstName: "Cliente",
+          lastName: email.split("@")[0] || "Web",
+          email,
+        },
+      });
+    }
+
+    const newCase = await prisma.case.create({
+      data: {
+        title: `Contratación - ${serviceName} - ${client.firstName} ${client.lastName}`,
+        status: "OPEN",
+        clientId: client.id,
+      },
+    });
+    caseId = newCase.id;
+  }
+
+  const update: Record<string, unknown> = { status: "PAID" };
+  if (caseId) update.case_id = caseId;
   const { error } = await supabase
     .from("service_orders")
-    .update({ status: "PAID" })
+    .update(update)
     .eq("stripe_session_id", stripeSessionId);
   if (error) throw new Error(error.message);
 }

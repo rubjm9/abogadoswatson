@@ -28,7 +28,7 @@ export async function createDocument(data: z.infer<typeof DocumentSchema>) {
         const document = await prisma.document.create({
             data: result.data
         })
-        revalidatePath(`/cases/${data.caseId}`)
+        revalidatePath('/admin/expedientes')
         return { success: true, data: document }
     } catch (_error) {
         return { success: false, error: 'Failed to create document' }
@@ -37,10 +37,12 @@ export async function createDocument(data: z.infer<typeof DocumentSchema>) {
 
 export async function deleteDocument(id: string) {
     try {
-        const document = await prisma.document.delete({
+        const doc = await prisma.document.findUnique({ where: { id } })
+        if (!doc) return { success: false, error: 'Document not found' }
+        await prisma.document.delete({
             where: { id }
         })
-        revalidatePath(`/cases/${document.caseId}`)
+        revalidatePath('/admin/expedientes')
         return { success: true }
     } catch (_error) {
         return { success: false, error: 'Failed to delete document' }

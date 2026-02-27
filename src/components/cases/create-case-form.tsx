@@ -53,7 +53,7 @@ export function CreateCaseForm() {
         try {
             await createCase(values)
             // Show success message (toast) - omitted for brevity
-            router.push("/dashboard/cases")
+            router.push("/admin/expedientes")
             router.refresh()
         } catch (error) {
             console.error(error)

@@ -16,6 +16,15 @@ const LEGACY_REDIRECTS: Record<string, string> = {
 
 export default auth((req) => {
     const { nextUrl } = req;
+
+    // Redirigir www -> sin www (301)
+    const host = nextUrl.hostname;
+    if (host.startsWith('www.')) {
+        const noWww = new URL(nextUrl);
+        noWww.hostname = host.slice(4);
+        return NextResponse.redirect(noWww, 301);
+    }
+
     const pathname = nextUrl.pathname;
     const pathParts = pathname.split('/').filter(Boolean); // ['contacta'] or ['es', 'contacta']
 
@@ -33,26 +42,34 @@ export default auth((req) => {
     }
 
     const isLoggedIn = !!req.auth;
-
-    // Protected routes configuration
-    const isOnDashboard = nextUrl.pathname.includes('/dashboard');
-    const isOnAdmin = nextUrl.pathname.includes('/admin');
-    const isProtectedRoute = isOnDashboard || isOnAdmin;
-
-    // Role-based access control (locale para redirect: si la primera parte no es locale, usar 'es')
     const localeForRedirect = isLocale(firstSegment) ? firstSegment : 'es';
 
-    if (isProtectedRoute && !isLoggedIn) {
+    // Redirigir /dashboard y /dashboard/* a /admin y /admin/*
+    if (pathname.includes('/dashboard')) {
+        const newPath = pathname.replace(/\/dashboard/g, '/admin');
+        return NextResponse.redirect(new URL(newPath, nextUrl.origin), 301);
+    }
+
+    // Redirigir /admin/cases a /admin/expedientes (legacy)
+    if (pathname.includes('/admin/cases')) {
+        const newPath = pathname.replace(/\/admin\/cases/g, '/admin/expedientes');
+        return NextResponse.redirect(new URL(newPath, nextUrl.origin), 301);
+    }
+
+    // Panel único: /admin (requiere login)
+    const isOnAdmin = pathname.includes('/admin');
+    const isOnAdminServicios = pathname.includes('/admin/servicios');
+    const isOnAdminContrataciones = pathname.includes('/admin/contrataciones');
+
+    if (isOnAdmin && !isLoggedIn) {
         const loginUrl = new URL(`/${localeForRedirect}/login`, nextUrl);
         loginUrl.searchParams.set('callbackUrl', pathname);
         return NextResponse.redirect(loginUrl);
     }
 
-    if (isOnAdmin && isLoggedIn) {
-        const userRole = req.auth?.user?.role;
-        if (userRole !== 'ADMIN') {
-            return NextResponse.redirect(new URL(`/${localeForRedirect}/unauthorized`, nextUrl));
-        }
+    // Solo ADMIN puede acceder a /admin/servicios y /admin/contrataciones
+    if (isLoggedIn && req.auth?.user?.role !== 'ADMIN' && (isOnAdminServicios || isOnAdminContrataciones)) {
+        return NextResponse.redirect(new URL(`/${localeForRedirect}/unauthorized`, nextUrl));
     }
 
     // Ghost routes redirection to specific Service Hubs

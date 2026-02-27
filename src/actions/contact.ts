@@ -16,6 +16,9 @@ const ContactFormSchema = z.object({
     message: z.string()
         .min(10, 'El mensaje debe tener al menos 10 caracteres')
         .max(2000, 'El mensaje es demasiado largo'),
+    acceptPrivacy: z.boolean().refine((v) => v === true, {
+        message: 'Debe aceptar la política de privacidad y protección de datos.',
+    }),
 });
 
 export type ContactFormData = z.infer<typeof ContactFormSchema>;
@@ -46,7 +49,11 @@ export async function submitContactForm(data: ContactFormData) {
         }
 
         const resend = new Resend(apiKey);
+        // Remitente: debe ser un email del dominio verificado en Resend (ej. contacto@mails.abogadoswatson.com).
         const from = process.env.RESEND_FROM ?? 'Abogados Watson <onboarding@resend.dev>';
+        if (process.env.NODE_ENV === 'development') {
+            console.log('[Contact] RESEND_FROM usado:', from || '(vacío, usando fallback)');
+        }
 
         const html = `
             <h2>Nueva consulta desde el formulario de contacto</h2>
@@ -60,6 +67,7 @@ export async function submitContactForm(data: ContactFormData) {
         const { data, error } = await resend.emails.send({
             from,
             to: [...CONTACT_EMAIL_TO],
+            replyTo: email,
             subject: `Nueva consulta de ${name}`,
             html,
         });

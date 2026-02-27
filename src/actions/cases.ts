@@ -49,7 +49,7 @@ export async function createCase(data: z.infer<typeof CaseSchema>) {
         const caseItem = await prisma.case.create({
             data: result.data
         })
-        revalidatePath('/cases')
+        revalidatePath('/admin/expedientes')
         return { success: true, data: caseItem }
     } catch (_error) {
         return { success: false, error: 'Failed to create case' }
@@ -68,8 +68,8 @@ export async function updateCase(id: string, data: Partial<z.infer<typeof CaseSc
             where: { id },
             data: result.data
         })
-        revalidatePath('/cases')
-        revalidatePath(`/cases/${id}`)
+        revalidatePath('/admin/expedientes')
+        revalidatePath(`/admin/expedientes/${id}`)
         return { success: true, data: caseItem }
     } catch (_error) {
         return { success: false, error: 'Failed to update case' }
@@ -81,7 +81,7 @@ export async function deleteCase(id: string) {
         await prisma.case.delete({
             where: { id }
         })
-        revalidatePath('/cases')
+        revalidatePath('/admin/expedientes')
         return { success: true }
     } catch (_error) {
         return { success: false, error: 'Failed to delete case' }

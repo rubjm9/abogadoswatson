@@ -57,7 +57,7 @@ export async function updateInvoice(id: string, data: Partial<z.infer<typeof Inv
             data: result.data
         })
 
-        revalidatePath(`/cases/${invoice.caseId}`)
+        revalidatePath('/admin/expedientes')
         return {
             success: true,
             data: { ...invoice, amount: invoice.amount.toNumber() }
