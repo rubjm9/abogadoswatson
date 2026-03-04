@@ -1,7 +1,7 @@
 import { Link } from "@/navigation";
 import { notFound } from "next/navigation";
 import { getCaseById } from "@/actions/cases";
-import { getLawyers } from "@/actions/lawyers";
+import { getAbogados } from "@/actions/users";
 import { getServiceForCase } from "@/actions/services";
 import { getRequirementsByServiceId } from "@/actions/service-requirements";
 import { findFormDataByCaseId } from "@/lib/db/case-form-data";
@@ -15,16 +15,16 @@ export default async function AdminExpedienteDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const [result, lawyersRes] = await Promise.all([getCaseById(id), getLawyers()]);
+  const [result, abogadosRes] = await Promise.all([getCaseById(id), getAbogados()]);
   if (!result.success || !result.data) notFound();
   const caseItem = result.data;
-  const lawyers = lawyersRes.success && lawyersRes.data ? lawyersRes.data : [];
+  const abogados = abogadosRes.success && abogadosRes.data ? abogadosRes.data : [];
   const service = await getServiceForCase(id);
   const requirements = service ? await getRequirementsByServiceId(service.id) : [];
   const formDataList = await findFormDataByCaseId(id);
 
   const lawyerName = caseItem.lawyer
-    ? `${caseItem.lawyer.firstName} ${caseItem.lawyer.lastName}`
+    ? (caseItem.lawyer.name || caseItem.lawyer.email)
     : null;
 
   return (
@@ -60,7 +60,7 @@ export default async function AdminExpedienteDetailPage({
         caseId={id}
         currentLawyerId={caseItem.lawyerId}
         currentLawyerName={lawyerName}
-        lawyers={lawyers.map((l) => ({ id: l.id, firstName: l.firstName, lastName: l.lastName }))}
+        abogados={abogados.map((u) => ({ id: u.id, name: u.name || u.email }))}
       />
 
       {requirements.length > 0 && (

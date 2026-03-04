@@ -3,6 +3,7 @@
 import { requireAdmin } from "@/lib/auth-helpers";
 import {
   findUsers,
+  findUsersByRole,
   findUserById,
   createUser,
   updateUser,
@@ -16,6 +17,16 @@ export async function getUsers() {
   try {
     await requireAdmin();
     const users = await findUsers();
+    return { success: true as const, data: users };
+  } catch (e) {
+    return { success: false as const, error: (e as Error).message, data: [] };
+  }
+}
+
+/** Usuarios con rol ABOGADO, para desplegables de asignación (expedientes, nueva contratación). */
+export async function getAbogados() {
+  try {
+    const users = await findUsersByRole("ABOGADO");
     return { success: true as const, data: users };
   } catch (e) {
     return { success: false as const, error: (e as Error).message, data: [] };

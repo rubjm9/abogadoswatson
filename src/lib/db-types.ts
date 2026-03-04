@@ -45,16 +45,6 @@ export interface ClientRow {
   address: string | null;
 }
 
-export interface LawyerRow {
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  specialty: string | null;
-}
-
 export interface CaseRow {
   id: string;
   createdAt: string;

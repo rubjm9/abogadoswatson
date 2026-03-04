@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -14,18 +14,18 @@ import {
 import { updateCase } from "@/actions/cases";
 import { User, UserX } from "lucide-react";
 
-type LawyerOption = { id: string; firstName: string; lastName: string };
+type AbogadoOption = { id: string; name: string };
 
 export function AssignLawyerBlock({
   caseId,
   currentLawyerId,
   currentLawyerName,
-  lawyers,
+  abogados,
 }: {
   caseId: string;
   currentLawyerId: string | null;
   currentLawyerName: string | null;
-  lawyers: LawyerOption[];
+  abogados: AbogadoOption[];
 }) {
   const router = useRouter();
   const [value, setValue] = useState(currentLawyerId || "__none__");
@@ -35,7 +35,7 @@ export function AssignLawyerBlock({
   async function handleAssign() {
     setMessage(null);
     setPending(true);
-    const lawyerId = value === "__none__" ? null : value;
+    const lawyerId = value === "__none__" ? undefined : value;
     const result = await updateCase(caseId, { lawyerId });
     setPending(false);
     if (result.success) {
@@ -60,40 +60,41 @@ export function AssignLawyerBlock({
           Sin asignar
         </p>
       )}
-      {lawyers.length > 0 && (
-        <div className="space-y-2">
-          <Label htmlFor="lawyer_select">Cambiar asignación</Label>
-          <div className="flex flex-wrap items-center gap-2">
-            <Select value={value} onValueChange={setValue}>
-              <SelectTrigger id="lawyer_select" className="w-[220px]">
-                <SelectValue placeholder="Ninguno" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="__none__">Ninguno</SelectItem>
-                {lawyers.map((l) => (
-                  <SelectItem key={l.id} value={l.id}>
-                    {l.firstName} {l.lastName}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <Button
-              type="button"
-              size="sm"
-              variant="outline"
-              onClick={handleAssign}
-              disabled={pending || value === (currentLawyerId || "__none__")}
-            >
-              {pending ? "Guardando…" : "Guardar"}
-            </Button>
-          </div>
-          {message && (
-            <p className={`text-sm ${message.type === "ok" ? "text-green-600" : "text-red-600"}`}>
-              {message.text}
-            </p>
-          )}
+      <div className="space-y-2">
+        <Label htmlFor="lawyer_select">Asignar o cambiar abogado</Label>
+        <div className="flex flex-wrap items-center gap-2">
+          <Select value={value} onValueChange={setValue}>
+            <SelectTrigger id="lawyer_select" className="w-[220px]">
+              <SelectValue placeholder="Ninguno" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="__none__">Ninguno</SelectItem>
+              {abogados.map((a) => (
+                <SelectItem key={a.id} value={a.id}>
+                  {a.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            onClick={handleAssign}
+            disabled={pending || value === (currentLawyerId || "__none__")}
+          >
+            {pending ? "Guardando…" : "Guardar"}
+          </Button>
         </div>
-      )}
+        {abogados.length === 0 && (
+          <p className="text-xs text-slate-500">No hay usuarios con rol Abogado. Asígneles el rol en Gestionar usuarios.</p>
+        )}
+        {message && (
+          <p className={`text-sm ${message.type === "ok" ? "text-green-600" : "text-red-600"}`}>
+            {message.text}
+          </p>
+        )}
+      </div>
     </div>
   );
 }

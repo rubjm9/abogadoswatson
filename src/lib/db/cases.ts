@@ -1,5 +1,5 @@
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import type { CaseRow, ClientRow, LawyerRow, DocumentRow, InvoiceRow } from "@/lib/db-types";
+import type { CaseRow, ClientRow, UserRow, DocumentRow, InvoiceRow } from "@/lib/db-types";
 import { createId } from "@paralleldrive/cuid2";
 
 function getClient() {
@@ -8,7 +8,8 @@ function getClient() {
 
 export type CaseWithRelations = CaseRow & {
   client?: ClientRow | null;
-  lawyer?: LawyerRow | null;
+  /** Usuario con rol ABOGADO asignado (Case.lawyerId = User.id). */
+  lawyer?: UserRow | null;
   documents?: DocumentRow[];
   invoices?: InvoiceRow[];
 };
@@ -24,12 +25,12 @@ export async function findCases(): Promise<CaseWithRelations[]> {
   for (const c of cases ?? []) {
     const [clientRes, lawyerRes] = await Promise.all([
       supabase.from("Client").select("*").eq("id", c.clientId).maybeSingle(),
-      c.lawyerId ? supabase.from("Lawyer").select("*").eq("id", c.lawyerId).maybeSingle() : { data: null },
+      c.lawyerId ? supabase.from("User").select("*").eq("id", c.lawyerId).maybeSingle() : { data: null },
     ]);
     result.push({
       ...c,
       client: clientRes.data as ClientRow | null,
-      lawyer: lawyerRes.data as LawyerRow | null,
+      lawyer: lawyerRes.data as UserRow | null,
     } as CaseWithRelations);
   }
   return result;
@@ -42,14 +43,14 @@ export async function findCaseById(id: string): Promise<CaseWithRelations | null
   if (!caseItem) return null;
   const [clientRes, lawyerRes, docsRes, invRes] = await Promise.all([
     supabase.from("Client").select("*").eq("id", caseItem.clientId).maybeSingle(),
-    caseItem.lawyerId ? supabase.from("Lawyer").select("*").eq("id", caseItem.lawyerId).maybeSingle() : { data: null },
+    caseItem.lawyerId ? supabase.from("User").select("*").eq("id", caseItem.lawyerId).maybeSingle() : { data: null },
     supabase.from("Document").select("*").eq("caseId", id).order("createdAt", { ascending: false }),
     supabase.from("Invoice").select("*").eq("caseId", id),
   ]);
   return {
     ...caseItem,
     client: clientRes.data as ClientRow | null,
-    lawyer: lawyerRes.data as LawyerRow | null,
+    lawyer: lawyerRes.data as UserRow | null,
     documents: (docsRes.data ?? []) as DocumentRow[],
     invoices: (invRes.data ?? []) as InvoiceRow[],
   } as CaseWithRelations;
@@ -73,41 +74,42 @@ export async function findCasesByClientEmail(email: string): Promise<CaseWithRel
   for (const c of cases ?? []) {
     const [clientRes, lawyerRes] = await Promise.all([
       supabase.from("Client").select("*").eq("id", c.clientId).maybeSingle(),
-      c.lawyerId ? supabase.from("Lawyer").select("*").eq("id", c.lawyerId).maybeSingle() : { data: null },
+      c.lawyerId ? supabase.from("User").select("*").eq("id", c.lawyerId).maybeSingle() : { data: null },
     ]);
     result.push({
       ...c,
       client: clientRes.data as ClientRow | null,
-      lawyer: lawyerRes.data as LawyerRow | null,
+      lawyer: lawyerRes.data as UserRow | null,
     } as CaseWithRelations);
   }
   return result;
 }
 
+/** Expedientes asignados al usuario (por email) con rol ABOGADO. lawyerId = User.id. */
 export async function findCasesByLawyerEmail(email: string): Promise<CaseWithRelations[]> {
   const supabase = getClient();
-  const { data: lawyer } = await supabase
-    .from("Lawyer")
+  const { data: user } = await supabase
+    .from("User")
     .select("id")
     .eq("email", email.trim().toLowerCase())
     .maybeSingle();
-  if (!lawyer) return [];
+  if (!user) return [];
   const { data: cases, error } = await supabase
     .from("Case")
     .select("*")
-    .eq("lawyerId", lawyer.id)
+    .eq("lawyerId", user.id)
     .order("createdAt", { ascending: false });
   if (error) throw new Error(error.message);
   const result: CaseWithRelations[] = [];
   for (const c of cases ?? []) {
     const [clientRes, lawyerRes] = await Promise.all([
       supabase.from("Client").select("*").eq("id", c.clientId).maybeSingle(),
-      supabase.from("Lawyer").select("*").eq("id", c.lawyerId).maybeSingle(),
+      c.lawyerId ? supabase.from("User").select("*").eq("id", c.lawyerId).maybeSingle() : { data: null },
     ]);
     result.push({
       ...c,
       client: clientRes.data as ClientRow | null,
-      lawyer: lawyerRes.data as LawyerRow | null,
+      lawyer: lawyerRes.data as UserRow | null,
     } as CaseWithRelations);
   }
   return result;
@@ -146,7 +148,8 @@ export async function updateCase(
   }>
 ): Promise<CaseRow> {
   const supabase = getClient();
-  const update = { ...data, updatedAt: new Date().toISOString() };
+  const update: Record<string, unknown> = { ...data, updatedAt: new Date().toISOString() };
+  if ("lawyerId" in data && data.lawyerId === undefined) update.lawyerId = null;
   const { data: updated, error } = await supabase.from("Case").update(update).eq("id", id).select().single();
   if (error) throw new Error(error.message);
   return updated as CaseRow;

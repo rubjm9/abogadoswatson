@@ -34,6 +34,18 @@ export async function findUserByEmail(email: string): Promise<UserRow | null> {
   return data as UserRow | null;
 }
 
+/** Usuarios con un rol dado (ej. ABOGADO para desplegables de asignación). */
+export async function findUsersByRole(role: string): Promise<UserRow[]> {
+  const supabase = getClient();
+  const { data, error } = await supabase
+    .from("User")
+    .select("*")
+    .eq("role", role)
+    .order("name", { ascending: true, nullsFirst: false });
+  if (error) throw new Error(error.message);
+  return (data ?? []) as UserRow[];
+}
+
 export async function createUser(data: {
   email: string;
   password: string;

@@ -9,19 +9,12 @@ export const ClientSchema = z.object({
     address: z.string().optional(),
 });
 
-export const LawyerSchema = z.object({
-    firstName: z.string().min(1, "First name is required"),
-    lastName: z.string().min(1, "Last name is required"),
-    email: z.string().email("Invalid email address"),
-    specialty: z.string().optional(),
-});
-
 export const CaseSchema = z.object({
     title: z.string().min(1, "Title is required"),
     description: z.string().optional(),
     status: z.nativeEnum(CaseStatus).default('OPEN'),
     clientId: z.string().min(1, "Client ID is required"),
-    lawyerId: z.string().optional(),
+    lawyerId: z.string().nullish(),
 });
 
 export const DocumentSchema = z.object({

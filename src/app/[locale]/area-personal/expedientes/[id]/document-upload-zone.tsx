@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { uploadDocumentForCase } from "@/actions/area-personal";
+import { useRouter } from "@/navigation";
 import { Button } from "@/components/ui/button";
 import { Upload, FileCheck } from "lucide-react";
 import type { DocumentRow } from "@/lib/db-types";
@@ -15,6 +15,7 @@ export function DocumentUploadZone({
   slotLabel: string;
   existingDoc?: DocumentRow | null;
 }) {
+  const router = useRouter();
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [doc, setDoc] = useState(existingDoc);
@@ -25,13 +26,22 @@ export function DocumentUploadZone({
     if (!file) return;
     setUploading(true);
     setError(null);
-    const result = await uploadDocumentForCase(caseId, slotLabel, file);
+    const formData = new FormData();
+    formData.set("caseId", caseId);
+    formData.set("slotLabel", slotLabel);
+    formData.set("file", file);
+    const res = await fetch("/api/area-personal/upload-document", {
+      method: "POST",
+      body: formData,
+    });
+    const data = (await res.json()) as { success: boolean; error?: string };
     setUploading(false);
-    if (result.success) {
+    if (data.success && res.ok) {
       setDoc({ id: "new", title: slotLabel, url: "#", type: "EVIDENCE", caseId, slot_label: slotLabel } as DocumentRow);
       if (inputRef.current) inputRef.current.value = "";
+      router.refresh();
     } else {
-      setError(result.error);
+      setError(data.error || "Error al subir");
     }
   }
 

@@ -18,16 +18,16 @@ import { cn } from "@/lib/utils";
 
 type Service = { id: string; name: string; price: number };
 type ClientOption = { id: string; firstName: string; lastName: string; email: string; phone: string; address: string };
-type LawyerOption = { id: string; firstName: string; lastName: string };
+type AbogadoOption = { id: string; name: string };
 
 export function NuevaContratacionForm({
   services,
   clients,
-  lawyers = [],
+  abogados = [],
 }: {
   services: Service[];
   clients: ClientOption[];
-  lawyers?: LawyerOption[];
+  abogados?: AbogadoOption[];
 }) {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
@@ -160,7 +160,6 @@ export function NuevaContratacionForm({
       </div>
 
       <div className="space-y-4 border-t border-slate-200 pt-6">
-        <Label>Cliente</Label>
         <div className="inline-flex rounded-lg border border-slate-200 bg-slate-50/50 p-1">
           <button
             type="button"
@@ -268,25 +267,26 @@ export function NuevaContratacionForm({
         />
       </div>
 
-      {lawyers.length > 0 && (
-        <div className="space-y-2 border-t border-slate-200 pt-6">
-          <Label htmlFor="lawyer_id">Abogado asignado</Label>
-          <Select name="lawyer_id" value={lawyerId || "__none__"} onValueChange={(v) => setLawyerId(v === "__none__" ? "" : v)}>
-            <SelectTrigger id="lawyer_id">
-              <SelectValue placeholder="Ninguno" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="__none__">Ninguno</SelectItem>
-              {lawyers.map((l) => (
-                <SelectItem key={l.id} value={l.id}>
-                  {l.firstName} {l.lastName}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <p className="text-xs text-slate-500">Opcional. El abogado verá este expediente en su panel.</p>
-        </div>
-      )}
+      <div className="space-y-2 border-t border-slate-200 pt-6">
+        <Label htmlFor="lawyer_id">Abogado asignado</Label>
+        <Select name="lawyer_id" value={lawyerId || "__none__"} onValueChange={(v) => setLawyerId(v === "__none__" ? "" : v)}>
+          <SelectTrigger id="lawyer_id" className="w-full sm:w-[280px]">
+            <SelectValue placeholder="Ninguno" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="__none__">Ninguno</SelectItem>
+            {abogados.map((a) => (
+              <SelectItem key={a.id} value={a.id}>
+                {a.name}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        <p className="text-xs text-slate-500">
+          Opcional. El abogado verá este expediente en su panel.
+          {abogados.length === 0 && " No hay usuarios con rol Abogado."}
+        </p>
+      </div>
 
       <Button type="submit" variant="brown">
         Crear contratación y expediente

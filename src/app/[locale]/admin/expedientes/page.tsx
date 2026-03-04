@@ -45,7 +45,7 @@ export default async function AdminExpedientesPage() {
                   {c.lawyer ? (
                     <span className="inline-flex items-center gap-1.5 text-slate-700">
                       <User className="h-3.5 w-3.5 text-slate-500" />
-                      {c.lawyer.firstName} {c.lawyer.lastName}
+                      {c.lawyer.name || c.lawyer.email}
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800">
