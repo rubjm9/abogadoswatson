@@ -1,0 +1,4 @@
+-- IMPORTANTE: Crear el bucket "client-documents" manualmente en Supabase.
+-- Dashboard > Storage > New bucket > Nombre: client-documents
+-- Public: Sí (para que las URLs públicas funcionen) o configurar políticas RLS.
+-- Sin este bucket, la subida de documentos en el área personal fallará.

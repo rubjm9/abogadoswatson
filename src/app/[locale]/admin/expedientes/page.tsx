@@ -9,7 +9,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
 
 export default async function AdminExpedientesPage() {
   const response = await getCases();
@@ -17,16 +16,11 @@ export default async function AdminExpedientesPage() {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-3xl font-bold tracking-tight">Expedientes</h2>
-          <p className="text-slate-500">Gestión de expedientes y trámites.</p>
-        </div>
-        <Button asChild>
-          <Link href="/admin/expedientes/new">
-            <Plus className="mr-2 h-4 w-4" /> Nuevo expediente
-          </Link>
-        </Button>
+      <div>
+        <h2 className="text-3xl font-bold tracking-tight">Expedientes</h2>
+        <p className="text-slate-500">
+          Servicio, documentos y trámites de cada expediente. Los nuevos expedientes se crean desde Contrataciones.
+        </p>
       </div>
 
       <div className="rounded-md border border-slate-200">

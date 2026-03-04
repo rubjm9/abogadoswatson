@@ -23,7 +23,7 @@ export default function InmobiliarioPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* HERO */}
-            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden text-white">
                 <img
                     src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80"
                     alt={t("hero.imageAlt")}

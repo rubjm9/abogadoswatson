@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { useRouter } from "next/navigation"
 import { Loader2 } from "lucide-react"
-import { CaseStatus } from "@prisma/client"
+import { CaseStatus } from "@/lib/db-types"
 
 import { Button } from "@/components/ui/button"
 import {

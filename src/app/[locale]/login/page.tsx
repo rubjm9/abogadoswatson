@@ -19,12 +19,14 @@ export default function LoginPage() {
     const callbackUrl = searchParams.get('callbackUrl') ?? '/admin';
     const registered = searchParams.get('registered') === '1';
     const [error, setError] = useState<string | null>(null);
+    const errorFromUrl = searchParams.get('error') === 'CredentialsSignin' ? t('invalidCredentials') : null;
+    const errorMessage = error ?? errorFromUrl;
 
     async function handleSubmit(formData: FormData) {
         setError(null);
         const email = formData.get('email') as string;
         const password = formData.get('password') as string;
-        const result = await login({ email, password });
+        const result = await login({ email, password, callbackUrl });
         if (result.success) {
             router.push(callbackUrl);
             router.refresh();
@@ -79,9 +81,9 @@ export default function LoginPage() {
                                         {t('registerSuccess')}
                                     </p>
                                 )}
-                                {error && (
+                                {(errorMessage) && (
                                     <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-md px-3 py-2" role="alert">
-                                        {error}
+                                        {errorMessage}
                                     </p>
                                 )}
                                 <div className="space-y-2">
@@ -93,6 +95,12 @@ export default function LoginPage() {
                                         required
                                         autoComplete="email"
                                         placeholder="tu@email.com"
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') {
+                                                e.preventDefault();
+                                                (e.target as HTMLInputElement).form?.requestSubmit();
+                                            }
+                                        }}
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -104,6 +112,12 @@ export default function LoginPage() {
                                         required
                                         autoComplete="current-password"
                                         minLength={6}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') {
+                                                e.preventDefault();
+                                                (e.target as HTMLInputElement).form?.requestSubmit();
+                                            }
+                                        }}
                                     />
                                 </div>
                                 <Button

@@ -26,7 +26,7 @@ export default function InversionesPage() {
                         <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
                             {t('hero.badge')}
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight text-white">
                             {t('hero.title')}
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }} />
@@ -90,7 +90,7 @@ export default function InversionesPage() {
                             <Gavel className="w-32 h-32 text-[#C5A059]" />
                         </div>
                         <div className="relative z-10">
-                            <h2 className="text-3xl font-serif font-bold mb-6">{t('defense.title')}</h2>
+                            <h2 className="text-3xl font-serif font-bold mb-6 text-white">{t('defense.title')}</h2>
                             <p className="text-slate-400 mb-8 leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: t.raw('defense.description') }} />
                             <Button asChild variant="outline" className="border-[#C5A059] text-[#C5A059] hover:bg-[#C5A059] hover:text-white">
                                 <Link href="/servicios/defensa-juridica" className="flex items-center gap-2">

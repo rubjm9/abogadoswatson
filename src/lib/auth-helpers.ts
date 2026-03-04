@@ -1,5 +1,5 @@
 import { auth } from '@/auth';
-import { Role } from '@prisma/client';
+import { Role } from '@/lib/db-types';
 
 /**
  * Get the current authenticated user session

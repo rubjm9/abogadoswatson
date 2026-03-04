@@ -29,7 +29,7 @@ export default function NacionalidadPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* Hero Section */}
-            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden text-white">
                 <div className="absolute inset-0 bg-slate-900/80 z-10" />
                 <img
                     src={imagePath("nationality.png")}

@@ -32,7 +32,7 @@ export default function DefensaJuridicaPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* SECCIÓN 1 — HERO (Confianza) */}
-            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden text-white">
                 <img
                     src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80"
                     alt={t('hero.imageAlt') || 'Defensa jurídica'}

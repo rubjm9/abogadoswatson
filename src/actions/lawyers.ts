@@ -1,15 +1,13 @@
 'use server'
 
-import { prisma } from '@/lib/prisma'
+import * as dbLawyers from '@/lib/db/lawyers'
 import { LawyerSchema } from '@/lib/validations'
 import { z } from 'zod'
 import { revalidatePath } from 'next/cache'
 
 export async function getLawyers() {
     try {
-        const lawyers = await prisma.lawyer.findMany({
-            orderBy: { createdAt: 'desc' }
-        })
+        const lawyers = await dbLawyers.findLawyers()
         return { success: true, data: lawyers }
     } catch (_error) {
         return { success: false, error: 'Failed to fetch lawyers' }
@@ -18,12 +16,10 @@ export async function getLawyers() {
 
 export async function getLawyerById(id: string) {
     try {
-        const lawyer = await prisma.lawyer.findUnique({
-            where: { id },
-            include: { cases: true }
-        })
+        const lawyer = await dbLawyers.findLawyerById(id)
         if (!lawyer) return { success: false, error: 'Lawyer not found' }
-        return { success: true, data: lawyer }
+        const cases = await import('@/lib/db/cases').then(m => m.findCases()).then(cs => cs.filter(c => c.lawyerId === id))
+        return { success: true, data: { ...lawyer, cases } }
     } catch (_error) {
         return { success: false, error: 'Failed to fetch lawyer' }
     }
@@ -37,9 +33,7 @@ export async function createLawyer(data: z.infer<typeof LawyerSchema>) {
     }
 
     try {
-        const lawyer = await prisma.lawyer.create({
-            data: result.data
-        })
+        const lawyer = await dbLawyers.insertLawyer(result.data)
         revalidatePath('/lawyers')
         return { success: true, data: lawyer }
     } catch (_error) {
@@ -55,10 +49,7 @@ export async function updateLawyer(id: string, data: Partial<z.infer<typeof Lawy
     }
 
     try {
-        const lawyer = await prisma.lawyer.update({
-            where: { id },
-            data: result.data
-        })
+        const lawyer = await dbLawyers.updateLawyer(id, result.data)
         revalidatePath('/lawyers')
         revalidatePath(`/lawyers/${id}`)
         return { success: true, data: lawyer }
@@ -69,9 +60,7 @@ export async function updateLawyer(id: string, data: Partial<z.infer<typeof Lawy
 
 export async function deleteLawyer(id: string) {
     try {
-        await prisma.lawyer.delete({
-            where: { id }
-        })
+        await dbLawyers.deleteLawyer(id)
         revalidatePath('/lawyers')
         return { success: true }
     } catch (_error) {

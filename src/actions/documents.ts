@@ -1,16 +1,13 @@
 'use server'
 
-import { prisma } from '@/lib/prisma'
+import * as dbDocuments from '@/lib/db/documents'
 import { DocumentSchema } from '@/lib/validations'
 import { z } from 'zod'
 import { revalidatePath } from 'next/cache'
 
 export async function getDocumentsByCaseId(caseId: string) {
     try {
-        const documents = await prisma.document.findMany({
-            where: { caseId },
-            orderBy: { createdAt: 'desc' }
-        })
+        const documents = await dbDocuments.findDocumentsByCaseId(caseId)
         return { success: true, data: documents }
     } catch (_error) {
         return { success: false, error: 'Failed to fetch documents' }
@@ -25,8 +22,9 @@ export async function createDocument(data: z.infer<typeof DocumentSchema>) {
     }
 
     try {
-        const document = await prisma.document.create({
-            data: result.data
+        const document = await dbDocuments.insertDocument({
+            ...result.data,
+            slot_label: result.data.slot_label ?? undefined,
         })
         revalidatePath('/admin/expedientes')
         return { success: true, data: document }
@@ -37,11 +35,9 @@ export async function createDocument(data: z.infer<typeof DocumentSchema>) {
 
 export async function deleteDocument(id: string) {
     try {
-        const doc = await prisma.document.findUnique({ where: { id } })
+        const doc = await dbDocuments.findDocumentById(id)
         if (!doc) return { success: false, error: 'Document not found' }
-        await prisma.document.delete({
-            where: { id }
-        })
+        await dbDocuments.deleteDocument(id)
         revalidatePath('/admin/expedientes')
         return { success: true }
     } catch (_error) {

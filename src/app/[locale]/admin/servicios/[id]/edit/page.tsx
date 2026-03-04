@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getServiceById } from "@/actions/services";
 import { ServiceForm } from "../../service-form";
 import { updateServiceFromForm } from "@/actions/services";
+import { RequirementsSection } from "../requirements-section";
 import { ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -29,6 +30,7 @@ export default async function EditServicioPage({
         <p className="text-slate-500 mt-1">{service.name}</p>
       </header>
       <ServiceForm action={boundUpdateAction} service={service} />
+      <RequirementsSection serviceId={id} />
     </div>
   );
 }

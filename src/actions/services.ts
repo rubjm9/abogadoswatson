@@ -2,7 +2,8 @@
 
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { requireAdmin } from "@/lib/auth-helpers";
-import { prisma } from "@/lib/prisma";
+import { findClientByEmail, insertClient } from "@/lib/db/clients";
+import { insertCase } from "@/lib/db/cases";
 
 const BUCKET = "service-images";
 
@@ -69,6 +70,25 @@ export async function getServiceById(id: string): Promise<ServiceRow | null> {
     throw new Error(error.message);
   }
   return data as ServiceRow;
+}
+
+/** Obtiene el servicio asociado a un expediente (vía service_orders). No requiere admin. */
+export async function getServiceForCase(caseId: string): Promise<ServiceRow | null> {
+  const supabase = createServerSupabaseClient();
+  const { data: order, error } = await supabase
+    .from("service_orders")
+    .select("service_id")
+    .eq("case_id", caseId)
+    .limit(1)
+    .maybeSingle();
+  if (error || !order) return null;
+  const { data: service, error: svcError } = await supabase
+    .from("services")
+    .select("*")
+    .eq("id", order.service_id)
+    .single();
+  if (svcError || !service) return null;
+  return service as ServiceRow;
 }
 
 /** Obtiene un servicio activo por slug (público, para la página de contratar). */
@@ -152,8 +172,8 @@ export async function deleteService(id: string): Promise<void> {
   if (error) throw new Error(error.message);
 }
 
-export type CreateServiceFormState = { error?: string };
-export type UpdateServiceFormState = { error?: string };
+export type CreateServiceFormState = { error?: string; success?: boolean };
+export type UpdateServiceFormState = { error?: string; success?: boolean };
 
 /** Crea un servicio desde FormData (nombre, slug, descripción, imagen, precio, activo). */
 export async function createServiceFromForm(
@@ -187,9 +207,7 @@ export async function createServiceFromForm(
       price,
       active,
     });
-    const { redirect } = await import("next/navigation");
-    redirect("/admin/servicios");
-    return {};
+    return { success: true };
   } catch (e) {
     return { error: e instanceof Error ? e.message : "Error al crear el servicio." };
   }
@@ -231,9 +249,7 @@ export async function updateServiceFromForm(
       price,
       active,
     });
-    const { redirect } = await import("next/navigation");
-    redirect("/admin/servicios");
-    return {};
+    return { success: true };
   } catch (e) {
     return { error: e instanceof Error ? e.message : "Error al actualizar el servicio." };
   }
@@ -341,23 +357,19 @@ export async function markOrderPaidBySessionId(stripeSessionId: string): Promise
       .single();
     const serviceName = (serviceRow as { name?: string } | null)?.name ?? "Servicio";
 
-    let client = await prisma.client.findUnique({ where: { email } });
+    let client = await findClientByEmail(email);
     if (!client) {
-      client = await prisma.client.create({
-        data: {
-          firstName: "Cliente",
-          lastName: email.split("@")[0] || "Web",
-          email,
-        },
+      client = await insertClient({
+        firstName: "Cliente",
+        lastName: email.split("@")[0] || "Web",
+        email,
       });
     }
 
-    const newCase = await prisma.case.create({
-      data: {
-        title: `Contratación - ${serviceName} - ${client.firstName} ${client.lastName}`,
-        status: "OPEN",
-        clientId: client.id,
-      },
+    const newCase = await insertCase({
+      title: `Contratación - ${serviceName} - ${client.firstName} ${client.lastName}`,
+      status: "OPEN",
+      clientId: client.id,
     });
     caseId = newCase.id;
   }

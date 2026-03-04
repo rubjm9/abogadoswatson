@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import { upsertUser } from "@/lib/db/users";
 import bcrypt from "bcryptjs";
 
 /**
@@ -26,18 +26,11 @@ export async function POST(request: NextRequest) {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   try {
-    const user = await prisma.user.upsert({
-      where: { email },
-      update: {
-        password: hashedPassword,
-        role: "ADMIN",
-      },
-      create: {
-        email,
-        password: hashedPassword,
-        role: "ADMIN",
-        name: "Ruben",
-      },
+    const user = await upsertUser({
+      email,
+      password: hashedPassword,
+      role: "ADMIN",
+      name: "Ruben",
     });
     return NextResponse.json({
       ok: true,

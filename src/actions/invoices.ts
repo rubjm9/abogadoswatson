@@ -1,22 +1,14 @@
 'use server'
 
-import { prisma } from '@/lib/prisma'
+import * as dbInvoices from '@/lib/db/invoices'
 import { InvoiceSchema } from '@/lib/validations'
 import { z } from 'zod'
 import { revalidatePath } from 'next/cache'
 
 export async function getInvoicesByCaseId(caseId: string) {
     try {
-        const invoices = await prisma.invoice.findMany({
-            where: { caseId },
-            orderBy: { createdAt: 'desc' }
-        })
-        // Serialize Decimals to numbers for client safety
-        const safeInvoices = invoices.map(inv => ({
-            ...inv,
-            amount: inv.amount.toNumber()
-        }))
-        return { success: true, data: safeInvoices }
+        const invoices = await dbInvoices.findInvoicesByCaseId(caseId)
+        return { success: true, data: invoices }
     } catch (_error) {
         return { success: false, error: 'Failed to fetch invoices' }
     }
@@ -30,15 +22,12 @@ export async function createInvoice(data: z.infer<typeof InvoiceSchema>) {
     }
 
     try {
-        const invoice = await prisma.invoice.create({
-            data: result.data
+        const invoice = await dbInvoices.insertInvoice({
+            ...result.data,
+            dueDate: result.data.dueDate,
         })
-
-        // Return safe object
-        return {
-            success: true,
-            data: { ...invoice, amount: invoice.amount.toNumber() }
-        }
+        revalidatePath('/admin/expedientes')
+        return { success: true, data: invoice }
     } catch (_error) {
         return { success: false, error: 'Failed to create invoice' }
     }
@@ -52,16 +41,9 @@ export async function updateInvoice(id: string, data: Partial<z.infer<typeof Inv
     }
 
     try {
-        const invoice = await prisma.invoice.update({
-            where: { id },
-            data: result.data
-        })
-
+        const invoice = await dbInvoices.updateInvoice(id, result.data)
         revalidatePath('/admin/expedientes')
-        return {
-            success: true,
-            data: { ...invoice, amount: invoice.amount.toNumber() }
-        }
+        return { success: true, data: invoice }
     } catch (_error) {
         return { success: false, error: 'Failed to update invoice' }
     }

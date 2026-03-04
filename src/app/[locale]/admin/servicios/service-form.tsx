@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import { useActionState } from "react";
+import { useRouter } from "@/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,7 +20,14 @@ type ServiceFormProps = {
 
 export function ServiceForm({ action, service }: ServiceFormProps) {
   const isEdit = !!service;
+  const router = useRouter();
   const [state, formAction] = useActionState(action, {});
+
+  useEffect(() => {
+    if (state?.success) {
+      router.push("/admin/servicios");
+    }
+  }, [state?.success, router]);
 
   return (
     <form action={formAction} className="max-w-xl">

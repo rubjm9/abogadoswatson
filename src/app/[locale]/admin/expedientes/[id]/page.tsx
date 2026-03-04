@@ -1,8 +1,11 @@
 import { Link } from "@/navigation";
 import { notFound } from "next/navigation";
 import { getCaseById } from "@/actions/cases";
+import { getServiceForCase } from "@/actions/services";
+import { getRequirementsByServiceId } from "@/actions/service-requirements";
+import { findFormDataByCaseId } from "@/lib/db/case-form-data";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, FileCheck, FileText } from "lucide-react";
 
 export default async function AdminExpedienteDetailPage({
   params,
@@ -13,6 +16,9 @@ export default async function AdminExpedienteDetailPage({
   const result = await getCaseById(id);
   if (!result.success || !result.data) notFound();
   const caseItem = result.data;
+  const service = await getServiceForCase(id);
+  const requirements = service ? await getRequirementsByServiceId(service.id) : [];
+  const formDataList = await findFormDataByCaseId(id);
 
   return (
     <div className="space-y-8">
@@ -42,6 +48,55 @@ export default async function AdminExpedienteDetailPage({
           )}
         </dl>
       </div>
+
+      {requirements.length > 0 && (
+        <div className="rounded-lg border border-slate-200 bg-white p-6">
+          <h3 className="text-lg font-semibold mb-4">Documentos y formularios del cliente</h3>
+          <div className="space-y-4">
+            {requirements.map((req) => {
+              const doc = caseItem.documents?.find((d) => d.slot_label === req.label);
+              const formData = formDataList.find((f) => f.slot_label === req.label);
+              const hasDoc = !!doc;
+              const hasForm = !!formData;
+              const completed = req.type === "document" ? hasDoc : hasForm;
+              return (
+                <div key={req.id} className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0">
+                  <div className="flex items-center gap-2">
+                    {req.type === "document" ? (
+                      <FileText className="h-4 w-4 text-slate-500" />
+                    ) : (
+                      <FileCheck className="h-4 w-4 text-slate-500" />
+                    )}
+                    <span>{req.label}</span>
+                  </div>
+                  <span
+                    className={`text-sm ${completed ? "text-green-600" : "text-slate-400"}`}
+                  >
+                    {req.type === "document" ? (
+                      hasDoc ? (
+                        <a href={doc!.url} target="_blank" rel="noopener noreferrer" className="underline">
+                          Ver documento
+                        </a>
+                      ) : (
+                        "Pendiente"
+                      )
+                    ) : hasForm ? (
+                      <details className="inline">
+                        <summary className="cursor-pointer underline">Completado</summary>
+                        <pre className="mt-2 text-xs bg-slate-50 p-2 rounded max-w-md overflow-auto">
+                          {JSON.stringify(formData.form_data, null, 2)}
+                        </pre>
+                      </details>
+                    ) : (
+                      "Pendiente"
+                    )}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

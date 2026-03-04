@@ -101,21 +101,21 @@ export default function NomadasPage() {
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
                                     <AlertTriangle className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
-                                        <h4 className="font-bold mb-1">{t('risks.economic.title')}</h4>
+                                        <h4 className="font-bold mb-1 text-white">{t('risks.economic.title')}</h4>
                                         <p className="text-sm text-slate-400">{t('risks.economic.description')}</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
                                     <ShieldAlert className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
-                                        <h4 className="font-bold mb-1">{t('risks.socialSecurity.title')}</h4>
+                                        <h4 className="font-bold mb-1 text-white">{t('risks.socialSecurity.title')}</h4>
                                         <p className="text-sm text-slate-400">{t('risks.socialSecurity.description')}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                            <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-white">
                                 <ShieldCheck className="w-5 h-5 text-[#C5A059]" />
                                 {t('methodology.title')}
                             </h3>

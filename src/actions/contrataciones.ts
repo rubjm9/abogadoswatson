@@ -1,6 +1,7 @@
 "use server";
 
-import { prisma } from "@/lib/prisma";
+import { findClientByEmail, findClientById, insertClient, updateClient } from "@/lib/db/clients";
+import { insertCase } from "@/lib/db/cases";
 import { requireAdmin } from "@/lib/auth-helpers";
 import { getServiceById, createManualServiceOrder } from "@/actions/services";
 import { revalidatePath } from "next/cache";
@@ -8,9 +9,13 @@ import { revalidatePath } from "next/cache";
 export type CreateContratacionManualInput = {
   service_id: string;
   amount: number;
+  /** Si se indica, se usa el cliente existente y opcionalmente se actualizan sus datos. */
+  client_id?: string | null;
   email: string;
   firstName: string;
   lastName: string;
+  phone?: string | null;
+  address?: string | null;
 };
 
 export async function createContratacionManual(
@@ -19,7 +24,7 @@ export async function createContratacionManual(
   try {
     await requireAdmin();
 
-    const { service_id, amount, email, firstName, lastName } = input;
+    const { service_id, amount, client_id, email, firstName, lastName, phone, address } = input;
     const trimmedEmail = email.trim().toLowerCase();
     if (!trimmedEmail || !firstName?.trim() || !lastName?.trim()) {
       return { success: false, error: "Email, nombre y apellidos son obligatorios." };
@@ -31,26 +36,57 @@ export async function createContratacionManual(
     const service = await getServiceById(service_id);
     if (!service) return { success: false, error: "Servicio no encontrado." };
 
-    let client = await prisma.client.findUnique({
-      where: { email: trimmedEmail },
-    });
-    if (!client) {
-      client = await prisma.client.create({
-        data: {
+    let client;
+    if (client_id) {
+      client = await findClientById(client_id);
+      if (!client) return { success: false, error: "Cliente seleccionado no encontrado." };
+      const needsUpdate =
+        client.firstName !== firstName.trim() ||
+        client.lastName !== lastName.trim() ||
+        client.email !== trimmedEmail ||
+        (phone !== undefined && client.phone !== (phone?.trim() || null)) ||
+        (address !== undefined && client.address !== (address?.trim() || null));
+      if (needsUpdate) {
+        client = await updateClient(client_id, {
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           email: trimmedEmail,
-        },
-      });
+          phone: phone?.trim() || null,
+          address: address?.trim() || null,
+        });
+      }
+    } else {
+      client = await findClientByEmail(trimmedEmail);
+      if (!client) {
+        client = await insertClient({
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          email: trimmedEmail,
+          phone: phone?.trim() || null,
+          address: address?.trim() || null,
+        });
+      } else {
+        const needsUpdate =
+          client.firstName !== firstName.trim() ||
+          client.lastName !== lastName.trim() ||
+          (phone !== undefined && client.phone !== (phone?.trim() || null)) ||
+          (address !== undefined && client.address !== (address?.trim() || null));
+        if (needsUpdate) {
+          client = await updateClient(client.id, {
+            firstName: firstName.trim(),
+            lastName: lastName.trim(),
+            phone: phone?.trim() || null,
+            address: address?.trim() || null,
+          });
+        }
+      }
     }
 
     const caseTitle = `Contratación - ${service.name} - ${client.firstName} ${client.lastName}`;
-    const newCase = await prisma.case.create({
-      data: {
-        title: caseTitle,
-        status: "OPEN",
-        clientId: client.id,
-      },
+    const newCase = await insertCase({
+      title: caseTitle,
+      status: "OPEN",
+      clientId: client.id,
     });
 
     await createManualServiceOrder({

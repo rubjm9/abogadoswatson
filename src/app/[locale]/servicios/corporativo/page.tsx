@@ -99,21 +99,21 @@ export default function CorporativoPage() {
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
                                     <ShieldCheck className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
-                                        <h4 className="font-bold mb-1">{t('uge.fastTrack.title')}</h4>
+                                        <h4 className="font-bold mb-1 text-white">{t('uge.fastTrack.title')}</h4>
                                         <p className="text-sm text-slate-400">{t('uge.fastTrack.description')}</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
                                     <Building className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
-                                        <h4 className="font-bold mb-1">{t('uge.audit.title')}</h4>
+                                        <h4 className="font-bold mb-1 text-white">{t('uge.audit.title')}</h4>
                                         <p className="text-sm text-slate-400">{t('uge.audit.description')}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="bg-white/5 p-10 rounded-3xl border border-white/10 backdrop-blur-sm">
-                            <h3 className="text-xl font-bold mb-6">{t('uge.benefits.title')}</h3>
+                            <h3 className="text-xl font-bold mb-6 text-white">{t('uge.benefits.title')}</h3>
                             <ul className="space-y-5">
                                 {t.raw('uge.benefits.items').map((item: string, i: number) => (
                                     <li key={i} className="flex gap-3 text-sm text-slate-300">

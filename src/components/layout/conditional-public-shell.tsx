@@ -10,7 +10,7 @@ import { Toaster } from "@/components/ui/toaster";
 export function ConditionalPublicShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() ?? "";
 
-  const isBackend = pathname.includes("/admin");
+  const isBackend = pathname.includes("/admin") || pathname.includes("/area-personal");
 
   if (isBackend) {
     return (

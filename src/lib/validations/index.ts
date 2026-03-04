@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { CaseStatus, DocumentType } from '@prisma/client';
+import { CaseStatus, DocumentType } from '@/lib/db-types';
 
 export const ClientSchema = z.object({
     firstName: z.string().min(1, "First name is required"),
@@ -29,6 +29,7 @@ export const DocumentSchema = z.object({
     url: z.string().url("Invalid URL"),
     type: z.nativeEnum(DocumentType).default('OTHER'),
     caseId: z.string().min(1, "Case ID is required"),
+    slot_label: z.string().optional().nullable(),
 });
 
 export const InvoiceSchema = z.object({

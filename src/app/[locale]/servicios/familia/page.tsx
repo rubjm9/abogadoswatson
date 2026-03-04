@@ -101,7 +101,7 @@ export default function FamiliaPage() {
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
                                     <Landmark className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
-                                        <h4 className="font-bold mb-1">{t('requirements.income.title')}</h4>
+                                        <h4 className="font-bold mb-1 text-white">{t('requirements.income.title')}</h4>
                                         <p className="text-sm text-slate-400">
                                             {t('requirements.income.description')}
                                         </p>
@@ -110,14 +110,14 @@ export default function FamiliaPage() {
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
                                     <Home className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
-                                        <h4 className="font-bold mb-1">{t('requirements.housing.title')}</h4>
+                                        <h4 className="font-bold mb-1 text-white">{t('requirements.housing.title')}</h4>
                                         <p className="text-sm text-slate-400" dangerouslySetInnerHTML={{ __html: t.raw('requirements.housing.description') }} />
                                     </div>
                                 </div>
                                 <div className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
                                     <Heart className="w-6 h-6 text-[#C5A059] shrink-0" />
                                     <div>
-                                        <h4 className="font-bold mb-1">{t('requirements.dependency.title')}</h4>
+                                        <h4 className="font-bold mb-1 text-white">{t('requirements.dependency.title')}</h4>
                                         <p className="text-sm text-slate-400">
                                             {t('requirements.dependency.description')}
                                         </p>

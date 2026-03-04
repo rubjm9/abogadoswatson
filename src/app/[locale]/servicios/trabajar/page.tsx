@@ -22,7 +22,7 @@ export default function TrabajarPage() {
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             {/* SECCIÓN 1 — HERO */}
-            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-slate-900 overflow-hidden text-white">
                 <img
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80"
                     alt={t('hero.imageAlt') || 'Profesionales trabajando'}

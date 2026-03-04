@@ -1,11 +1,13 @@
 import { Link } from "@/navigation";
 import { getServices } from "@/actions/services";
+import { getClients } from "@/actions/clients";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import { NuevaContratacionForm } from "../nueva-contractacion-form";
 
 export default async function NuevaContratacionPage() {
-  const services = await getServices();
+  const [services, clientsRes] = await Promise.all([getServices(), getClients()]);
+  const clients = clientsRes.success ? clientsRes.data : [];
 
   return (
     <div className="space-y-8">
@@ -17,11 +19,14 @@ export default async function NuevaContratacionPage() {
         </Button>
         <h2 className="text-3xl font-bold tracking-tight mt-2">Nueva contratación</h2>
         <p className="text-slate-500 mt-1">
-          Registre una contratación realizada fuera de la web. Se creará un expediente asociado.
+          Registre una contratación (web o pago por otra vía). Se creará un expediente asociado.
         </p>
       </div>
       <div className="rounded-lg border border-slate-200 bg-white p-6 md:p-8">
-        <NuevaContratacionForm services={services.map((s) => ({ id: s.id, name: s.name }))} />
+        <NuevaContratacionForm
+          services={services.map((s) => ({ id: s.id, name: s.name }))}
+          clients={clients.map((c) => ({ id: c.id, firstName: c.firstName, lastName: c.lastName, email: c.email, phone: c.phone ?? "", address: c.address ?? "" }))}
+        />
       </div>
     </div>
   );

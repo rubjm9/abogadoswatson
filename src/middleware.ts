@@ -60,6 +60,8 @@ export default auth((req) => {
     const isOnAdmin = pathname.includes('/admin');
     const isOnAdminServicios = pathname.includes('/admin/servicios');
     const isOnAdminContrataciones = pathname.includes('/admin/contrataciones');
+    const isOnAdminUsuarios = pathname.includes('/admin/usuarios');
+    const isOnAreaPersonal = pathname.includes('/area-personal');
 
     if (isOnAdmin && !isLoggedIn) {
         const loginUrl = new URL(`/${localeForRedirect}/login`, nextUrl);
@@ -67,8 +69,24 @@ export default auth((req) => {
         return NextResponse.redirect(loginUrl);
     }
 
-    // Solo ADMIN puede acceder a /admin/servicios y /admin/contrataciones
-    if (isLoggedIn && req.auth?.user?.role !== 'ADMIN' && (isOnAdminServicios || isOnAdminContrataciones)) {
+    if (isOnAreaPersonal && !isLoggedIn) {
+        const loginUrl = new URL(`/${localeForRedirect}/login`, nextUrl);
+        loginUrl.searchParams.set('callbackUrl', pathname);
+        return NextResponse.redirect(loginUrl);
+    }
+
+    // CLIENTE que intenta acceder a /admin -> redirigir a /area-personal
+    if (isLoggedIn && req.auth?.user?.role === 'CLIENTE' && isOnAdmin) {
+        return NextResponse.redirect(new URL(`/${localeForRedirect}/area-personal`, nextUrl));
+    }
+
+    // ADMIN o ABOGADO que intenta acceder a /area-personal -> redirigir a /admin
+    if (isLoggedIn && (req.auth?.user?.role === 'ADMIN' || req.auth?.user?.role === 'ABOGADO') && isOnAreaPersonal) {
+        return NextResponse.redirect(new URL(`/${localeForRedirect}/admin`, nextUrl));
+    }
+
+    // Solo ADMIN puede acceder a /admin/servicios, /admin/contrataciones y /admin/usuarios
+    if (isLoggedIn && req.auth?.user?.role !== 'ADMIN' && (isOnAdminServicios || isOnAdminContrataciones || isOnAdminUsuarios)) {
         return NextResponse.redirect(new URL(`/${localeForRedirect}/unauthorized`, nextUrl));
     }
 

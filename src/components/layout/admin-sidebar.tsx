@@ -2,7 +2,7 @@
 
 import { Link } from "@/navigation";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Briefcase, User, ShoppingBag, FileText, LogOut } from "lucide-react";
+import { LayoutDashboard, Briefcase, User, ShoppingBag, FileText, LogOut, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { imagePath } from "@/lib/constants";
 import { logoutAndRedirect } from "@/actions/auth";
@@ -16,6 +16,7 @@ const baseItems = [
 const adminOnlyItems = [
   { title: "Contrataciones", href: "/admin/contrataciones", icon: FileText },
   { title: "Servicios", href: "/admin/servicios", icon: ShoppingBag },
+  { title: "Gestionar usuarios", href: "/admin/usuarios", icon: Users },
 ];
 
 export function AdminSidebar({ role }: { role?: string | null }) {
@@ -24,8 +25,8 @@ export function AdminSidebar({ role }: { role?: string | null }) {
   const items = [...baseItems, ...(isAdmin ? adminOnlyItems : [])];
 
   return (
-    <div className="flex h-full w-64 flex-col bg-slate-900 text-white">
-      <div className="flex h-20 items-center justify-center border-b border-slate-800 px-4">
+    <div className="flex h-full w-64 flex-col bg-[#701218] text-white">
+      <div className="flex h-20 items-center justify-center border-b border-[#5a0e13] px-4">
         <Link href="/" className="block w-full max-w-[180px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -47,8 +48,8 @@ export function AdminSidebar({ role }: { role?: string | null }) {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-slate-800",
-                  isActive ? "bg-slate-800 text-white" : "text-slate-400"
+                  "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-[#5a0e13]",
+                  isActive ? "bg-[#5a0e13] text-white" : "text-white/80"
                 )}
               >
                 <Icon className="h-4 w-4" />
@@ -58,11 +59,11 @@ export function AdminSidebar({ role }: { role?: string | null }) {
           })}
         </nav>
       </div>
-      <div className="border-t border-slate-800 p-4">
+      <div className="border-t border-[#5a0e13] p-4">
         <form action={logoutAndRedirect}>
           <button
             type="submit"
-            className="flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-400 transition-colors hover:bg-slate-800 hover:text-white"
+            className="flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-[#5a0e13] hover:text-white"
           >
             <LogOut className="h-4 w-4" />
             Cerrar sesión

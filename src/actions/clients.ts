@@ -1,15 +1,13 @@
 'use server'
 
-import { prisma } from '@/lib/prisma'
+import * as dbClients from '@/lib/db/clients'
 import { ClientSchema } from '@/lib/validations'
 import { z } from 'zod'
 import { revalidatePath } from 'next/cache'
 
 export async function getClients() {
     try {
-        const clients = await prisma.client.findMany({
-            orderBy: { createdAt: 'desc' }
-        })
+        const clients = await dbClients.findClients()
         return { success: true, data: clients }
     } catch (_error) {
         return { success: false, error: 'Failed to fetch clients' }
@@ -18,12 +16,13 @@ export async function getClients() {
 
 export async function getClientById(id: string) {
     try {
-        const client = await prisma.client.findUnique({
-            where: { id },
-            include: { cases: true, invoices: true }
-        })
+        const client = await dbClients.findClientById(id)
         if (!client) return { success: false, error: 'Client not found' }
-        return { success: true, data: client }
+        const [cases, invoices] = await Promise.all([
+            import('@/lib/db/cases').then(m => m.findCases()).then(cs => cs.filter(c => c.clientId === id)),
+            import('@/lib/db/invoices').then(m => m.findInvoicesByClientId(id)),
+        ])
+        return { success: true, data: { ...client, cases, invoices } }
     } catch (_error) {
         return { success: false, error: 'Failed to fetch client' }
     }
@@ -37,9 +36,7 @@ export async function createClient(data: z.infer<typeof ClientSchema>) {
     }
 
     try {
-        const client = await prisma.client.create({
-            data: result.data
-        })
+        const client = await dbClients.insertClient(result.data)
         revalidatePath('/clients')
         return { success: true, data: client }
     } catch (_error) {
@@ -48,7 +45,6 @@ export async function createClient(data: z.infer<typeof ClientSchema>) {
 }
 
 export async function updateClient(id: string, data: Partial<z.infer<typeof ClientSchema>>) {
-    // Use partial schema for updates
     const result = ClientSchema.partial().safeParse(data)
 
     if (!result.success) {
@@ -56,10 +52,7 @@ export async function updateClient(id: string, data: Partial<z.infer<typeof Clie
     }
 
     try {
-        const client = await prisma.client.update({
-            where: { id },
-            data: result.data
-        })
+        const client = await dbClients.updateClient(id, result.data)
         revalidatePath('/clients')
         revalidatePath(`/clients/${id}`)
         return { success: true, data: client }
@@ -70,9 +63,7 @@ export async function updateClient(id: string, data: Partial<z.infer<typeof Clie
 
 export async function deleteClient(id: string) {
     try {
-        await prisma.client.delete({
-            where: { id }
-        })
+        await dbClients.deleteClient(id)
         revalidatePath('/clients')
         return { success: true }
     } catch (_error) {
