@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ConditionalPublicShell } from "@/components/layout/conditional-public-shell";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -36,6 +37,7 @@ export default async function RootLayout({
     return (
         <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
             <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-slate-50 text-slate-900 flex min-h-screen flex-col`}>
+                <GoogleAnalytics />
                 <NextIntlClientProvider messages={messages}>
                     <ConditionalPublicShell>
                         {children}
