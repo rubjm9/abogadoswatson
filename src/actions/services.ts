@@ -27,6 +27,7 @@ export type ServiceOrderRow = {
   email: string | null;
   stripe_session_id: string | null;
   amount: number;
+  amount_paid?: number;
   status: string;
   created_at: string;
   case_id: string | null;
@@ -302,10 +303,12 @@ export async function createManualServiceOrder(params: {
   service_id: string;
   email: string | null;
   amount: number;
+  amount_paid?: number;
   case_id: string;
 }): Promise<ServiceOrderRow> {
   await requireAdmin();
   const supabase = createServerSupabaseClient();
+  const amountPaid = params.amount_paid ?? 0;
   const { data, error } = await supabase
     .from("service_orders")
     .insert({
@@ -313,6 +316,7 @@ export async function createManualServiceOrder(params: {
       email: params.email,
       stripe_session_id: null,
       amount: params.amount,
+      amount_paid: amountPaid,
       status: "PAID",
       case_id: params.case_id,
     })

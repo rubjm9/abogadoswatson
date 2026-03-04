@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import { UserX, User } from "lucide-react";
 
 export default async function AdminExpedientesPage() {
   const response = await getCases();
@@ -29,6 +30,7 @@ export default async function AdminExpedientesPage() {
             <TableRow>
               <TableHead>Título</TableHead>
               <TableHead>Cliente</TableHead>
+              <TableHead>Abogado asignado</TableHead>
               <TableHead>Estado</TableHead>
               <TableHead>Fecha</TableHead>
               <TableHead className="text-right">Acciones</TableHead>
@@ -39,6 +41,19 @@ export default async function AdminExpedientesPage() {
               <TableRow key={c.id}>
                 <TableCell className="font-medium">{c.title}</TableCell>
                 <TableCell>{c.client ? `${c.client.firstName} ${c.client.lastName}` : "N/A"}</TableCell>
+                <TableCell>
+                  {c.lawyer ? (
+                    <span className="inline-flex items-center gap-1.5 text-slate-700">
+                      <User className="h-3.5 w-3.5 text-slate-500" />
+                      {c.lawyer.firstName} {c.lawyer.lastName}
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800">
+                      <UserX className="h-3.5 w-3.5" />
+                      Sin asignar
+                    </span>
+                  )}
+                </TableCell>
                 <TableCell>
                   <span
                     className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ${
@@ -57,7 +72,9 @@ export default async function AdminExpedientesPage() {
                 <TableCell>{new Date(c.createdAt).toLocaleDateString()}</TableCell>
                 <TableCell className="text-right">
                   <Button variant="ghost" size="sm" asChild>
-                    <Link href={`/admin/expedientes/${c.id}`}>Ver</Link>
+                    <Link href={`/admin/expedientes/${c.id}`}>
+                      {c.lawyer ? "Ver" : "Asignar"}
+                    </Link>
                   </Button>
                 </TableCell>
               </TableRow>

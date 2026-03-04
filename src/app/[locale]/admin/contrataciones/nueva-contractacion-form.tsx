@@ -14,23 +14,42 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { createContratacionManual } from "@/actions/contrataciones";
+import { cn } from "@/lib/utils";
 
-type Service = { id: string; name: string };
+type Service = { id: string; name: string; price: number };
 type ClientOption = { id: string; firstName: string; lastName: string; email: string; phone: string; address: string };
+type LawyerOption = { id: string; firstName: string; lastName: string };
 
-export function NuevaContratacionForm({ services, clients }: { services: Service[]; clients: ClientOption[] }) {
+export function NuevaContratacionForm({
+  services,
+  clients,
+  lawyers = [],
+}: {
+  services: Service[];
+  clients: ClientOption[];
+  lawyers?: LawyerOption[];
+}) {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [serviceId, setServiceId] = useState<string>("");
+  const [amount, setAmount] = useState<string>("");
   const [clientMode, setClientMode] = useState<"existing" | "new">("new");
   const [selectedClientId, setSelectedClientId] = useState<string>("");
+  const [lawyerId, setLawyerId] = useState<string>("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
+  const selectedService = services.find((s) => s.id === serviceId);
   const selectedClient = clients.find((c) => c.id === selectedClientId);
+
+  useEffect(() => {
+    if (selectedService != null) {
+      setAmount(String(selectedService.price));
+    }
+  }, [selectedService?.id]);
 
   useEffect(() => {
     if (clientMode === "existing" && selectedClient) {
@@ -56,9 +75,12 @@ export function NuevaContratacionForm({ services, clients }: { services: Service
       return;
     }
     const amt = Number(formData.get("amount"));
+    const amtPaid = Number(formData.get("amount_paid"));
     const result = await createContratacionManual({
       service_id: serviceId,
       amount: amt,
+      amount_paid: Number.isNaN(amtPaid) ? 0 : Math.max(0, amtPaid),
+      lawyer_id: lawyerId || null,
       client_id: clientMode === "existing" && selectedClientId ? selectedClientId : null,
       email: (formData.get("email") as string)?.trim() ?? email,
       firstName: (formData.get("firstName") as string)?.trim() ?? firstName,
@@ -83,7 +105,16 @@ export function NuevaContratacionForm({ services, clients }: { services: Service
       )}
       <div className="space-y-2">
         <Label htmlFor="service_id">Servicio</Label>
-        <Select name="service_id" required value={serviceId} onValueChange={setServiceId}>
+        <Select
+          name="service_id"
+          required
+          value={serviceId}
+          onValueChange={(v) => {
+            setServiceId(v);
+            const svc = services.find((s) => s.id === v);
+            if (svc != null) setAmount(String(svc.price));
+          }}
+        >
           <SelectTrigger id="service_id">
             <SelectValue placeholder="Seleccione un servicio" />
           </SelectTrigger>
@@ -91,6 +122,7 @@ export function NuevaContratacionForm({ services, clients }: { services: Service
             {services.map((s) => (
               <SelectItem key={s.id} value={s.id}>
                 {s.name}
+                {s.price != null && !Number.isNaN(s.price) ? ` — ${Number(s.price).toFixed(2)} €` : ""}
               </SelectItem>
             ))}
           </SelectContent>
@@ -106,32 +138,54 @@ export function NuevaContratacionForm({ services, clients }: { services: Service
           min="0"
           required
           placeholder="99.00"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
         />
+        <p className="text-xs text-slate-500">
+          Se rellena con el coste del servicio; puede modificarlo para esta contratación.
+        </p>
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="amount_paid">Cantidad abonada (€)</Label>
+        <Input
+          id="amount_paid"
+          name="amount_paid"
+          type="number"
+          step="0.01"
+          min="0"
+          placeholder="0.00"
+          defaultValue="0"
+        />
+        <p className="text-xs text-slate-500">Opcional. Para pagos parciales.</p>
       </div>
 
       <div className="space-y-4 border-t border-slate-200 pt-6">
         <Label>Cliente</Label>
-        <div className="flex gap-4">
-          <label className="flex items-center gap-2">
-            <input
-              type="radio"
-              name="clientMode"
-              checked={clientMode === "new"}
-              onChange={() => setClientMode("new")}
-              className="text-[#701218] focus:ring-[#701218]"
-            />
+        <div className="inline-flex rounded-lg border border-slate-200 bg-slate-50/50 p-1">
+          <button
+            type="button"
+            onClick={() => setClientMode("new")}
+            className={cn(
+              "rounded-md px-4 py-2 text-sm font-medium transition-colors",
+              clientMode === "new"
+                ? "bg-white text-slate-900 shadow-sm"
+                : "text-slate-600 hover:text-slate-900"
+            )}
+          >
             Nuevo cliente
-          </label>
-          <label className="flex items-center gap-2">
-            <input
-              type="radio"
-              name="clientMode"
-              checked={clientMode === "existing"}
-              onChange={() => setClientMode("existing")}
-              className="text-[#701218] focus:ring-[#701218]"
-            />
+          </button>
+          <button
+            type="button"
+            onClick={() => setClientMode("existing")}
+            className={cn(
+              "rounded-md px-4 py-2 text-sm font-medium transition-colors",
+              clientMode === "existing"
+                ? "bg-white text-slate-900 shadow-sm"
+                : "text-slate-600 hover:text-slate-900"
+            )}
+          >
             Cliente existente
-          </label>
+          </button>
         </div>
         {clientMode === "existing" && (
           <Select value={selectedClientId} onValueChange={setSelectedClientId}>
@@ -213,6 +267,27 @@ export function NuevaContratacionForm({ services, clients }: { services: Service
           className="resize-y"
         />
       </div>
+
+      {lawyers.length > 0 && (
+        <div className="space-y-2 border-t border-slate-200 pt-6">
+          <Label htmlFor="lawyer_id">Abogado asignado</Label>
+          <Select name="lawyer_id" value={lawyerId || "__none__"} onValueChange={(v) => setLawyerId(v === "__none__" ? "" : v)}>
+            <SelectTrigger id="lawyer_id">
+              <SelectValue placeholder="Ninguno" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="__none__">Ninguno</SelectItem>
+              {lawyers.map((l) => (
+                <SelectItem key={l.id} value={l.id}>
+                  {l.firstName} {l.lastName}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <p className="text-xs text-slate-500">Opcional. El abogado verá este expediente en su panel.</p>
+        </div>
+      )}
+
       <Button type="submit" variant="brown">
         Crear contratación y expediente
       </Button>

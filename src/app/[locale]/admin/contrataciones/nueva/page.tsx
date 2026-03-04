@@ -1,13 +1,19 @@
 import { Link } from "@/navigation";
 import { getServices } from "@/actions/services";
 import { getClients } from "@/actions/clients";
+import { getLawyers } from "@/actions/lawyers";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import { NuevaContratacionForm } from "../nueva-contractacion-form";
 
 export default async function NuevaContratacionPage() {
-  const [services, clientsRes] = await Promise.all([getServices(), getClients()]);
-  const clients = clientsRes.success ? clientsRes.data : [];
+  const [services, clientsRes, lawyersRes] = await Promise.all([
+    getServices(),
+    getClients(),
+    getLawyers(),
+  ]);
+  const clients = clientsRes.success && clientsRes.data ? clientsRes.data : [];
+  const lawyers = lawyersRes.success && lawyersRes.data ? lawyersRes.data : [];
 
   return (
     <div className="space-y-8">
@@ -24,8 +30,9 @@ export default async function NuevaContratacionPage() {
       </div>
       <div className="rounded-lg border border-slate-200 bg-white p-6 md:p-8">
         <NuevaContratacionForm
-          services={services.map((s) => ({ id: s.id, name: s.name }))}
+          services={services.map((s) => ({ id: s.id, name: s.name, price: Number(s.price) }))}
           clients={clients.map((c) => ({ id: c.id, firstName: c.firstName, lastName: c.lastName, email: c.email, phone: c.phone ?? "", address: c.address ?? "" }))}
+          lawyers={lawyers.map((l) => ({ id: l.id, firstName: l.firstName, lastName: l.lastName }))}
         />
       </div>
     </div>

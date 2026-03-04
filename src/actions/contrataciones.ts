@@ -9,6 +9,10 @@ import { revalidatePath } from "next/cache";
 export type CreateContratacionManualInput = {
   service_id: string;
   amount: number;
+  /** Cantidad ya abonada (pago parcial). Opcional, por defecto 0. */
+  amount_paid?: number;
+  /** Abogado asignado al expediente. Opcional. */
+  lawyer_id?: string | null;
   /** Si se indica, se usa el cliente existente y opcionalmente se actualizan sus datos. */
   client_id?: string | null;
   email: string;
@@ -24,13 +28,17 @@ export async function createContratacionManual(
   try {
     await requireAdmin();
 
-    const { service_id, amount, client_id, email, firstName, lastName, phone, address } = input;
+    const { service_id, amount, amount_paid, lawyer_id, client_id, email, firstName, lastName, phone, address } = input;
     const trimmedEmail = email.trim().toLowerCase();
     if (!trimmedEmail || !firstName?.trim() || !lastName?.trim()) {
       return { success: false, error: "Email, nombre y apellidos son obligatorios." };
     }
     if (amount <= 0 || Number.isNaN(amount)) {
       return { success: false, error: "El importe debe ser mayor que 0." };
+    }
+    const paid = amount_paid ?? 0;
+    if (paid < 0 || paid > amount) {
+      return { success: false, error: "La cantidad abonada debe estar entre 0 y el importe total." };
     }
 
     const service = await getServiceById(service_id);
@@ -87,12 +95,14 @@ export async function createContratacionManual(
       title: caseTitle,
       status: "OPEN",
       clientId: client.id,
+      lawyerId: lawyer_id ?? null,
     });
 
     await createManualServiceOrder({
       service_id,
       email: trimmedEmail,
       amount,
+      amount_paid: amount_paid ?? 0,
       case_id: newCase.id,
     });
 
