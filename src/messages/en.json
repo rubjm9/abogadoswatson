@@ -53,9 +53,9 @@
       }
     },
     "trustindex": {
-      "title": "Google reviews",
+      "title": "What our clients say",
       "subtitle": "Verified opinions from our clients.",
-      "ariaLabel": "Client reviews on Google"
+      "ariaLabel": "What our clients say"
     },
     "cta": {
       "title": "Ready to start your process?",

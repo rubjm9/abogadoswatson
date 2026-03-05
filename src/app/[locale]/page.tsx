@@ -1,7 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { Stats } from "@/components/sections/stats";
 import { ServicesPreview } from "@/components/sections/services-preview";
-import { Testimonials } from "@/components/sections/testimonials";
 import { TrustindexReviews } from "@/components/sections/trustindex-reviews";
 import { CTASection } from "@/components/sections/cta-section";
 
@@ -12,7 +11,6 @@ export default function Home() {
             <Hero />
             <Stats />
             <ServicesPreview />
-            <Testimonials />
             <TrustindexReviews />
             <CTASection />
         </>
