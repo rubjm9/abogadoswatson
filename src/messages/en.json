@@ -52,6 +52,11 @@
         "role": "Private client, Colombia"
       }
     },
+    "trustindex": {
+      "title": "Google reviews",
+      "subtitle": "Verified opinions from our clients.",
+      "ariaLabel": "Client reviews on Google"
+    },
     "cta": {
       "title": "Ready to start your process?",
       "description": "The first consultation is the most important step. We will analyze your case in detail and design the best legal strategy for you.",

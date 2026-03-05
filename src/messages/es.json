@@ -52,6 +52,11 @@
         "role": "Cliente particular, Colombia"
       }
     },
+    "trustindex": {
+      "title": "Reseñas en Google",
+      "subtitle": "Opiniones verificadas de nuestros clientes.",
+      "ariaLabel": "Reseñas de clientes en Google"
+    },
     "cta": {
       "title": "¿Listo para iniciar tu trámite?",
       "description": "La primera consulta es el paso más importante. Analizaremos tu caso en detalle y diseñaremos la mejor estrategia legal para ti.",
