@@ -3,8 +3,9 @@ import { Globe2, Briefcase, Building2, Users, Gavel } from "lucide-react";
 
 /**
  * Prefijo base para assets estáticos (imágenes en public).
- * Por defecto '' (Next sirve public en la raíz: /images/...).
- * Si en producción los estáticos se sirven bajo /public, define NEXT_PUBLIC_STATIC_BASE=/public
+ * Por defecto '' (Next sirve public/ en la raíz: /images/...).
+ * Solo en Hostinger: si el servidor sirve los estáticos en la URL /public, define
+ * NEXT_PUBLIC_STATIC_BASE=/public allí. En local y Vercel déjalo sin definir.
  */
 export const STATIC_BASE = process.env.NEXT_PUBLIC_STATIC_BASE ?? "";
 
@@ -12,7 +13,8 @@ export const STATIC_BASE = process.env.NEXT_PUBLIC_STATIC_BASE ?? "";
 export function imagePath(path: string): string {
     const base = STATIC_BASE.replace(/\/$/, "");
     const segment = path.startsWith("/") ? path : `/images/${path}`;
-    return base ? `${base}${segment}` : segment;
+    const result = base ? `${base}${segment}` : segment;
+    return result;
 }
 
 /** Número de WhatsApp para contacto (sin +). Usado en botón flotante y página de contacto. */

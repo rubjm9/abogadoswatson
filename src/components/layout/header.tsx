@@ -57,8 +57,8 @@ export function Header() {
 
     const isLightMode = isHeroPage ? isScrolled : true;
     const logoSrc = isLightMode 
-        ? imagePath("logo-horizontal.png") 
-        : imagePath("logo-horizontal-white.png");
+        ? imagePath("aw-logo-horizontal.png") 
+        : imagePath("aw-logo-horizontal-white.png");
     
     // Detect active navigation items
     const isServicesActive = pathname?.includes("/servicios");
@@ -76,11 +76,13 @@ export function Header() {
             )}
         >
             <Container className="flex h-20 items-center justify-between transition-all">
-                <Link href="/" className="mr-8">
+                <Link href="/" className="mr-8 block">
                     <img
                         src={logoSrc}
                         alt="Abogados Watson"
-                        className="h-10 md:h-12 w-auto transition-all"
+                        width={180}
+                        height={48}
+                        className="h-10 w-[180px] md:h-12 md:w-[180px] object-contain object-left transition-all"
                     />
                 </Link>
 

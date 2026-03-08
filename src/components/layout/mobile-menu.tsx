@@ -74,7 +74,7 @@ export function MobileMenu({ isLightMode = true }: MobileMenuProps) {
                                 <Link href="/">
                                     <span onClick={() => setIsOpen(false)}>
                                         <img
-                                            src={imagePath("logo-horizontal.png")}
+                                            src={imagePath("aw-logo-horizontal.png")}
                                             alt="Abogados Watson"
                                             className="h-8 w-auto"
                                         />

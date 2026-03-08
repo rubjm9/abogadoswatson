@@ -57,7 +57,7 @@ export function AdminSidebar({ role }: { role?: string | null }) {
         <Link href="/" className="block w-full max-w-[180px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={imagePath("logo-horizontal-white.png")}
+            src={imagePath("aw-logo-horizontal-white.png")}
             alt="Abogados Watson"
             className="h-10 w-auto object-contain object-center"
           />
