@@ -10,6 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node scripts/start-with-logs.js",
+    "start:hostinger": "next build && node scripts/start-with-logs.js",
     "lint": "eslint"
   },
   "dependencies": {
