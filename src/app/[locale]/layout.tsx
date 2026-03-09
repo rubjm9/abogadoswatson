@@ -6,7 +6,8 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ConditionalPublicShell } from "@/components/layout/conditional-public-shell";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
-import { Analytics } from "@vercel/analytics/next";
+import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
+import { ClientifyAnalytics } from "@/components/analytics/clientify-analytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -39,7 +40,8 @@ export default async function RootLayout({
         <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
             <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-slate-50 text-slate-900 flex min-h-screen flex-col`}>
                 <GoogleAnalytics />
-                <Analytics />
+                <VercelAnalytics />
+                <ClientifyAnalytics />
                 <NextIntlClientProvider messages={messages}>
                     <ConditionalPublicShell>
                         {children}

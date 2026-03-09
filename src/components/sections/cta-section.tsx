@@ -10,7 +10,7 @@ export function CTASection() {
 
     return (
         <section className="py-24 bg-[#0F172A] relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03]" />
+            <div className="absolute inset-0 opacity-[0.03] [background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')]" />
             <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-[#701218]/10 to-transparent" />
 
             <Container className="relative z-10">

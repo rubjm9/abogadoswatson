@@ -4,6 +4,7 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
     experimental: {
         serverActions: {
             bodySizeLimit: '10mb',

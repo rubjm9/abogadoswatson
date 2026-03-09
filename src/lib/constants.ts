@@ -9,12 +9,18 @@ import { Globe2, Briefcase, Building2, Users, Gavel } from "lucide-react";
  */
 export const STATIC_BASE = process.env.NEXT_PUBLIC_STATIC_BASE ?? "";
 
+/**
+ * Si la app se sirve en un subpath (ej. https://dominio.com/app), define
+ * NEXT_PUBLIC_BASE_PATH=/app en el entorno de build. Debe coincidir con la URL
+ * bajo la que corre la app en el servidor.
+ */
+const BASE_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/$/, "");
+
 /** Ruta pública de una imagen (ej: imagePath("logo.png") => "/images/logo.png") */
 export function imagePath(path: string): string {
-    const base = STATIC_BASE.replace(/\/$/, "");
     const segment = path.startsWith("/") ? path : `/images/${path}`;
-    const result = base ? `${base}${segment}` : segment;
-    return result;
+    const withStaticBase = STATIC_BASE ? `${STATIC_BASE.replace(/\/$/, "")}${segment}` : segment;
+    return BASE_PATH ? `${BASE_PATH}${withStaticBase}` : withStaticBase;
 }
 
 /** Número de WhatsApp para contacto (sin +). Usado en botón flotante y página de contacto. */
